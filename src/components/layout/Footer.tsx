@@ -10,12 +10,12 @@ import TextPressure from '../animations/TextPressure';
 
 export const Footer = () => {
   return (
-    <section className="bg-black  text-white max-w-screen min-h-screen general-sans">
+    <section className="bg-black   text-white max-w-screen min-h-screen general-sans">
       <div className="p-16">
         <div className="flex items-center justify-between  gap-5">
           <div className="flex items-center gap-10 w-1/2">
             <Image
-              src={"./icons/yes-to-boss-white-logo.svg"}
+              src={"/icons/yes-to-boss-white-logo.svg"}
               alt="yes-to-boss-logo"
               width={140}
               height={100}
@@ -62,19 +62,19 @@ export const Footer = () => {
             <div className="mt-2 flex gap-2">
               <Image
                 alt="facebook-icon"
-                src={"./icons/facebook-icon.svg"}
+                src={"/icons/facebook-icon.svg"}
                 width={20}
                 height={20}
               />
               <Image
                 alt="x-icon"
-                src={"./icons/x-icon.svg"}
+                src={"/icons/x-icon.svg"}
                 width={20}
                 height={20}
               />
               <Image
                 alt="threads-icon"
-                src={"./icons/threads-icon.svg"}
+                src={"/icons/threads-icon.svg"}
                 width={20}
                 height={20}
               />

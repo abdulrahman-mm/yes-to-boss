@@ -299,8 +299,8 @@ export const HomeWhyYouHaveToChooseUs = () => {
             display: "inline-block",
           }}
         >
-          Whatever your customers' payment preferences, we’ll help you find the
-          right solution for your business.
+         Whatever your business goals or tax requirements, we help you find the right solutions that ensure growth, compliance, and peace of mind.
+
         </p>
       </div>
 
@@ -330,7 +330,7 @@ export const HomeWhyYouHaveToChooseUs = () => {
             <p className="text-5xl">+</p>
           </div>
           <p className="text-[#6B7280] text-lg mt-5 satoshi font-normal">
-            In 38 countries, we work as one global team to help clients
+          We’ve supported a wide range of individuals and businesses with expert tax strategies and reliable consulting services.
           </p>
         </div>
 
@@ -364,7 +364,8 @@ export const HomeWhyYouHaveToChooseUs = () => {
             <p className="text-5xl">%</p>
           </div>
           <p className="text-[#6B7280] text-lg satoshi mt-5 font-normal">
-            We have worked with 89% of the Global 500 companies.
+          Our clients experience smooth filings, optimized savings, and full compliance with evolving tax regulations.
+
           </p>
         </div>
 
@@ -393,8 +394,7 @@ export const HomeWhyYouHaveToChooseUs = () => {
             <p className="text-5xl">%</p>
           </div>
           <p className="text-[#6B7280] text-lg satoshi mt-5 font-normal">
-            We started with a rebellious mindset and set ourselves the
-            challenge
+          From startups to leading enterprises, 89% of our clients come from top-tier business sectors.
           </p>
         </div>
       </div>

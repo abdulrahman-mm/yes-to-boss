@@ -219,6 +219,167 @@
 
 
 
+// "use client";
+// import React, { useEffect, useRef } from "react";
+// import Image from "next/image";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// export const HomeTestimonial = () => {
+//   const headingRef = useRef<HTMLDivElement>(null);
+//   const subheadingRef = useRef<HTMLDivElement>(null);
+//   const textRef = useRef<HTMLParagraphElement>(null);
+//   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+//   useEffect(() => {
+//     // Clip-path animation for text
+//     const tl = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: headingRef.current,
+//         start: "top 5%",
+//       },
+//     });
+
+//     tl.fromTo(
+//       headingRef.current,
+//       {
+//         clipPath: "inset(0 100% 0 0)",
+//         opacity: 0,
+//       },
+//       {
+//         clipPath: "inset(0 0% 0 0)",
+//         opacity: 1,
+//         duration: 1,
+//         ease: "power2.out",
+//       }
+//     )
+//       .fromTo(
+//         subheadingRef.current,
+//         {
+//           clipPath: "inset(0 100% 0 0)",
+//           opacity: 0,
+//         },
+//         {
+//           clipPath: "inset(0 0% 0 0)",
+//           opacity: 1,
+//           duration: 1,
+//           ease: "power2.out",
+//         },
+//         "-=0.7"
+//       )
+//       .fromTo(
+//         textRef.current,
+//         {
+//           y: 20,
+//           opacity: 0,
+//         },
+//         {
+//           y: 0,
+//           opacity: 1,
+//           duration: 0.6,
+//           ease: "power2.out",
+//         },
+//         "-=0.5"
+//       );
+//   }, []);
+
+//   useEffect(() => {
+//     gsap.fromTo(
+//       cardsRef.current,
+//       {
+//         opacity: 0,
+//         y: 60,
+//         rotate: 5,
+//         scale: 0.95,
+//       },
+//       {
+//         opacity: 1,
+//         y: 0,
+//         rotate: 0,
+//         scale: 1,
+//         duration: 1,
+//         ease: "power3.out",
+//         stagger: 0.2,
+//         scrollTrigger: {
+//           trigger: cardsRef.current[0],
+//           start: "top 20%",
+//         },
+//       }
+//     );
+//   }, []);
+  
+
+//   return (
+//     <section className="bg-white min-h-screen p-16 general-sans">
+//       {/* Title Section */}
+//       <p className="border rounded-2xl px-3 font-medium text-sm py-1 border-gray-300 w-fit mx-auto text-gray-700">
+//         Testimonials
+//       </p>
+
+//       <div
+//         ref={headingRef}
+//         className="font-medium text-5xl mt-5 mx-auto w-fit text-center opacity-0"
+//       >
+//         Real Stories. True Trust.
+//       </div>
+
+//       <div
+//         ref={subheadingRef}
+//         className="font-medium text-5xl mt-1 mx-auto w-fit text-center opacity-0"
+//       >
+//         Proven Results.
+//       </div>
+
+//       <p
+//         ref={textRef}
+//         className="font-normal text-sm mt-1 mx-auto w-fit text-gray-600 text-center opacity-0"
+//       >
+//         Hear what our clients say about our service, support, and success
+//       </p>
+
+//       {/* Cards Section */}
+//       <div className="flex flex-wrap gap-8 mt-16 justify-center">
+//         {[...Array(4)].map((_, index) => (
+//           <div
+//             key={index}
+//             ref={(el) => {cardsRef.current[index] = el}}
+//             className="rounded-3xl h-auto w-80 flex-grow transform transition-all duration-300 hover:-translate-y-3 overflow-hidden border border-gray-200 shadow-lg bg-white"
+//           >
+//             <div className="relative w-full h-64">
+//               <Image
+//                 className="object-cover rounded-t-3xl"
+//                 alt="image"
+//                 fill
+//                 src="/images/dummy-image1.svg"
+//               />
+//             </div>
+//             <p className="p-4 font-inter font-semibold text-sm text-gray-800">
+//               Their team has been instrumental in keeping our finances organized
+//               and compliant. From tax planning to payroll, everything is handled
+//               with precision and professionalism.
+//             </p>
+//           </div>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 "use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
@@ -234,11 +395,10 @@ export const HomeTestimonial = () => {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Clip-path animation for text
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: headingRef.current,
-        start: "top 80%",
+        start: "top 75%", // smoother trigger
       },
     });
 
@@ -246,26 +406,30 @@ export const HomeTestimonial = () => {
       headingRef.current,
       {
         clipPath: "inset(0 100% 0 0)",
-        opacity: 0,
+        autoAlpha: 0,
+        willChange: "clip-path, opacity",
       },
       {
         clipPath: "inset(0 0% 0 0)",
-        opacity: 1,
+        autoAlpha: 1,
         duration: 1,
         ease: "power2.out",
+        clearProps: "clipPath, opacity",
       }
     )
       .fromTo(
         subheadingRef.current,
         {
           clipPath: "inset(0 100% 0 0)",
-          opacity: 0,
+          autoAlpha: 0,
+          willChange: "clip-path, opacity",
         },
         {
           clipPath: "inset(0 0% 0 0)",
-          opacity: 1,
+          autoAlpha: 1,
           duration: 1,
           ease: "power2.out",
+          clearProps: "clipPath, opacity",
         },
         "-=0.7"
       )
@@ -273,13 +437,15 @@ export const HomeTestimonial = () => {
         textRef.current,
         {
           y: 20,
-          opacity: 0,
+          autoAlpha: 0,
+          willChange: "transform, opacity",
         },
         {
           y: 0,
-          opacity: 1,
+          autoAlpha: 1,
           duration: 0.6,
           ease: "power2.out",
+          clearProps: "transform, opacity",
         },
         "-=0.5"
       );
@@ -289,63 +455,63 @@ export const HomeTestimonial = () => {
     gsap.fromTo(
       cardsRef.current,
       {
-        opacity: 0,
+        autoAlpha: 0,
         y: 60,
         rotate: 5,
         scale: 0.95,
+        willChange: "transform, opacity",
       },
       {
-        opacity: 1,
+        autoAlpha: 1,
         y: 0,
         rotate: 0,
         scale: 1,
         duration: 1,
         ease: "power3.out",
         stagger: 0.2,
+        force3D: true,
         scrollTrigger: {
           trigger: cardsRef.current[0],
-          start: "top 95%",
+          start: "top 75%",
         },
+        clearProps: "transform, opacity",
       }
     );
   }, []);
-  
 
   return (
     <section className="bg-white min-h-screen p-16 general-sans">
-      {/* Title Section */}
       <p className="border rounded-2xl px-3 font-medium text-sm py-1 border-gray-300 w-fit mx-auto text-gray-700">
         Testimonials
       </p>
 
       <div
         ref={headingRef}
-        className="font-medium text-5xl mt-5 mx-auto w-fit text-center opacity-0"
+        className="font-medium text-5xl mt-5 mx-auto w-fit text-center opacity-0 will-change-auto"
       >
         Real Stories. True Trust.
       </div>
 
       <div
         ref={subheadingRef}
-        className="font-medium text-5xl mt-1 mx-auto w-fit text-center opacity-0"
+        className="font-medium text-5xl mt-1 mx-auto w-fit text-center opacity-0 will-change-auto"
       >
         Proven Results.
       </div>
 
       <p
         ref={textRef}
-        className="font-normal text-sm mt-1 mx-auto w-fit text-gray-600 text-center opacity-0"
+        className="font-normal text-sm mt-1 mx-auto w-fit text-gray-600 text-center opacity-0 will-change-auto"
       >
         Hear what our clients say about our service, support, and success
       </p>
 
-      {/* Cards Section */}
       <div className="flex flex-wrap gap-8 mt-16 justify-center">
         {[...Array(4)].map((_, index) => (
           <div
             key={index}
             ref={(el) => {cardsRef.current[index] = el}}
-            className="rounded-3xl h-auto w-80 flex-grow transform transition-all duration-300 hover:-translate-y-3 overflow-hidden border border-gray-200 shadow-lg bg-white"
+            className="rounded-3xl h-auto w-80 flex-grow transform transition-all duration-300 hover:-translate-y-3 overflow-hidden border border-gray-200 shadow-lg bg-white will-change-transform"
           >
             <div className="relative w-full h-64">
               <Image
@@ -366,4 +532,3 @@ export const HomeTestimonial = () => {
     </section>
   );
 };
-

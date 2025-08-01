@@ -3,3 +3,6 @@ export { default as CountUp } from "./CountUp";
 export { default as CurvedText } from "./CurvedText";
 export { default as TextPressure } from "./TextPressure";
 export { default as BlurText } from "./BlurText";
+export { default as ShinnyText } from "./ShinyText";
+export { default as ScrollReveal } from "./ScrollReveal";
+export { default as DotGrid } from "./DotGrid";

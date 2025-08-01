@@ -563,6 +563,202 @@
 
 
 
+// "use client";
+
+// import React, { useEffect, useRef } from "react";
+// import Image from "next/image";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// export const HomeWhatMakesUsDifferent = () => {
+//   const containerRef = useRef(null);
+//   const imageRef = useRef(null);
+//   const headingTextRef = useRef<HTMLDivElement>(null);
+//   const subHeadingTextRef = useRef<HTMLDivElement>(null);
+//   const cardsRef = useRef<HTMLDivElement[]>([]);
+
+//   useEffect(() => {
+//     const ctx = gsap.context(() => {
+//       // Animate top heading text
+//       if (headingTextRef.current) {
+//         gsap.from(Array.from(headingTextRef.current.children), {
+//           opacity: 0,
+//           y: 50,
+//           duration: 1.2,
+//           stagger: 0.15,
+//           ease: "power4.out",
+//           scrollTrigger: {
+//             trigger: headingTextRef.current,
+//             start: "top 80%",
+//           },
+//         });
+//       }
+
+//       // Animate the wheel image from top with rotation
+//       if (imageRef.current) {
+//         gsap.fromTo(
+//           imageRef.current,
+//           {
+//             y: -200,
+//             opacity: 0,
+//             rotate: 360,
+//           },
+//           {
+//             y: 0,
+//             opacity: 1,
+//             rotate: 0,
+//             duration: 2.5,
+//             ease: "power4.out",
+//             scrollTrigger: {
+//               trigger: containerRef.current,
+//               start: "top 80%",
+//             },
+//           }
+//         );
+//       }
+
+//       // Subheading animation
+//       if (subHeadingTextRef.current) {
+//         gsap.from(Array.from(subHeadingTextRef.current.children), {
+//           y: 50,
+//           opacity: 0,
+//           scale: 0.95,
+//           duration: 1.1,
+//           ease: "power4.out",
+//           stagger: 0.15,
+//           scrollTrigger: {
+//             trigger: subHeadingTextRef.current,
+//             start: "top 85%",
+//           },
+//         });
+//       }
+
+//       // Animate service cards
+//       cardsRef.current.forEach((card, index) => {
+//         gsap.fromTo(
+//           card,
+//           {
+//             opacity: 0,
+//             y: 80,
+//             scale: 0.95,
+//           },
+//           {
+//             opacity: 1,
+//             y: 0,
+//             scale: 1,
+//             duration: 1.1,
+//             ease: "power3.out",
+//             scrollTrigger: {
+//               trigger: card,
+//               start: "top 100%",
+//             },
+//             delay: index * 0.1,
+//           }
+//         );
+//       });
+//     });
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <section className="bg-white pb-16 general-sans">
+//       <div className="flex p-16 flex-col gap-5 items-center justify-center">
+//         {/* Top heading */}
+//         <div
+//           ref={containerRef}
+//           className="flex items-center gap-5 font-medium text-5xl"
+//         >
+//           <div ref={headingTextRef} className="flex items-center gap-5">
+//             <p>What</p>
+//             <p className="bg-gray-400 w-28 h-10 rounded-4xl"></p>
+//             <p>Makes Us Different</p>
+//           </div>
+
+//           <div className="w-14 h-auto overflow-hidden" ref={imageRef}>
+//             <Image
+//               alt="tax-business-consulting"
+//               src="/icons/home-cirlce-icon.svg"
+//               width={50}
+//               height={40}
+//               className="w-full h-auto object-cover"
+//             />
+//           </div>
+//         </div>
+
+//         {/* Subheading */}
+//         <div
+//           ref={subHeadingTextRef}
+//           className="flex items-center gap-5 font-medium text-5xl"
+//         >
+//           <p>For</p>
+//           <div className="w-14 h-auto">
+//             <Image
+//               alt="tax-business-consulting"
+//               src="/icons/home-play-icon.svg"
+//               width={50}
+//               height={40}
+//             />
+//           </div>
+//           <p>Our Clients</p>
+//           <div className="w-20 sm:w-24 h-auto">
+//             <Image
+//               src="/icons/home-our-clients-icon.svg"
+//               alt="Client Icon"
+//               width={70}
+//               height={80}
+//               className="w-full h-auto object-cover"
+//             />
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Cards Section */}
+//       <div className="flex flex-wrap justify-center gap-5 px-16 pt-16">
+//         {[
+//           {
+//             id: "01",
+//             title: "Nationwide Expertise",
+//           },
+//           {
+//             id: "02",
+//             title: "Personalized Financial Solutions",
+//           },
+//           {
+//             id: "03",
+//             title: "Multi-Sector Proficiency",
+//           },
+//           {
+//             id: "04",
+//             title: "Tech-Enabled Delivery",
+//           },
+//         ].map((item, index) => (
+//           <div
+//             key={item.id}
+//             ref={(el) => {
+//               cardsRef.current[index] = el!;
+//             }}
+//             className="bg-[#E8E8E8] flex-grow hover:bg-black group transition-all duration-500 h-110 w-52 relative rounded-2xl overflow-hidden cursor-pointer"
+//           >
+//             <div className="bg-[#292833]/50 group-hover:bg-gradient-to-b from-[#232323] from-15% to-[#000000] h-1/3 w-full absolute bottom-0 p-8 rounded-b-2xl transition-all duration-500">
+//               <p className="text-white text-xs font-medium">{item.id}</p>
+//               <p className="font-medium text-white text-3xl">{item.title}</p>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// };
+
+
+
+
+
+
+
 "use client";
 
 import React, { useEffect, useRef } from "react";
@@ -577,100 +773,138 @@ export const HomeWhatMakesUsDifferent = () => {
   const imageRef = useRef(null);
   const headingTextRef = useRef<HTMLDivElement>(null);
   const subHeadingTextRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement[]>([]);
+  const cardsWrapperRef = useRef<HTMLDivElement>(null);
+  const pulseRef = useRef(null);
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate top heading text
+      // Top Heading Animation
       if (headingTextRef.current) {
         gsap.from(Array.from(headingTextRef.current.children), {
           opacity: 0,
           y: 50,
           duration: 1.2,
-          stagger: 0.15,
+          stagger: 0.1,
           ease: "power4.out",
           scrollTrigger: {
             trigger: headingTextRef.current,
-            start: "top 80%",
-          },
-        });
-      }
-
-      // Animate the wheel image from top with rotation
-      if (imageRef.current) {
-        gsap.fromTo(
-          imageRef.current,
-          {
-            y: -200,
-            opacity: 0,
-            rotate: 360,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            rotate: 0,
-            duration: 2.5,
-            ease: "power4.out",
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: "top 80%",
-            },
-          }
-        );
-      }
-
-      // Subheading animation
-      if (subHeadingTextRef.current) {
-        gsap.from(Array.from(subHeadingTextRef.current.children), {
-          y: 50,
-          opacity: 0,
-          scale: 0.95,
-          duration: 1.1,
-          ease: "power4.out",
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: subHeadingTextRef.current,
             start: "top 85%",
           },
         });
       }
 
-      // Animate service cards
-      cardsRef.current.forEach((card, index) => {
+      // Image Rotate In Animation
+      // if (imageRef.current) {
+      //   gsap.fromTo(
+      //     imageRef.current,
+      //     { y: -200, opacity: 0, rotate: 360 },
+      //     {
+      //       y: 0,
+      //       opacity: 1,
+      //       rotate: 360,
+      //       duration: 2.2,
+      //       repeat:-1,
+      //       ease: "power4.out",
+      //       scrollTrigger: {
+      //         trigger: containerRef.current,
+      //         start: "top 90%",
+      //       },
+      //     }
+      //   );
+      // }
+      if (imageRef.current) {
+        // Falling and fade-in animation (plays once on scroll)
         gsap.fromTo(
-          card,
+          imageRef.current,
+          { y: -200, opacity: 0 },
           {
-            opacity: 0,
-            y: 80,
-            scale: 0.95,
-          },
-          {
-            opacity: 1,
             y: 0,
-            scale: 1,
-            duration: 1.1,
-            ease: "power3.out",
+            opacity: 1,
+            duration: 1.5,
+            ease: "power4.out",
             scrollTrigger: {
-              trigger: card,
-              start: "top 100%",
+              trigger: containerRef.current,
+              start: "top 90%",
             },
-            delay: index * 0.1,
           }
         );
-      });
-    });
+      
+        // Infinite rotation after the image has landed
+        gsap.to(imageRef.current, {
+          rotate: 360,
+          duration: 6,
+          repeat: -1,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 90%",
+            // scrub:1
+          },
+        });
+      }
+      
+
+      // Subheading Text Animation
+      if (subHeadingTextRef.current) {
+        gsap.from(Array.from(subHeadingTextRef.current.children), {
+          y: 40,
+          opacity: 0,
+          duration: 1,
+          ease: "power4.out",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: subHeadingTextRef.current,
+            start: "top 90%",
+          },
+        });
+      }
+
+      // Batch animate cards
+      if (cardsWrapperRef.current) {
+        ScrollTrigger.batch(cardsWrapperRef.current.querySelectorAll(".service-card"), {
+          interval: 0.15,
+          batchMax: 3,
+          onEnter: (batch) =>
+            gsap.fromTo(
+              batch,
+              {
+                opacity: 0,
+                y: 80,
+                scale: 0.95,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1,
+                ease: "power3.out",
+                stagger: 0.15,
+              }
+            ),
+        });
+      }
+    }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    if (pulseRef.current) {
+      gsap.to(pulseRef.current, {
+        scale: 1.2,
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
+    }
+  }, []);
   return (
-    <section className="bg-white pb-16 general-sans">
+    <section ref={containerRef} className="bg-white pb-16 general-sans">
       <div className="flex p-16 flex-col gap-5 items-center justify-center">
-        {/* Top heading */}
-        <div
-          ref={containerRef}
-          className="flex items-center gap-5 font-medium text-5xl"
-        >
+        {/* Heading */}
+        <div className="flex items-center gap-5 font-medium text-5xl">
           <div ref={headingTextRef} className="flex items-center gap-5">
             <p>What</p>
             <p className="bg-gray-400 w-28 h-10 rounded-4xl"></p>
@@ -694,7 +928,7 @@ export const HomeWhatMakesUsDifferent = () => {
           className="flex items-center gap-5 font-medium text-5xl"
         >
           <p>For</p>
-          <div className="w-14 h-auto">
+          <div ref={pulseRef} className="w-14 h-auto">
             <Image
               alt="tax-business-consulting"
               src="/icons/home-play-icon.svg"
@@ -716,7 +950,10 @@ export const HomeWhatMakesUsDifferent = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="flex flex-wrap justify-center gap-5 px-16 pt-16">
+      <div
+        ref={cardsWrapperRef}
+        className="flex flex-wrap justify-center gap-5 px-16 pt-16"
+      >
         {[
           {
             id: "01",
@@ -734,13 +971,10 @@ export const HomeWhatMakesUsDifferent = () => {
             id: "04",
             title: "Tech-Enabled Delivery",
           },
-        ].map((item, index) => (
+        ].map((item) => (
           <div
             key={item.id}
-            ref={(el) => {
-              cardsRef.current[index] = el!;
-            }}
-            className="bg-[#E8E8E8] flex-grow hover:bg-black group transition-all duration-500 h-110 w-52 relative rounded-2xl overflow-hidden cursor-pointer"
+            className="service-card bg-[#E8E8E8] flex-grow hover:bg-black group transition-all duration-500 h-110 w-52 relative rounded-2xl overflow-hidden cursor-pointer"
           >
             <div className="bg-[#292833]/50 group-hover:bg-gradient-to-b from-[#232323] from-15% to-[#000000] h-1/3 w-full absolute bottom-0 p-8 rounded-b-2xl transition-all duration-500">
               <p className="text-white text-xs font-medium">{item.id}</p>
@@ -752,5 +986,3 @@ export const HomeWhatMakesUsDifferent = () => {
     </section>
   );
 };
-
-

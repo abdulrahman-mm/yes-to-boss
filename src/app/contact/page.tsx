@@ -9,7 +9,6 @@ const contact = () => {
       <ContactEmpowerYourBusiness/>
       <ContactFollowUs/>
       <ContactTrustedInsights/>
-      <Footer/>
     </div>
   );
 };

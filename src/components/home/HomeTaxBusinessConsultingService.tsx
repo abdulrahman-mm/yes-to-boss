@@ -394,6 +394,245 @@
 //   );
 // };
 
+
+
+
+
+// "use client";
+
+// import React, { useEffect, useRef } from "react";
+// import Image from "next/image";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import SplitType from "split-type";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// export const HomeTaxBusinessConsultingService = () => {
+//   const sectionRef = useRef(null);
+//   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+//   const whiteBox1Ref = useRef(null);
+//   const whiteBox2Ref = useRef(null);
+//   // const headingRef = useRef(null);
+//   const headingRef = useRef<HTMLParagraphElement | null>(null);
+
+//   const descRef = useRef(null);
+
+//   useEffect(() => {
+//     const ctx = gsap.context(() => {
+//       const section = sectionRef.current;
+
+//       // Split heading into words
+//       if (!headingRef.current) return;
+
+//       const splitHeading = new SplitType(headingRef.current, {
+//         types: "words",
+//         tagName: "span",
+//       });
+
+//       // Animate heading words in with skew & stagger
+//       gsap.from(splitHeading.words, {
+//         yPercent: 100,
+//         skewY: 10,
+//         opacity: 0,
+//         duration: 1,
+//         ease: "power4.out",
+//         stagger: 0.08,
+//         scrollTrigger: {
+//           trigger: section,
+//           start: "top 70%",
+//         },
+//       });
+
+//       // Description fade in with slight movement
+//       gsap.from(descRef.current, {
+//         opacity: 0,
+//         y: 20,
+//         delay: 0.5,
+//         duration: 1,
+//         ease: "power2.out",
+//         scrollTrigger: {
+//           trigger: section,
+//           start: "top 70%",
+//         },
+//       });
+
+//       // Animate cards with clip reveal and rotation
+//       cardsRef.current.forEach((card, i) => {
+//         if (card) {
+//           gsap.fromTo(
+//             card,
+//             {
+//               clipPath: "inset(0 100% 0 0)",
+//               rotateY: -20,
+//               scale: 0.9,
+//               opacity: 0,
+//             },
+//             {
+//               clipPath: "inset(0 0% 0 0)",
+//               rotateY: 0,
+//               scale: 1,
+//               opacity: 1,
+//               duration: 1,
+//               ease: "power3.out",
+//               delay: i * 0.15,
+//               scrollTrigger: {
+//                 trigger: card,
+//                 start: "top 97%",
+//               },
+//             }
+//           );
+//         }
+//       });
+
+//       // Animate white boxes with parallax scale + bounce
+//       gsap.fromTo(
+//         whiteBox1Ref.current,
+//         {
+//           y: 100,
+//           scale: 0.5,
+//           rotate: -15,
+//           opacity: 0,
+//         },
+//         {
+//           y: 0,
+//           scale: 1,
+//           rotate: 0,
+//           opacity: 1,
+//           duration: 1.2,
+//           ease: "expo.out",
+//           scrollTrigger: {
+//             trigger: section,
+//             start: "top 70%",
+//           },
+//         }
+//       );
+
+//       gsap.fromTo(
+//         whiteBox2Ref.current,
+//         {
+//           x: 100,
+//           scale: 0,
+//           rotate: 30,
+//           opacity: 0,
+//         },
+//         {
+//           x: 0,
+//           scale: 1,
+//           rotate: 0,
+//           opacity: 1,
+//           duration: 1.4,
+//           ease: "elastic.out(1, 0.5)",
+//           scrollTrigger: {
+//             trigger: section,
+//             start: "top 70%",
+//           },
+//         }
+//       );
+//     });
+
+//     return () => ctx.revert();
+//   }, []);
+
+//   return (
+//     <section className="relative p-16 bg-black" ref={sectionRef}>
+//       <div className="flex gap-32 items-center min-h-[100vh] text-white relative z-10">
+//         {/* Left Side */}
+//         <div className="w-[45%]">
+//           <p
+//             className="text-6xl font-bold leading-tight general-sans overflow-hidden"
+//             ref={headingRef}
+//           >
+//             Tax & Business Consulting Services
+//           </p>
+
+//           <p className="mt-5 text-sm text-gray-300" ref={descRef}>
+//             Comprehensive support for startups, MSMEs, and growing
+//             businesses—from registrations to regulatory compliance
+//           </p>
+
+//           <div className="flex flex-col gap-5 mt-10">
+//             {[
+//               {
+//                 icon: "tax-business-consulting-icon1.svg",
+//                 title: "Business Structuring & Registrations",
+//               },
+//               {
+//                 icon: "tax-business-consulting-icon2.svg",
+//                 title: "Tax Filing & Advisory",
+//               },
+//               {
+//                 icon: "tax-business-consulting-icon3.svg",
+//                 title: "Regulatory Compliance",
+//               },
+//               {
+//                 icon: "tax-business-consulting-icon4.svg",
+//                 title: "Financial Planning & Growth",
+//               },
+//             ].map((item, i) => (
+//               <div
+//                 key={i}
+//                 ref={(el) => {
+//                   cardsRef.current[i] = el;
+//                 }}
+//                 className="flex border border-[#FFFFFF]/30 hover:border-white hover:bg-[#1a1a1a] transition-all duration-300 rounded-xl px-6 py-5 gap-5 backdrop-blur-sm shadow-md"
+//               >
+//                 <Image
+//                   alt={item.title}
+//                   src={`./icons/${item.icon}`}
+//                   width={40}
+//                   height={20}
+//                 />
+//                 <div className="border-r border-[#FFFFFF]/30 h-auto"></div>
+//                 <div>
+//                   <p className="text-xl font-semibold general-sans">
+//                     {item.title}
+//                   </p>
+//                   <p className="text-sm mt-2 text-gray-400">
+//                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
+//                   </p>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* Right Side */}
+//         <div className="w-1/2 min-h-[500px] flex items-center relative z-10">
+//           <div
+//             className="w-2/3 bg-white h-3/4 rounded-3xl absolute shadow-2xl"
+//             ref={whiteBox1Ref}
+//           ></div>
+//           <div
+//             className="w-1/2 bg-white h-1/2 rounded-3xl absolute z-40 -bottom-10 right-24 border-[5px] border-black shadow-xl"
+//             ref={whiteBox2Ref}
+//           ></div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 "use client";
 
 import React, { useEffect, useRef } from "react";
@@ -406,12 +645,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const HomeTaxBusinessConsultingService = () => {
   const sectionRef = useRef(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  // const cardsWrapperRef = useRef(null);
+  const cardsWrapperRef = useRef<HTMLDivElement | null>(null);
+
   const whiteBox1Ref = useRef(null);
   const whiteBox2Ref = useRef(null);
-  // const headingRef = useRef(null);
   const headingRef = useRef<HTMLParagraphElement | null>(null);
-
   const descRef = useRef(null);
 
   useEffect(() => {
@@ -426,70 +665,62 @@ export const HomeTaxBusinessConsultingService = () => {
         tagName: "span",
       });
 
-      // Animate heading words in with skew & stagger
       gsap.from(splitHeading.words, {
         yPercent: 100,
         skewY: 10,
         opacity: 0,
         duration: 1,
         ease: "power4.out",
-        stagger: 0.08,
+        stagger: 0.07,
         scrollTrigger: {
           trigger: section,
-          start: "top 70%",
+          start: "top 75%",
         },
       });
 
-      // Description fade in with slight movement
+      // Animate description
       gsap.from(descRef.current, {
         opacity: 0,
-        y: 20,
-        delay: 0.5,
+        y: 30,
         duration: 1,
         ease: "power2.out",
         scrollTrigger: {
           trigger: section,
-          start: "top 70%",
+          start: "top 75%",
         },
       });
 
-      // Animate cards with clip reveal and rotation
-      cardsRef.current.forEach((card, i) => {
-        if (card) {
-          gsap.fromTo(
-            card,
-            {
-              clipPath: "inset(0 100% 0 0)",
-              rotateY: -20,
-              scale: 0.9,
-              opacity: 0,
-            },
-            {
-              clipPath: "inset(0 0% 0 0)",
-              rotateY: 0,
-              scale: 1,
-              opacity: 1,
-              duration: 1,
-              ease: "power3.out",
-              delay: i * 0.15,
-              scrollTrigger: {
-                trigger: card,
-                start: "top 97%",
+      // Batch animate cards
+      if (cardsWrapperRef.current) {
+        ScrollTrigger.batch(cardsWrapperRef.current.querySelectorAll(".card"), {
+          interval: 0.1,
+          batchMax: 4,
+          onEnter: (batch) =>
+            gsap.fromTo(
+              batch,
+              {
+                clipPath: "inset(0 100% 0 0)",
+                rotateY: -20,
+                scale: 0.95,
+                opacity: 0,
               },
-            }
-          );
-        }
-      });
+              {
+                clipPath: "inset(0 0% 0 0)",
+                rotateY: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out",
+                stagger: 0.1,
+              }
+            ),
+        });
+      }
 
-      // Animate white boxes with parallax scale + bounce
+      // Animate white boxes
       gsap.fromTo(
         whiteBox1Ref.current,
-        {
-          y: 100,
-          scale: 0.5,
-          rotate: -15,
-          opacity: 0,
-        },
+        { y: 100, scale: 0.7, rotate: -10, opacity: 0 },
         {
           y: 0,
           scale: 1,
@@ -499,33 +730,28 @@ export const HomeTaxBusinessConsultingService = () => {
           ease: "expo.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 70%",
+            start: "top 80%",
           },
         }
       );
 
       gsap.fromTo(
         whiteBox2Ref.current,
-        {
-          x: 100,
-          scale: 0,
-          rotate: 30,
-          opacity: 0,
-        },
+        { x: 100, scale: 0, rotate: 25, opacity: 0 },
         {
           x: 0,
           scale: 1,
           rotate: 0,
           opacity: 1,
-          duration: 1.4,
+          duration: 1.3,
           ease: "elastic.out(1, 0.5)",
           scrollTrigger: {
             trigger: section,
-            start: "top 70%",
+            start: "top 80%",
           },
         }
       );
-    });
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
@@ -547,31 +773,35 @@ export const HomeTaxBusinessConsultingService = () => {
             businesses—from registrations to regulatory compliance
           </p>
 
-          <div className="flex flex-col gap-5 mt-10">
+          <div className="flex flex-col gap-5 mt-10" ref={cardsWrapperRef}>
             {[
               {
                 icon: "tax-business-consulting-icon1.svg",
                 title: "Business Structuring & Registrations",
+                subText: "Proprietorship, Partnership, LLP, Trust, Pvt Ltd & More",
               },
               {
                 icon: "tax-business-consulting-icon2.svg",
                 title: "Tax Filing & Advisory",
+                subText: "GST Registrations, ITR Filing, TDS Returns, Advance Tax ",
+
               },
               {
                 icon: "tax-business-consulting-icon3.svg",
                 title: "Regulatory Compliance",
+                subText: "DIN eKYC, AOC-4, MGT-7, ADT-1 Filing, MOA/ AOA Amendments.",
+
               },
               {
                 icon: "tax-business-consulting-icon4.svg",
                 title: "Financial Planning & Growth",
+                subText: "PF / ESI / PT Registration & Returns, FSSAI & DSC, IEC.",
+
               },
             ].map((item, i) => (
               <div
                 key={i}
-                ref={(el) => {
-                  cardsRef.current[i] = el;
-                }}
-                className="flex border border-[#FFFFFF]/30 hover:border-white hover:bg-[#1a1a1a] transition-all duration-300 rounded-xl px-6 py-5 gap-5 backdrop-blur-sm shadow-md"
+                className="card flex border border-[#FFFFFF]/30 hover:border-white hover:bg-[#1a1a1a] transition-all duration-300 rounded-xl px-6 py-5 gap-5 backdrop-blur-sm shadow-md"
               >
                 <Image
                   alt={item.title}
@@ -585,7 +815,7 @@ export const HomeTaxBusinessConsultingService = () => {
                     {item.title}
                   </p>
                   <p className="text-sm mt-2 text-gray-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    {item.subText}
                   </p>
                 </div>
               </div>
