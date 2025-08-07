@@ -179,6 +179,16 @@ export const ITR1InternalAudit = () => {
     },
   ];
 
+  async function test() {
+    console.log("Start");
+  
+    await new Promise((reject) => setTimeout(reject, 2000)); // waits
+  
+    console.log("End after 2 seconds");
+  }
+  
+  test();
+
   return (
     <section className="bg-white" ref={sectionRef}>
       <div className="bg-gradient-to-b from-[#212121] to-[#070707] rounded-b-[60px] min-h-screen p-16">

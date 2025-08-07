@@ -305,7 +305,7 @@ import { BlurText, CountUp } from "../animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const AboutSecondSection = () => {
+ const AboutSecondSection = () => {
   const sectionRef = useRef(null);
   const paragraphRef = useRef(null);
   const statsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -384,78 +384,231 @@ export const AboutSecondSection = () => {
   }, []);
 
   return (
+    // <section ref={sectionRef} className="bg-white general-sans overflow-hidden">
+    //   <div className="flex gap-32 p-16">
+    //     <div className="w-1/3" ref={badgeRef}>
+    //       <p className="px-8 h-fit font-medium text-sm text-center rounded-full py-2.5 border-[#EBEBEB] border-2">
+    //         About Us
+    //       </p>
+    //     </div>
+
+    //     <div>
+    //       <BlurText
+    //         text="At YesToBoss, our mission is to help Indians master their money, simplify finances, and create smart solutions that save time and money for both businesses and individuals."
+    //         delay={50}
+    //         animateBy="words"
+    //         direction="top"
+    //         className="font-medium text-5xl leading-14"
+    //       />
+
+    //       <p
+    //         ref={paragraphRef}
+    //         className="font-normal text-xs mt-5 will-change-transform"
+    //       >
+    //        With a team of experienced consultants, we empower entrepreneurs, startups, and established businesses by streamlining essential operations and eliminating complexity from business processes.
+
+    //       </p>
+
+    //       <div className="flex gap-24 justify-between mt-14">
+    //         {[1200, 98, 24].map((value, i) => (
+    //           <div
+    //             key={i}
+    //             ref={(el) => {statsRef.current[i] = el}}
+    //             className="will-change-transform"
+    //           >
+    //             <p className="font-medium text-6xl">
+    //               <CountUp
+    //                 from={0}
+    //                 to={value}
+    //                 separator=","
+    //                 direction="up"
+    //                 duration={value === 24 ? 2 : value === 98 ? 0.5 : 0.2}
+    //                 className="count-up-text"
+    //               />
+    //               {value === 24 ? "/7" : value === 98 ? "%" : "+"}
+    //             </p>
+    //             <p className="font-normal text-sm mt-3">
+    //               {i === 0 &&
+    //                 "Businesses are supported through reliable, end-to-end assistance."}
+    //               {i === 1 &&
+    //                 "Success rate is built on trust and accuracy"}
+    //               {i === 2 &&
+    //                 "Expert support is available anytime—no waiting required."}
+    //             </p>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   </div>
+
+    //   <div className="bg-gradient-to-b gap-10 text-white from-[#212121] to-[#070707] h-[90vh] flex justify-between p-16">
+
+    //     <div className="flex flex-col gap-8 w-1/2">
+
+    //       <p className="font-medium text-5xl leading-14">We Serve Across India          </p>
+
+    //       <p className="font-normal text-sm leading-6">Whether you're in a metro or a growing city, our nationwide footprint ensures your business is supported with speed, precision, and consistency. With deep local insights and seamless coordination across regions, we deliver reliable, fast, and region-specific services tailored to your business needs.
+    //       </p>
+
+    //       <div className="grid grid-cols-2 gap-10 w-fit">
+
+    //         <div className="flex flex-col gap-1">
+    //           <p className="font-semibold text-5xl">30+</p>
+    //           <p className="text-sm">Major Cities Covered</p>
+    //         </div>
+
+    //         <div className="flex flex-col gap-1">
+    //           <p className="font-semibold text-5xl">5</p>
+    //           <p className="text-sm">Regional Service Zones</p>
+    //         </div>
+
+    //         <div className="flex flex-col gap-1">
+    //           <p className="font-semibold text-5xl">100%</p>
+    //           <p className="text-sm">Commitment to Local Relevance</p>
+    //         </div>
+
+    //         <div className="flex flex-col gap-1">
+    //           <p className="font-semibold text-5xl">4.8</p>
+    //           <p className="text-sm">Star Service Rating</p>
+    //         </div>
+
+    //       </div>
+
+    //     </div>
+   
+    //     <div
+    //       className="relative h-full  w-[50%] will-change-transform"
+    //       ref={imageRef}
+    //     >
+    //       <Image
+    //         alt="a"
+    //         src="/images/india-map-gif.gif"
+    //         fill
+    //         className="object-contain"
+    //       />
+    //     </div>
+    //   </div>
+
+    //   <div className="h-80 w-full bg-gray-300"></div>
+    // </section>
+
     <section ref={sectionRef} className="bg-white general-sans overflow-hidden">
-      <div className="flex gap-32 p-16">
-        <div className="w-1/3" ref={badgeRef}>
-          <p className="px-8 h-fit font-medium text-sm text-center rounded-full py-2.5 border-[#EBEBEB] border-2">
-            About Us
-          </p>
-        </div>
+  {/* About Section */}
+  <div className="flex flex-col lg:flex-row gap-10 lg:gap-32 p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16
+">
+    {/* Badge */}
+    <div className=" flex justify-center lg:justify-start" ref={badgeRef}>
+      <p className="px-8 h-fit font-medium text-sm text-center rounded-full py-2.5 border-[#EBEBEB] border-2">
+        About Us
+      </p>
+    </div>
 
-        <div>
-          <BlurText
-            text="At YesToBoss, our mission is to help Indians master their money, simplify finances, and create smart solutions that save time and money for both businesses and individuals."
-            delay={50}
-            animateBy="words"
-            direction="top"
-            className="font-medium text-5xl leading-14"
-          />
+    {/* Text Section */}
+    <div className="w-full flex-grow lg:w-2/3">
+      <BlurText
+        text="At YesToBoss, our mission is to help Indians master their money, simplify finances, and create smart solutions that save time and money for both businesses and individuals."
+        delay={50}
+        animateBy="words"
+        direction="top"
+        className="font-medium text-3xl md:text-4xl lg:text-5xl leading-tight"
+      />
 
-          <p
-            ref={paragraphRef}
-            className="font-normal text-xs mt-5 will-change-transform"
+      <p
+        ref={paragraphRef}
+        className="font-normal text-xs mt-5 will-change-transform"
+      >
+        With a team of experienced consultants, we empower entrepreneurs, startups, and established businesses by streamlining essential operations and eliminating complexity from business processes.
+      </p>
+
+      {/* CountUp Section */}
+      <div className="flex flex-col md:flex-row gap-10 md:gap-16 lg:gap-24 justify-between mt-10 lg:mt-14">
+        {[1200, 98, 24].map((value, i) => (
+          <div
+            key={i}
+            ref={(el) => { statsRef.current[i] = el }}
+            className="will-change-transform"
           >
-           With a team of experienced consultants, we empower entrepreneurs, startups, and established businesses by streamlining essential operations and eliminating complexity from business processes.
-
-          </p>
-
-          <div className="flex gap-24 justify-between mt-14">
-            {[1200, 98, 24].map((value, i) => (
-              <div
-                key={i}
-                ref={(el) => {statsRef.current[i] = el}}
-                className="will-change-transform"
-              >
-                <p className="font-medium text-6xl">
-                  <CountUp
-                    from={0}
-                    to={value}
-                    separator=","
-                    direction="up"
-                    duration={value === 24 ? 2 : value === 98 ? 0.5 : 0.2}
-                    className="count-up-text"
-                  />
-                  {value === 24 ? "/7" : value === 98 ? "%" : "+"}
-                </p>
-                <p className="font-normal text-sm mt-3">
-                  {i === 0 &&
-                    "Businesses are supported through reliable, end-to-end assistance."}
-                  {i === 1 &&
-                    "Success rate is built on trust and accuracy"}
-                  {i === 2 &&
-                    "Expert support is available anytime—no waiting required."}
-                </p>
-              </div>
-            ))}
+            <p className="font-medium text-4xl md:text-5xl lg:text-6xl">
+              <CountUp
+                from={0}
+                to={value}
+                separator=","
+                direction="up"
+                duration={value === 24 ? 2 : value === 98 ? 0.5 : 0.2}
+                className="count-up-text"
+              />
+              {value === 24 ? "/7" : value === 98 ? "%" : "+"}
+            </p>
+            <p className="font-normal text-sm mt-3">
+              {i === 0 &&
+                "Businesses are supported through reliable, end-to-end assistance."}
+              {i === 1 &&
+                "Success rate is built on trust and accuracy"}
+              {i === 2 &&
+                "Expert support is available anytime—no waiting required."}
+            </p>
           </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  {/* India Reach Section */}
+  <div className="bg-gradient-to-b gap-10 text-white from-[#212121] to-[#070707] h-auto lg:h-[90vh] flex flex-col lg:flex-row justify-between p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16
+">
+    {/* Left */}
+    <div className="flex flex-col gap-6 lg:gap-8 w-full lg:w-1/2">
+      <p className="font-medium text-3xl md:text-4xl lg:text-5xl leading-tight">
+        We Serve Across India
+      </p>
+
+      <p className="font-normal text-sm leading-6">
+        Whether you're in a metro or a growing city, our nationwide footprint ensures your business is supported with speed, precision, and consistency. With deep local insights and seamless coordination across regions, we deliver reliable, fast, and region-specific services tailored to your business needs.
+      </p>
+
+      <div className="grid grid-cols-2 gap-6 md:gap-10 w-full sm:w-fit">
+        <div className="flex flex-col gap-1">
+          <p className="font-semibold text-3xl md:text-4xl lg:text-5xl">30+</p>
+          <p className="text-sm">Major Cities Covered</p>
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <p className="font-semibold text-3xl md:text-4xl lg:text-5xl">5</p>
+          <p className="text-sm">Regional Service Zones</p>
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <p className="font-semibold text-3xl md:text-4xl lg:text-5xl">100%</p>
+          <p className="text-sm">Commitment to Local Relevance</p>
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <p className="font-semibold text-3xl md:text-4xl lg:text-5xl">4.8</p>
+          <p className="text-sm">Star Service Rating</p>
         </div>
       </div>
+    </div>
 
-      <div className="bg-gradient-to-b from-[#212121] to-[#070707] h-[90vh] flex justify-end p-9">
-        <div
-          className="relative h-full w-[50%] will-change-transform"
-          ref={imageRef}
-        >
-          <Image
-            alt="a"
-            src="/images/india-map-image.svg"
-            fill
-            className="object-contain"
-          />
-        </div>
-      </div>
+    {/* Right */}
+    <div
+      className="relative h-[300px] sm:h-[400px] md:h-full w-full lg:w-[50%] will-change-transform mt-10 lg:mt-0"
+      ref={imageRef}
+    >
+      <Image
+        alt="a"
+        src="/images/india-map-gif.gif"
+        fill
+        className="object-contain"
+      />
+    </div>
+  </div>
 
-      <div className="h-80 w-full bg-gray-300"></div>
-    </section>
+  {/* Footer Spacer */}
+  <div className="h-40 md:h-60 lg:h-80 w-full bg-gray-300"></div>
+</section>
+
   );
 };
+
+
+export default AboutSecondSection

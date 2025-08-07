@@ -306,7 +306,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const ContactEmpowerYourBusiness = () => {
+ const ContactEmpowerYourBusiness = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const headingRef = useRef<HTMLParagraphElement | null>(null);
   const subHeadingRef = useRef<HTMLParagraphElement | null>(null);
@@ -388,35 +388,44 @@ export const ContactEmpowerYourBusiness = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-white pt-16 pb-16">
-      <div className="general-sans rounded-t-[50px]">
-        <p
-          ref={headingRef}
-          className="font-semibold text-5xl text-center"
-        >
-          Empower Your Business With YesToBoss
-        </p>
-        <p
-          ref={subHeadingRef}
-          className="font-normal text-xl text-[#212121] text-center mt-3"
-        >
-          Any question or remarks? Just write us a message!
-        </p>
-      </div>
+    
 
-      <div ref={marqueeWrapperRef} className="overflow-hidden mt-10">
-        <Marquee autoFill={true}>
-          <div className="flex gap-5 shrink-0">
-            <div className="bg-gray-300 h-64 w-80" />
-            <div className="bg-gray-300 h-64 w-80" />
-            <div className="bg-gray-300 h-64 w-80" />
-            <div className="bg-gray-300 h-64 w-80" />
-            <div className="bg-gray-300 h-64 w-80" />
-            <div className="bg-gray-300 h-64 w-80" />
-          </div>
-        </Marquee>
+
+    <section ref={containerRef} className="bg-white py-8 md:py-10 lg:py-14 xl:py-16">
+  <div className="general-sans rounded-t-[30px] sm:rounded-t-[40px] md:rounded-t-[50px] px-4 sm:px-8 md:px-16">
+    <p
+      ref={headingRef}
+      className="font-semibold text-2xl sm:text-4xl md:text-5xl text-center"
+    >
+      Empower Your Business With YesToBoss
+    </p>
+    <p
+      ref={subHeadingRef}
+      className="font-normal text-base sm:text-lg md:text-xl text-[#212121] text-center mt-3"
+    >
+      Any question or remarks? Just write us a message!
+    </p>
+  </div>
+
+  <div
+    ref={marqueeWrapperRef}
+    className="overflow-hidden mt-10"
+  >
+    <Marquee autoFill={true}>
+      <div className="flex gap-3 sm:gap-4 md:gap-5 shrink-0">
+        <div className="bg-gray-300 h-40 w-60 sm:h-48 sm:w-72 md:h-64 md:w-80" />
+        <div className="bg-gray-300 h-40 w-60 sm:h-48 sm:w-72 md:h-64 md:w-80" />
+        <div className="bg-gray-300 h-40 w-60 sm:h-48 sm:w-72 md:h-64 md:w-80" />
+        <div className="bg-gray-300 h-40 w-60 sm:h-48 sm:w-72 md:h-64 md:w-80" />
+        <div className="bg-gray-300 h-40 w-60 sm:h-48 sm:w-72 md:h-64 md:w-80" />
+        <div className="bg-gray-300 h-40 w-60 sm:h-48 sm:w-72 md:h-64 md:w-80" />
       </div>
-    </section>
+    </Marquee>
+  </div>
+</section>
+
   );
 };
+
+export default ContactEmpowerYourBusiness;
 

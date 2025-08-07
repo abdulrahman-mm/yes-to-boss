@@ -626,5 +626,96 @@ export const ITR1Hero = () => {
         ></div>
       </div>
     </section>
+
+
+//     <section className="bg-white min-h-screen pt-2 general-sans p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16
+// ">
+//   <div className="w-full max-w-[90vw] mx-auto">
+//     <Header bgColor="black" textColor="white" />
+//   </div>
+
+//   <div className="flex justify-center items-center py-16 sm:py-20 md:py-24 lg:py-28 flex-col gap-2 text-center">
+//     <p
+//       ref={headingRef}
+//       className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl will-change-transform translate-z-0"
+//     >
+//       ITR-1 Return Filing (Sahaj)
+//     </p>
+
+//     <p
+//       ref={subheadingRef}
+//       className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl will-change-transform translate-z-0"
+//     >
+//       in <span className="text-[#6A6A6A]">India</span>
+//     </p>
+
+//     <p
+//       ref={descRef}
+//       className="font-normal text-xs sm:text-sm max-w-[90%] md:w-3/5 lg:w-2/5 will-change-transform translate-z-0"
+//     >
+//       Providing expert accounting, tax planning, and financial consulting
+//       services to help businesses grow, comply, and achieve long-term success.
+//     </p>
+
+//     <div
+//       className="flex flex-col sm:flex-row gap-4 mt-5 items-center will-change-transform translate-z-0"
+//       ref={btnRef}
+//     >
+//       <button className="bg-black text-white rounded-full px-10 sm:px-12 md:px-16 py-3 font-medium text-sm">
+//         Get Started
+//       </button>
+
+//       <div
+//         className="flex items-center gap-3 will-change-transform translate-z-0"
+//         ref={userStatsRef}
+//       >
+//         <div className="flex items-center">
+//           <p className="w-8 h-8 rounded-full bg-gray-500"></p>
+//           <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
+//           <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
+//         </div>
+
+//         <div>
+//           <p className="font-medium">100k+</p>
+//           <p className="font-normal text-sm">Customer</p>
+//           <p className="font-normal text-sm">Satisfied</p>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+
+//   <div className="flex flex-col lg:flex-row gap-10 lg:gap-28 justify-between items-center lg:items-start">
+//     <div
+//       className="flex flex-col gap-3 w-full lg:w-[60%] will-change-transform translate-z-0"
+//       ref={sectionTextRef}
+//     >
+//       <p className="font-medium text-sm font-Bricolage_Grotesque">
+//         Key Services
+//       </p>
+
+//       <BlurText
+//         text="What Is ITR-1 Sahaj Return Filing?"
+//         delay={50}
+//         animateBy="words"
+//         direction="top"
+//         className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+//       />
+
+//       <p className="text-sm leading-5 font-medium font-Bricolage_Grotesque">
+//         ITR-1, also known as Sahaj, is a simplified income tax return form
+//         prescribed under the Income Tax Act, 1961, for resident individuals
+//         earning up to ₹50,00,000 from eligible income sources. This form is
+//         ideal for most salaried taxpayers and offers a streamlined approach
+//         for filing returns online.
+//       </p>
+//     </div>
+
+//     <div
+//       className="w-full h-64 sm:h-72 md:h-80 lg:h-96 lg:w-96 bg-gray-300 will-change-transform translate-z-0"
+//       ref={imageBoxRef}
+//     ></div>
+//   </div>
+// </section>
+
   );
 };

@@ -221,21 +221,23 @@
 // };
 
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { Header } from "../layout";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { RxDotsHorizontal } from "react-icons/rx";
-
+import { CountUp, ShinnyText } from "../animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const AboutHero = () => {
+ const AboutHero = () => {
   const leftContentRef = useRef(null);
   const rightBoxesRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef(null);
   const avatarRef = useRef(null);
+  // const imageRef = useRef(null);
+  const wrapperRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -292,6 +294,19 @@ export const AboutHero = () => {
     return () => ctx.revert(); // Clean up on unmount
   }, []);
 
+  useEffect(() => {
+    gsap.fromTo(
+      wrapperRef.current,
+      { clipPath: "inset(0 100% 0 0)" }, // hide full width
+      {
+        clipPath: "inset(0 0% 0 0)", // reveal fully
+        duration: 4,
+        ease: "power2.out",
+        delay: 2,
+      }
+    );
+  }, []);
+
   return (
     <main>
       <div className="bg-black mt-2 general-sans text-white overflow-hidden">
@@ -299,35 +314,38 @@ export const AboutHero = () => {
           <Header />
         </div>
 
-        <div className="flex gap-5 mt-10 p-16 justify-between items-center">
+        <div className="flex flex-grow md:flex-grow-0 gap-5 mt-8 md:mt-20 xl:mt-10 p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16 justify-between items-center">
           {/* LEFT SIDE */}
           <div
-            className="w-1/2"
+            className="md:w-1/2"
             ref={leftContentRef}
             style={{ willChange: "transform, opacity" }}
           >
-            <div>
+            <div className="text-3xl sm:text-4xl md:text-5xl  xl:text-6xl">
               {/* Smart Tax Solutions for Every Indian
- */}
-              <p className="text-6xl font-semibold leading-16">
-              Smart Tax Solutions
+               */}
+              <p className=" font-semibold md:leading-13 xl:leading-16">
+                Smart Tax Solutions
               </p>
-              <p className="text-6xl font-semibold leading-16">
-              for Every{" "}
-                <span className="bg-gradient-to-r from-[#FFFFFF] to-[#9F9F9F] text-transparent bg-clip-text">
-                  Indian
-                </span>
-              </p>
-              {/* <p className="text-6xl font-semibold leading-16">Our Priority</p> */}
+              <div className=" font-semibold md:leading-13 xl:leading-16">
+                for Every{" "}
+              
+                <ShinnyText
+                  text=" Indian"
+                  disabled={false}
+                  speed={2}
+                  className="custom-class"
+                />
+              </div>
             </div>
 
-            <p className="text-sm mt-5 font-normal w-2/3">
-            Expert accounting, tax planning, and financial consulting services to support and scale your business.
-
+            <p className="text-sm mt-5 font-normal w-full lg:w-2/3">
+              Expert accounting, tax planning, and financial consulting services
+              to support and scale your business.
             </p>
 
             <div
-              className="flex gap-5 mt-10"
+              className="flex gap-5 mt-10 flex-wrap"
               ref={avatarRef}
               style={{ willChange: "transform, opacity" }}
             >
@@ -335,30 +353,37 @@ export const AboutHero = () => {
                 Get Started
               </button>
 
-              <div className="flex -space-x-3">
-                <img src="/icons/about-hero-circleimage1.svg" alt="" />
-                <img src="/icons/about-hero-circleimage2.svg" alt="" />
-                <img src="/icons/about-hero-circleimage3.svg" alt="" />
+              <div className="flex gap-3">
+                <div className="flex -space-x-3">
+                  <img src="/icons/about-hero-circleimage1.svg" alt="" />
+                  <img src="/icons/about-hero-circleimage2.svg" alt="" />
+                  <img src="/icons/about-hero-circleimage3.svg" alt="" />
+                </div>
+
+                <div className="flex flex-col">
+                  <p className="font-medium text-lg">100k+</p>
+                  <p className="text-sm">Customer Satisfied</p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* RIGHT SIDE */}
           <div
-            className="flex flex-col gap-8"
+            className=" hidden flex-col gap-8 md:flex"
             ref={rightBoxesRef}
             style={{ willChange: "transform, opacity" }}
           >
-            <div className="relative h-52 w-96 right-56">
+            <div className="relative h-52 w-96 lg:right-40 xl:right-48 2xl:right-56">
               {/* <div className="absolute bg-red-500 w-full h-full rounded-2xl z-10"></div> */}
               <img
                 src="/images/about-hero-image1.svg"
                 alt=""
-                className="w-full h-full obj"
+                className="w-full h-full"
               />
               {/* <div className="absolute -left-32 -top-16 bg-blue-500 rounded-2xl w-full h-2/3 z-10"></div> */}
 
-              <div className="absolute p-5 -left-32 -top-16 bg-white text-black rounded-2xl w-full h-fit z-10">
+              <div className="absolute p-5 hidden md:block -left-32 -top-16 bg-white text-black rounded-2xl w-full h-fit z-10">
                 <div className="flex gap-5 ">
                   <div className="w-10 h-10 rounded-full bg-gray-200"></div>
                   <div>
@@ -379,35 +404,47 @@ export const AboutHero = () => {
               </div>
             </div>
 
-            <div className="relative h-96 w-80">
+            <div className="relative h-96 w-72 xl:w-80">
               <div
                 ref={cardRef}
-                className="absolute bg-purple-600 rounded-xl p-3 w-3/4 h-1/5 z-50 left-28 top-1/3"
+                className="absolute bg-white rounded-xl p-3 w-3/4 h-1/5 z-50 left-28 top-1/3"
                 style={{ willChange: "transform, opacity" }}
               >
                 <div className="flex justify-between general-sans font-medium text-xs text-black">
                   <p>104 Reports</p>
-                  <p>100%</p>
+                  {/* <p>100%</p> */}
+                  <div>
+                    <CountUp from={0} to={100} duration={5} /> <span>%</span>
+                  </div>
                 </div>
 
-                <Image
-                  alt="a"
-                  src={"./images/reports.svg"}
-                  fill
-                  className="mx-2 mt-1 w-full object-contain"
-                />
+                <div ref={wrapperRef} className="w-full mt-1 relative h-1/2 ">
+                  <Image
+                    alt="a"
+                    src="./images/reports.svg"
+                    fill
+                    className="object-contain absolute w-full h-full "
+                  />
+                </div>
               </div>
 
-              <div className="absolute bg-[#DFFA7A] w-full h-full rounded-2xl z-10 px-7 pt-14">
-                <img src="/images/about-hero-image2.svg" alt="" className="w-full h-full object-cover " />
+              <div className="absolute left-20 xl:left-0 bg-gradient-to-r from-[#191919] from-10% via-[#2f2f2f] via-70%  to-[#191919] to-90% w-full h-full rounded-2xl z-10 px-7 pt-14 pb-7">
+                <img
+                  src="/images/about-hero-image2.svg"
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl "
+                />
               </div>
-              <div className="absolute bottom-5 -left-64 p-5 bg-white text-black rounded-2xl w-full  z-10">
+              <div className="absolute hidden lg:block bottom-5 -left-20 xl:-left-64 p-5 bg-white text-black rounded-2xl lg:w-3/4 xl:w-full  z-10">
                 <div className="flex justify-between items-center">
                   <img src="/icons/aboutus-bluedollor-icon.svg" alt="" />
                   <RxDotsHorizontal className="text-black text-lg" />
                 </div>
                 <p className="mt-5 text-2xl font-medium">$500.00</p>
-                <p className="text-sm">A total of $500 has been successfully managed and allocated for this week’s activities</p>
+                <p className="text-sm">
+                  A total of $500 has been successfully managed and allocated
+                  for this week’s activities
+                </p>
               </div>
             </div>
           </div>
@@ -416,3 +453,6 @@ export const AboutHero = () => {
     </main>
   );
 };
+
+
+export default AboutHero;

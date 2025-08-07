@@ -679,7 +679,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const ContactUsForm = () => {
+ const ContactUsForm = () => {
   const formRef = useRef(null);
   const inputGroupsRef = useRef<(HTMLDivElement | null)[]>([]);
   const circlesRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -774,138 +774,281 @@ export const ContactUsForm = () => {
   }, []);
 
   return (
+    // <section className="min-h-screen overflow-hidden">
+    //   <div className="p-16 text-white general-sans z-20">
+    //     <p ref={headingRef} className="text-center font-semibold text-5xl mt-5">
+    //       Contact Us
+    //     </p>
+    //     <p
+    //       ref={subtextRef}
+    //       className="font-inter text-[#F1F1F1] font-normal text-xl text-center mt-5"
+    //     >
+    //       Any question or remarks? Just write us a message!
+    //     </p>
+    //   </div>
+
+    //   <div className="relative">
+    //     {/* Background Circles */}
+    //     {[
+    //       "h-[350px] w-[350px] bg-gradient-to-bl from-[#98FFCE] via-[#838FFF] to-[#60B2FF] rounded-full right-10 top-40",
+    //       "h-[307px] w-[307px] bg-[linear-gradient(to_top_right,_#98FFCE,_#5F9FFF,_#8571FF,_#3F2FA5)] rounded-full bottom-10 left-5",
+    //       "h-[185px] w-[185px] bg-[linear-gradient(to_bottom_right,_#5F9FFF,_#7E69FF,_#FE3D41)] rounded-full top-10 left-48",
+    //       "h-[128px] w-[128px] bg-gradient-to-br from-[#5F9FFF] via-[#A06CFF] to-[#1E00FF] rounded-full bottom-32 left-[40%]",
+    //       "h-[119px] w-[119px] bg-[linear-gradient(to_bottom_right,_#FF3BDE,_#7E69FF,_#828FF1,#8DFFC9)] rounded-full bottom-5 right-36",
+    //     ].map((cls, i) => (
+    //       <div
+    //         key={i}
+    //         ref={(el) => {circlesRef.current[i] = el}}
+    //         className={`absolute z-0 ${cls}`}
+    //       />
+    //     ))}
+
+    //     {/* Form Container */}
+    //     <div ref={formRef} className="z-20 flex justify-center mt-16 pb-20">
+    //       <div className="flex w-[85%] border border-white/30 rounded-4xl backdrop-blur-xl text-white">
+    //         {/* Left */}
+    //         <div className="p-10 bg-black/50 rounded-s-4xl basis-[70%]">
+    //           <p className="font-inter font-bold text-4xl">
+    //             Contact <span className="text-[#989FFF]">Information</span>
+    //           </p>
+    //           <p className="h-2 w-2/5 mt-3 bg-white/30" />
+    //           <div className="flex gap-3 items-center mt-20">
+    //             <img src="./icons/contact-form-email.svg" alt="email" />
+    //             <p className="font-inter font-medium">yestoboss@gmail.com</p>
+    //           </div>
+    //           <div className="flex gap-3 items-center mt-7">
+    //             <img src="./icons/contact-form-phone.svg" alt="phone" />
+    //             <p className="font-inter font-medium">+91 98765 43210</p>
+    //           </div>
+    //           <div className="flex gap-3 items-start mt-7">
+    //             <img src="./icons/contact-form-location.svg" alt="location" />
+    //             <div className="font-inter text-[15px] font-semibold flex flex-col">
+    //               <p>No 33/14, Ground floor, Jayammal St,</p>
+    //               <p>G Ayyavoo Colony, Aminjikarai,</p>
+    //               <p>Chennai, Tamil Nadu 600029</p>
+    //             </div>
+    //           </div>
+    //           <iframe
+    //             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1211.2141600090897!2d80.21654007928126!3d13.072275374019252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17d61bbb0f3f96d%3A0x8334512f5fca845a!2sARYU%20ACADEMY!5e0!3m2!1sen!2sin!4v1752495251666!5m2!1sen!2sin"
+    //             loading="lazy"
+    //             className="w-full rounded-2xl h-52 mt-20"
+    //           ></iframe>
+    //         </div>
+
+    //         {/* Right */}
+    //         <div className="px-10 pt-10 basis-full rounded-e-4xl bg-black/50 flex flex-col gap-12">
+    //           {[
+    //             {
+    //               key: "row1",
+    //               labels: ["First Name", "Last Name"],
+    //               refs: [0],
+    //             },
+    //             {
+    //               key: "row2",
+    //               labels: ["Email", "Phone Number"],
+    //               refs: [1],
+    //             },
+    //             {
+    //               key: "row3",
+    //               labels: ["City", "State"],
+    //               refs: [2],
+    //             },
+    //           ].map((row, idx) => (
+    //             <div
+    //               key={row.key}
+    //               ref={(el) => {inputGroupsRef.current[row.refs[0]] = el}}
+    //               className="flex justify-between gap-10 font-inter font-medium"
+    //             >
+    //               {row.labels.map((label, i) => (
+    //                 <div className="flex flex-col gap-1 w-1/2" key={i}>
+    //                   <label>{label}</label>
+    //                   <input
+    //                     type="text"
+    //                     className="border-b border-white outline-none pb-2 bg-transparent"
+    //                   />
+    //                 </div>
+    //               ))}
+    //             </div>
+    //           ))}
+
+    //           {/* Message */}
+    //           <div
+    //             ref={(el) => {inputGroupsRef.current[3] = el}}
+    //             className="flex justify-between gap-7 font-inter font-medium"
+    //           >
+    //             <div className="flex flex-col gap-1 w-full">
+    //               <label>Message</label>
+    //               <textarea
+    //                 className="border-b border-white outline-none pb-2 placeholder-white text-sm bg-transparent resize-none"
+    //                 rows={2}
+    //                 placeholder="Write your message..."
+    //               ></textarea>
+    //             </div>
+    //           </div>
+
+    //           {/* Button + Rocket */}
+    //           <div className="flex flex-col gap-1 items-end">
+    //             <button
+    //               className="bg-white px-8 py-3 w-fit text-black rounded-md font-inter font-medium text-lg"
+    //               ref={buttonRef}
+    //             >
+    //               Send Message
+    //             </button>
+    //             <Image
+    //               ref={rocketRef}
+    //               src={"/icons/paper-rocket-icon.svg"}
+    //               alt="rocket"
+    //               width={200}
+    //               height={60}
+    //             />
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
+
+
     <section className="min-h-screen overflow-hidden">
-      <div className="p-16 text-white general-sans z-20">
-        <p ref={headingRef} className="text-center font-semibold text-5xl mt-5">
-          Contact Us
-        </p>
-        <p
-          ref={subtextRef}
-          className="font-inter text-[#F1F1F1] font-normal text-xl text-center mt-5"
-        >
-          Any question or remarks? Just write us a message!
-        </p>
-      </div>
+  <div className="px-6 md:p-16 text-white general-sans z-20">
+    <p ref={headingRef} className="text-center font-semibold text-3xl md:text-5xl mt-5">
+      Contact Us
+    </p>
+    <p
+      ref={subtextRef}
+      className="font-inter text-[#F1F1F1] font-normal text-base md:text-xl text-center mt-5"
+    >
+      Any question or remarks? Just write us a message!
+    </p>
+  </div>
 
-      <div className="relative">
-        {/* Background Circles */}
-        {[
-          "h-[350px] w-[350px] bg-gradient-to-bl from-[#98FFCE] via-[#838FFF] to-[#60B2FF] rounded-full right-10 top-40",
-          "h-[307px] w-[307px] bg-[linear-gradient(to_top_right,_#98FFCE,_#5F9FFF,_#8571FF,_#3F2FA5)] rounded-full bottom-10 left-5",
-          "h-[185px] w-[185px] bg-[linear-gradient(to_bottom_right,_#5F9FFF,_#7E69FF,_#FE3D41)] rounded-full top-10 left-48",
-          "h-[128px] w-[128px] bg-gradient-to-br from-[#5F9FFF] via-[#A06CFF] to-[#1E00FF] rounded-full bottom-32 left-[40%]",
-          "h-[119px] w-[119px] bg-[linear-gradient(to_bottom_right,_#FF3BDE,_#7E69FF,_#828FF1,#8DFFC9)] rounded-full bottom-5 right-36",
-        ].map((cls, i) => (
-          <div
-            key={i}
-            ref={(el) => {circlesRef.current[i] = el}}
-            className={`absolute z-0 ${cls}`}
-          />
-        ))}
+  <div className="relative">
+    {/* Background Circles */}
+    {[
+      "h-[250px] w-[250px] md:h-[350px] md:w-[350px] bg-gradient-to-bl from-[#98FFCE] via-[#838FFF] to-[#60B2FF] rounded-full right-0 md:right-10 top-40",
+      "h-[200px] w-[200px] md:h-[307px] md:w-[307px] bg-[linear-gradient(to_top_right,_#98FFCE,_#5F9FFF,_#8571FF,_#3F2FA5)] rounded-full bottom-10 left-5",
+      "h-[130px] w-[130px] md:h-[185px] md:w-[185px] bg-[linear-gradient(to_bottom_right,_#5F9FFF,_#7E69FF,_#FE3D41)] rounded-full top-10 left-20 md:left-48",
+      "h-[100px] w-[100px] md:h-[128px] md:w-[128px] bg-gradient-to-br from-[#5F9FFF] via-[#A06CFF] to-[#1E00FF] rounded-full bottom-32 left-[40%]",
+      "h-[100px] w-[100px] md:h-[119px] md:w-[119px] bg-[linear-gradient(to_bottom_right,_#FF3BDE,_#7E69FF,_#828FF1,#8DFFC9)] rounded-full bottom-5 right-10 md:right-36",
+    ].map((cls, i) => (
+      <div
+        key={i}
+        ref={(el) => {
+          circlesRef.current[i] = el;
+        }}
+        className={`absolute z-0 ${cls}`}
+      />
+    ))}
 
-        {/* Form Container */}
-        <div ref={formRef} className="z-20 flex justify-center mt-16 pb-20">
-          <div className="flex w-[85%] border border-white/30 rounded-4xl backdrop-blur-xl text-white">
-            {/* Left */}
-            <div className="p-10 bg-black/50 rounded-s-4xl basis-[70%]">
-              <p className="font-inter font-bold text-4xl">
-                Contact <span className="text-[#989FFF]">Information</span>
-              </p>
-              <p className="h-2 w-2/5 mt-3 bg-white/30" />
-              <div className="flex gap-3 items-center mt-20">
-                <img src="./icons/contact-form-email.svg" alt="email" />
-                <p className="font-inter font-medium">yestoboss@gmail.com</p>
-              </div>
-              <div className="flex gap-3 items-center mt-7">
-                <img src="./icons/contact-form-phone.svg" alt="phone" />
-                <p className="font-inter font-medium">+91 98765 43210</p>
-              </div>
-              <div className="flex gap-3 items-start mt-7">
-                <img src="./icons/contact-form-location.svg" alt="location" />
-                <div className="font-inter text-[15px] font-semibold flex flex-col">
-                  <p>No 33/14, Ground floor, Jayammal St,</p>
-                  <p>G Ayyavoo Colony, Aminjikarai,</p>
-                  <p>Chennai, Tamil Nadu 600029</p>
-                </div>
-              </div>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1211.2141600090897!2d80.21654007928126!3d13.072275374019252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17d61bbb0f3f96d%3A0x8334512f5fca845a!2sARYU%20ACADEMY!5e0!3m2!1sen!2sin!4v1752495251666!5m2!1sen!2sin"
-                loading="lazy"
-                className="w-full rounded-2xl h-52 mt-20"
-              ></iframe>
+    {/* Form Container */}
+    <div ref={formRef} className="z-20 flex justify-center mt-10 md:mt-16 pb-20 px-5">
+      <div className="flex flex-col lg:flex-row w-full lg:w-[85%] border border-white/30 rounded-4xl backdrop-blur-xl text-white">
+        {/* Left */}
+        <div className="p-3 sm:p-6 md:p-10 bg-black/50 rounded-t-4xl lg:rounded-s-4xl lg:rounded-tr-none basis-full lg:basis-[70%]">
+          <p className="font-inter font-bold text-2xl md:text-4xl">
+            Contact <span className="text-[#989FFF]">Information</span>
+          </p>
+          <p className="h-1 md:h-2 w-2/5 mt-3 bg-white/30" />
+          <div className="flex gap-3 items-center mt-10 md:mt-20">
+            <img src="./icons/contact-form-email.svg" alt="email" />
+            <p className="font-inter font-medium text-sm md:text-base">yestoboss@gmail.com</p>
+          </div>
+          <div className="flex gap-3 items-center mt-5 md:mt-7">
+            <img src="./icons/contact-form-phone.svg" alt="phone" />
+            <p className="font-inter font-medium text-sm md:text-base">+91 98765 43210</p>
+          </div>
+          <div className="flex gap-3 items-start mt-5 md:mt-7">
+            <img src="./icons/contact-form-location.svg" alt="location" />
+            <div className="font-inter text-xs md:text-[15px] font-semibold flex flex-col">
+              <p>No 33/14, Ground floor, Jayammal St,</p>
+              <p>G Ayyavoo Colony, Aminjikarai,</p>
+              <p>Chennai, Tamil Nadu 600029</p>
             </div>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1211.2141600090897!2d80.21654007928126!3d13.072275374019252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17d61bbb0f3f96d%3A0x8334512f5fca845a!2sARYU%20ACADEMY!5e0!3m2!1sen!2sin!4v1752495251666!5m2!1sen!2sin"
+            loading="lazy"
+            className="w-full rounded-2xl h-40 md:h-52 mt-10 md:mt-20"
+          ></iframe>
+        </div>
 
-            {/* Right */}
-            <div className="px-10 pt-10 basis-full rounded-e-4xl bg-black/50 flex flex-col gap-12">
-              {[
-                {
-                  key: "row1",
-                  labels: ["First Name", "Last Name"],
-                  refs: [0],
-                },
-                {
-                  key: "row2",
-                  labels: ["Email", "Phone Number"],
-                  refs: [1],
-                },
-                {
-                  key: "row3",
-                  labels: ["City", "State"],
-                  refs: [2],
-                },
-              ].map((row, idx) => (
-                <div
-                  key={row.key}
-                  ref={(el) => {inputGroupsRef.current[row.refs[0]] = el}}
-                  className="flex justify-between gap-10 font-inter font-medium"
-                >
-                  {row.labels.map((label, i) => (
-                    <div className="flex flex-col gap-1 w-1/2" key={i}>
-                      <label>{label}</label>
-                      <input
-                        type="text"
-                        className="border-b border-white outline-none pb-2 bg-transparent"
-                      />
-                    </div>
-                  ))}
+        {/* Right */}
+        <div className="px-3 sm:px-6 md:px-10 pt-8 md:pt-10 pb-10 basis-full rounded-b-4xl lg:rounded-e-4xl lg:rounded-bl-none bg-black/50 flex flex-col gap-6 md:gap-10">
+          {[
+            {
+              key: "row1",
+              labels: ["First Name", "Last Name"],
+              refs: [0],
+            },
+            {
+              key: "row2",
+              labels: ["Email", "Phone Number"],
+              refs: [1],
+            },
+            {
+              key: "row3",
+              labels: ["City", "State"],
+              refs: [2],
+            },
+          ].map((row, idx) => (
+            <div
+              key={row.key}
+              ref={(el) => {
+                inputGroupsRef.current[row.refs[0]] = el;
+              }}
+              className="flex flex-col md:flex-row justify-between gap-6 md:gap-10 font-inter font-medium"
+            >
+              {row.labels.map((label, i) => (
+                <div className="flex flex-col gap-1 w-full md:w-1/2" key={i}>
+                  <label>{label}</label>
+                  <input
+                    type="text"
+                    className="border-b border-white outline-none pb-2 bg-transparent text-sm md:text-base"
+                  />
                 </div>
               ))}
-
-              {/* Message */}
-              <div
-                ref={(el) => {inputGroupsRef.current[3] = el}}
-                className="flex justify-between gap-7 font-inter font-medium"
-              >
-                <div className="flex flex-col gap-1 w-full">
-                  <label>Message</label>
-                  <textarea
-                    className="border-b border-white outline-none pb-2 placeholder-white text-sm bg-transparent resize-none"
-                    rows={2}
-                    placeholder="Write your message..."
-                  ></textarea>
-                </div>
-              </div>
-
-              {/* Button + Rocket */}
-              <div className="flex flex-col gap-1 items-end">
-                <button
-                  className="bg-white px-8 py-3 w-fit text-black rounded-md font-inter font-medium text-lg"
-                  ref={buttonRef}
-                >
-                  Send Message
-                </button>
-                <Image
-                  ref={rocketRef}
-                  src={"/icons/paper-rocket-icon.svg"}
-                  alt="rocket"
-                  width={200}
-                  height={60}
-                />
-              </div>
             </div>
+          ))}
+
+          {/* Message */}
+          <div
+            ref={(el) => {
+              inputGroupsRef.current[3] = el;
+            }}
+            className="flex flex-col gap-1 font-inter font-medium"
+          >
+            <label>Message</label>
+            <textarea
+              className="border-b border-white outline-none pb-2 placeholder-white text-sm bg-transparent resize-none"
+              rows={2}
+              placeholder="Write your message..."
+            ></textarea>
+          </div>
+
+          {/* Button + Rocket */}
+          <div className="flex flex-col gap-1 items-end">
+            <button
+              className="bg-white px-6 md:px-8 py-2 md:py-3 w-fit text-black rounded-md font-inter font-medium text-base md:text-lg"
+              ref={buttonRef}
+            >
+              Send Message
+            </button>
+            <Image
+              ref={rocketRef}
+              src={"/icons/paper-rocket-icon.svg"}
+              alt="rocket"
+              width={160}
+              height={60}
+              className="mt-2 hidden sm:block"
+            />
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   );
 };
+
+export default ContactUsForm;

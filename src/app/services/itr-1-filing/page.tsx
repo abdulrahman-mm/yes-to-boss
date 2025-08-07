@@ -1,5 +1,6 @@
 import {
   ITR1FinanceHelpsTax,
+  ITR1FinanceServices,
   ITR1Hero,
   ITR1InternalAudit,
   ITR1KeyServices,
@@ -12,6 +13,7 @@ const page = () => {
     <>
       <ITR1Hero />
       <ITR1InternalAudit />
+      <ITR1FinanceServices/>
       <ITR1WhyYouChooseUs />
       <ITR1KeyServices />
       <ITR1FinanceHelpsTax />

@@ -14,6 +14,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${inter.variable} ${lora.variable} ${poppins.variable} ${BricolageGrotesque.className} antialiased`}
       >
+        
         {children}
         <Footer/>
       </body>

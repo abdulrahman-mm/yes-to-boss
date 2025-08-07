@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ContactTrustedInsights = () => {
+ const ContactTrustedInsights = () => {
   
   
   return (
@@ -12,5 +12,7 @@ export const ContactTrustedInsights = () => {
   );
 };
 
+
+export default ContactTrustedInsights;
 
 

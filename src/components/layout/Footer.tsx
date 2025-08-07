@@ -4,54 +4,54 @@ import { IoLocationOutline } from "react-icons/io5";
 import { LuMailOpen } from "react-icons/lu";
 import { FiPhoneCall } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
-import TextPressure from '../animations/TextPressure';
-
-
+import TextPressure from "../animations/TextPressure";
 
 export const Footer = () => {
   return (
-    <section className="bg-black   text-white max-w-screen min-h-screen general-sans">
-      <div className="p-16">
-        <div className="flex items-center justify-between  gap-5">
-          <div className="flex items-center gap-10 w-1/2">
+    <section className="bg-black text-white max-w-screen min-h-screen general-sans">
+      <div className="p-5 md:p-10 lg:p-16">
+        {/* Top Section */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
+          <div className="flex items-center gap-5 md:gap-10 w-full lg:w-1/2 text-center lg:text-left flex-col lg:flex-row">
             <Image
               src={"/icons/yes-to-boss-white-logo.svg"}
               alt="yes-to-boss-logo"
               width={140}
               height={100}
             />
-            <p className="text-4xl font-medium">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-medium">
               Subscribe Newsletter & Get Latest Updates
             </p>
           </div>
 
-          <div className="flex flex-col gap-1  justify-center items-center">
-            <div className="bg-white rounded-4xl w-fit h-fit  flex items-center justify-between py-1 px-1">
+          <div className="flex flex-col gap-1 justify-center items-center w-full lg:w-auto  lg:mt-0">
+            <div className="bg-white rounded-4xl w-full max-w-md flex items-center justify-between py-1 px-1">
               <input
                 type="text"
                 placeholder="Enter Email id "
-                className="outline-none text-black ps-5 w-72"
+                className="outline-none text-black ps-5 w-full"
               />
-              <button className="bg-black text-sm text-white rounded-4xl px-9 py-3">
+              <button className="bg-black text-sm text-white rounded-4xl px-4 py-2">
                 Submit
               </button>
             </div>
-            <p className="w-fit">Signup to get first order free..</p>
+            <p className="text-sm mt-2">Signup to get first order free..</p>
           </div>
         </div>
 
         <hr className="border border-white/10 w-full mt-11" />
 
-        <div className="flex gap-14 mt-14">
-          <div className="basis-[30%]">
+        {/* Footer Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 mt-14">
+          {/* Contact */}
+          <div className=" ">
             <div className="flex flex-col gap-5">
-              <div className="flex justify-between">
-                <p className="text-sm">Mobile</p>
+              <div className="flex justify-between text-sm">
+                <p>Mobile</p>
                 <p>+61 232 32425</p>
               </div>
               <hr className="border border-white/10 w-full " />
-
-              <div className="flex justify-between">
+              <div className="flex justify-between text-sm">
                 <p>Email</p>
                 <p>yestoboss.com</p>
               </div>
@@ -81,9 +81,9 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="flex-grow basis-[15%]">
+          {/* Links */}
+          <div className=" ">
             <p className="font-semibold text-xl">Link</p>
-
             <div className="mt-6 flex flex-col gap-2">
               <p className="text-sm">Home</p>
               <p className="text-sm">About Us</p>
@@ -95,9 +95,9 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="flex-grow basis-[15%]">
+          {/* Creative Links */}
+          <div className=" ">
             <p className="font-semibold text-xl">Creative Link</p>
-
             <div className="mt-6 flex flex-col gap-2">
               <p className="text-sm">Strategy</p>
               <p className="text-sm">Creative Finance</p>
@@ -108,9 +108,9 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="flex-grow basis-[15%]">
+          {/* Policy */}
+          <div className=" ">
             <p className="font-semibold text-xl">Policy</p>
-
             <div className="mt-6 flex flex-col gap-2">
               <p className="text-sm">Support</p>
               <p className="text-sm">Pricing</p>
@@ -121,28 +121,25 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="flex-grow basis-[15%]">
+          {/* Office Address */}
+          <div className=" ">
             <p className="font-semibold text-xl">Office Address</p>
-
             <div className="mt-6 flex flex-col gap-5">
               <div className="flex gap-2">
-                <IoLocationOutline className="text-3xl w-20" />
+                <IoLocationOutline className="text-2xl w-10 md:w-16 lg:w-20" />
                 <p className="text-sm">
-                  No 33/ 14 , Ground floor, Jayammal St, Ayyavoo Colony,
+                  No 33/14, Ground floor, Jayammal St, Ayyavoo Colony,
                   Aminjikarai, Chennai, Tamil Nadu 600029
                 </p>
               </div>
-
               <div className="flex gap-2 items-center">
                 <LuMailOpen className="text-md" />
                 <p className="text-sm">yestoboss@gmail.com</p>
               </div>
-
               <div className="flex gap-2 items-center">
                 <FiPhoneCall className="text-md" />
                 <p className="text-sm">Phone : 234 3834 549</p>
               </div>
-
               <p className="underline text-sm text-center">View Map</p>
             </div>
           </div>
@@ -150,52 +147,44 @@ export const Footer = () => {
 
         <hr className="border border-white/10 w-full mt-7" />
 
-        <div className="flex justify-between mt-5">
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center mt-5 gap-5 text-center md:text-left">
           <div>
             <p className="text-sm">
-              &copy; 2022-2025 | Alrights Reserved by yestoboss.com{" "}
+              &copy; 2022-2025 | Alrights Reserved by yestoboss.com
             </p>
           </div>
 
-          <div className="flex gap-5 justify-between">
-            <p>Monday-Saturday : 10.00 AM - 07.00 PM</p>
-            <p className="border border-r border-white/40"></p>
+          <div className="flex flex-col sm:flex-row gap-5 justify-between items-center">
+            <p className="text-sm sm:text-base">
+              Monday-Saturday : 10.00 AM - 07.00 PM
+            </p>
+            <p className="border border-r border-white/40 h-4 hidden sm:block"></p>
             <p>
               Book An Appointments{" "}
               <span>
-                <FaPlay className="text-white inline ms-5 text-xs" />
-              </span>{" "}
+                <FaPlay className="text-white inline ms-2 text-xs" />
+              </span>
             </p>
           </div>
         </div>
       </div>
 
-      {/* <div className="flex text-[230px] h-fit justify-center text-white/10 font-semibold ">
-        <p className="h-64">Y</p>
-        <p className="h-64">E</p>
-        <p className="h-64">S</p>
-        <p className="h-64">T</p>
-        <p className="h-64">O</p>
-        <p className="h-64">B</p>
-        <p className="h-64">O</p>
-        <p className="h-64">S</p>
-        <p className="h-64">S</p>
-      </div> */}
-
-      <div style={{position: 'relative', height: '300px',marginBottom:'50px'}}>
-  <TextPressure
-    text="YESTOBOSS"
-    flex={true}
-    alpha={false}
-    stroke={false}
-    width={true}
-    weight={true}
-    italic={true}
-    textColor="#ffffff"
-    strokeColor="#ff0000"
-    minFontSize={36}
-  />
-</div>
+      {/* TextPressure Section */}
+      <div className="hidden md:block my-11 relative">
+        <TextPressure
+          text="YESTOBOSS"
+          flex={true}
+          alpha={false}
+          stroke={false}
+          width={true}
+          weight={true}
+          italic={true}
+          textColor="#ffffff"
+          strokeColor="#ff0000"
+          minFontSize={36}
+        />
+      </div>
     </section>
   );
 };

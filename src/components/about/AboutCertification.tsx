@@ -292,7 +292,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const AboutCertification = () => {
+ const AboutCertification = () => {
   const titleRef = useRef<HTMLParagraphElement>(null);
   const headingRef = useRef<HTMLParagraphElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
@@ -432,111 +432,183 @@ export const AboutCertification = () => {
   }, []);
   
   return (
-    <section className="bg-white min-h-screen p-16 general-sans">
-      <p
-        ref={titleRef}
-        className="border rounded-3xl px-4 py-2 w-fit border-[#EBEBEB] font-medium text-sm"
-      >
-        Our Values
+    // <section className="bg-white  p-16 general-sans">
+    //   <p
+    //     ref={titleRef}
+    //     className="border rounded-3xl px-4 py-2 w-fit border-[#EBEBEB] font-medium text-sm"
+    //   >
+    //     Our Values
+    //   </p>
+
+    //   <div className="flex justify-between gap-10 mt-5 flex-wrap">
+    //     <p
+    //       ref={headingRef}
+    //       className="font-medium text-5xl w-full md:w-1/2 leading-tight"
+    //     >
+    //     Do it right. Do it well. Do it with purpose.
+
+    //     </p>
+
+    //     <p
+    //       ref={descRef}
+    //       className="font-normal text-sm w-full md:w-1/5 text-gray-600 mt-4 md:mt-0"
+    //     >
+    //       At YesToBoss, our values are more than principles; they’re our daily practice.
+
+    //     </p>
+    //   </div>
+
+    //   <div className="flex gap-6 mt-14 flex-wrap">
+    //     <div
+    //       ref={(el) => {cardsRef.current[0] = el}}
+    //       className="bg-gradient-to-b from-[#212121] to-[#070707] flex-grow rounded-3xl p-6 text-white w-[20%]"
+    //     >
+    //       {/* <Image
+    //         src={"/icons/dummy-logo1.svg"}
+    //         width={80}
+    //         height={80}
+    //         alt="a"
+    //       /> */}
+    //       <p className="font-medium text-2xl mt-12">
+    //       Integrity 
+    //       </p>
+    //       {/* <p className="font-medium text-2xl ">(CPA)</p> */}
+    //       <p className="font-normal text-sm mt-2 text-white/80">
+    //       We follow ethical practices in everything we do
+    //       </p>
+    //     </div>
+
+    //     <div
+    //       ref={(el) => {cardsRef.current[1] = el}}
+    //       className="bg-gradient-to-b from-[#FFFFFF] flex-grow to-[#E0F1F9] rounded-3xl p-6 text-black w-[20%]"
+    //     >
+    //       {/* <Image
+    //         src={"/icons/dummy-logo2.svg"}
+    //         width={80}
+    //         height={80}
+    //         alt="a"
+    //       /> */}
+    //       <p className="font-medium text-2xl mt-12">
+    //       Accuracy 
+    //       </p>
+    //       {/* <p className="font-medium text-2xl ">(CFA)</p> */}
+    //       <p className="font-normal text-sm mt-2">
+    //       Every document is reviewed for precision.
+    //       </p>
+    //     </div>
+
+    //     <div
+    //       ref={(el) => {cardsRef.current[2] = el}}
+    //       className="bg-gradient-to-b flex-grow from-[#FFFFFF] to-[#FF9B79] rounded-3xl p-6 text-black w-[20%]"
+    //     >
+    //       {/* <Image
+    //         src={"/icons/dummy-logo2.svg"}
+    //         width={80}
+    //         height={80}
+    //         alt="a"
+    //       /> */}
+    //       <p className="font-medium text-2xl mt-12">
+    //       Confidentiality 
+    //       </p>
+    //       {/* <p className="font-medium text-2xl ">(CMA)</p> */}
+    //       <p className="font-normal text-sm mt-2">
+    //       We treat your data with complete privacy.
+
+    //       </p>
+    //     </div>
+
+    //     <div
+    //       ref={(el) => {cardsRef.current[3] = el}}
+    //       className="bg-gradient-to-b flex-grow from-[#FFFFFF] to-[#FF9B79] rounded-3xl p-6 text-black w-[20%]"
+    //     >
+    //       {/* <Image
+    //         src={"/icons/dummy-logo2.svg"}
+    //         width={80}
+    //         height={80}
+    //         alt="a"
+    //       /> */}
+    //       <p className="font-medium text-2xl mt-12">
+    //       Commitment 
+    //       </p>
+    //       {/* <p className="font-medium text-2xl ">(CMA)</p> */}
+    //       <p className="font-normal text-sm mt-2">
+    //       We deliver what we promise, always on time
+
+    //       </p>
+    //     </div>
+    //   </div>
+    // </section>
+
+    <section className="bg-white  p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16
+ general-sans overflow-hidden">
+  <p
+    ref={titleRef}
+    className="border rounded-3xl px-4 py-2 w-fit border-[#EBEBEB] font-medium text-sm"
+  >
+    Our Values
+  </p>
+
+  <div className="flex flex-wrap justify-between gap-5 md:gap-10 mt-5">
+    <p
+      ref={headingRef}
+      className="font-medium text-3xl sm:text-4xl md:text-5xl w-full md:w-1/2 leading-tight"
+    >
+      Do it right. Do it well. Do it with purpose.
+    </p>
+
+    <p
+      ref={descRef}
+      className="font-normal text-sm w-full md:w-1/4 text-gray-600 mt-4 md:mt-0"
+    >
+      At YesToBoss, our values are more than principles; they’re our daily practice.
+    </p>
+  </div>
+
+  <div className="flex flex-wrap gap-6 mt-14">
+    <div
+      ref={(el) => { cardsRef.current[0] = el }}
+      className="bg-gradient-to-b from-[#212121] to-[#070707] rounded-3xl p-6 text-white flex-grow min-w-[250px] md:w-[22%] w-full"
+    >
+      <p className="font-medium text-2xl mt-12">Integrity</p>
+      <p className="font-normal text-sm mt-2 text-white/80">
+        We follow ethical practices in everything we do
       </p>
+    </div>
 
-      <div className="flex justify-between gap-10 mt-5 flex-wrap">
-        <p
-          ref={headingRef}
-          className="font-medium text-5xl w-full md:w-1/2 leading-tight"
-        >
-        Do it right. Do it well. Do it with purpose.
+    <div
+      ref={(el) => { cardsRef.current[1] = el }}
+      className="bg-gradient-to-b from-[#FFFFFF] to-[#E0F1F9] rounded-3xl p-6 text-black flex-grow min-w-[250px] md:w-[22%] w-full"
+    >
+      <p className="font-medium text-2xl mt-12">Accuracy</p>
+      <p className="font-normal text-sm mt-2">
+        Every document is reviewed for precision.
+      </p>
+    </div>
 
-        </p>
+    <div
+      ref={(el) => { cardsRef.current[2] = el }}
+      className="bg-gradient-to-b from-[#FFFFFF] to-[#FF9B79] rounded-3xl p-6 text-black flex-grow min-w-[250px] md:w-[22%] w-full"
+    >
+      <p className="font-medium text-2xl mt-12">Confidentiality</p>
+      <p className="font-normal text-sm mt-2">
+        We treat your data with complete privacy.
+      </p>
+    </div>
 
-        <p
-          ref={descRef}
-          className="font-normal text-sm w-full md:w-1/5 text-gray-600 mt-4 md:mt-0"
-        >
-          At YesToBoss, our values are more than principles; they’re our daily practice.
+    <div
+      ref={(el) => { cardsRef.current[3] = el }}
+      className="bg-gradient-to-b from-[#FFFFFF] to-[#FF9B79] rounded-3xl p-6 text-black flex-grow min-w-[250px] md:w-[22%] w-full"
+    >
+      <p className="font-medium text-2xl mt-12">Commitment</p>
+      <p className="font-normal text-sm mt-2">
+        We deliver what we promise, always on time
+      </p>
+    </div>
+  </div>
+</section>
 
-        </p>
-      </div>
-
-      <div className="flex gap-6 mt-14 flex-wrap">
-        <div
-          ref={(el) => {cardsRef.current[0] = el}}
-          className="bg-gradient-to-b from-[#212121] to-[#070707] flex-grow rounded-3xl p-6 text-white w-[20%]"
-        >
-          {/* <Image
-            src={"/icons/dummy-logo1.svg"}
-            width={80}
-            height={80}
-            alt="a"
-          /> */}
-          <p className="font-medium text-2xl mt-12">
-          Integrity 
-          </p>
-          {/* <p className="font-medium text-2xl ">(CPA)</p> */}
-          <p className="font-normal text-sm mt-2 text-white/80">
-          We follow ethical practices in everything we do
-          </p>
-        </div>
-
-        <div
-          ref={(el) => {cardsRef.current[1] = el}}
-          className="bg-gradient-to-b from-[#FFFFFF] flex-grow to-[#E0F1F9] rounded-3xl p-6 text-black w-[20%]"
-        >
-          {/* <Image
-            src={"/icons/dummy-logo2.svg"}
-            width={80}
-            height={80}
-            alt="a"
-          /> */}
-          <p className="font-medium text-2xl mt-12">
-          Accuracy 
-          </p>
-          {/* <p className="font-medium text-2xl ">(CFA)</p> */}
-          <p className="font-normal text-sm mt-2">
-          Every document is reviewed for precision.
-          </p>
-        </div>
-
-        <div
-          ref={(el) => {cardsRef.current[2] = el}}
-          className="bg-gradient-to-b flex-grow from-[#FFFFFF] to-[#FF9B79] rounded-3xl p-6 text-black w-[20%]"
-        >
-          {/* <Image
-            src={"/icons/dummy-logo2.svg"}
-            width={80}
-            height={80}
-            alt="a"
-          /> */}
-          <p className="font-medium text-2xl mt-12">
-          Confidentiality 
-          </p>
-          {/* <p className="font-medium text-2xl ">(CMA)</p> */}
-          <p className="font-normal text-sm mt-2">
-          We treat your data with complete privacy.
-
-          </p>
-        </div>
-
-        <div
-          ref={(el) => {cardsRef.current[3] = el}}
-          className="bg-gradient-to-b flex-grow from-[#FFFFFF] to-[#FF9B79] rounded-3xl p-6 text-black w-[20%]"
-        >
-          {/* <Image
-            src={"/icons/dummy-logo2.svg"}
-            width={80}
-            height={80}
-            alt="a"
-          /> */}
-          <p className="font-medium text-2xl mt-12">
-          Commitment 
-          </p>
-          {/* <p className="font-medium text-2xl ">(CMA)</p> */}
-          <p className="font-normal text-sm mt-2">
-          We deliver what we promise, always on time
-
-          </p>
-        </div>
-      </div>
-    </section>
   );
 };
+
+
+export default AboutCertification;

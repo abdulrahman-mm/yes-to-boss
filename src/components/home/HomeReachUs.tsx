@@ -1,67 +1,3 @@
-// import React from "react";
-
-// export const HomeReachUs = () => {
-//   return (
-//     <section className="p-16 bg-black text-white">
-//       <div className="flex gap-12">
-//         <div className="w-[45%]">
-//           <p className="text-5xl font-semibold general-sans">Reach Us</p>
-
-//           <p className="mt-12 text-white/60 general-sans">
-//             Let us help you register, manage, and grow your
-//             business—stress-free. Contact us today for expert consultancy that
-//             puts your success first.
-//           </p>
-//           <div className="mt-32 rounded-2xl">
-//             <iframe
-//               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1211.2141600090897!2d80.21654007928126!3d13.072275374019252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17d61bbb0f3f96d%3A0x8334512f5fca845a!2sARYU%20ACADEMY!5e0!3m2!1sen!2sin!4v1752495251666!5m2!1sen!2sin"
-//               loading="lazy"
-//               className="w-full rounded-2xl h-52"
-//             ></iframe>
-//           </div>
-//         </div>
-
-//         <div className="flex general-sans flex-col flex-grow gap-8 border border-[#424242] p-14 rounded-2xl bg-[#1b1b1b]">
-//           <div className="flex gap-5">
-//             <div className="flex flex-col gap-3 w-1/2">
-//               <label htmlFor="" className="text-sm font-semibold ">First Name</label>
-//               <input type="text" name="" id="" className="border border-[#FFFFFF]/30 rounded-lg p-3" placeholder="Steve"/>
-//             </div>
-
-//             <div className="flex flex-col gap-3 w-1/2">
-//               <label htmlFor="" className="text-sm font-semibold">Last Name</label>
-//               <input type="text" name="" id="" className="border border-[#FFFFFF]/30 rounded-lg p-3" placeholder="Steve"/>
-//             </div>
-
-           
-//           </div>
-
-//           <div className="flex flex-col gap-3">
-//               <label htmlFor="" className="text-sm font-semibold">Last Name</label>
-//               <input type="text" name="" id="" className="border border-[#FFFFFF]/30 rounded-lg p-3" placeholder="Steve"/>
-//             </div>
-
-//             <div className="flex flex-col gap-3">
-//               <label htmlFor="" className="text-sm font-semibold">Last Name</label>
-//               <input type="text" name="" id="" className="border border-[#FFFFFF]/30 rounded-lg p-3" placeholder="Steve"/>
-//             </div>
-
-//             <div className="flex flex-col gap-3">
-//               <label htmlFor="" className="text-sm font-semibold">Last Name</label>
-//               <input type="text" name="" id="" className="border border-[#FFFFFF]/30 rounded-lg p-3" placeholder="Steve"/>
-//             </div>
-
-//             <button className="bg-white px-8 py-3 w-fit text-black rounded font-semibold">
-//                Submit
-//             </button>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-
-
 // "use client";
 // import React, { useEffect, useRef } from "react";
 // import gsap from "gsap";
@@ -85,7 +21,7 @@
 //         ease: "power2.out",
 //         scrollTrigger: {
 //           trigger: headingRef.current,
-//           start: "top 10%",
+//           start: "top 60%", // smoother entrance
 //         },
 //       });
 
@@ -97,7 +33,7 @@
 //         ease: "power2.out",
 //         scrollTrigger: {
 //           trigger: textRef.current,
-//           start: "top 10%",
+//           start: "top 60%",
 //         },
 //       });
 
@@ -109,7 +45,7 @@
 //         ease: "power2.out",
 //         scrollTrigger: {
 //           trigger: mapRef.current,
-//           start: "top 10%",
+//           start: "top 60%",
 //         },
 //       });
 
@@ -121,7 +57,7 @@
 //         ease: "power2.out",
 //         scrollTrigger: {
 //           trigger: formRef.current,
-//           start: "top 10%",
+//           start: "top 60%",
 //         },
 //       });
 //     }, sectionRef);
@@ -130,102 +66,87 @@
 //   }, []);
 
 //   return (
-//     <section ref={sectionRef} className="p-16 bg-black text-white overflow-hidden">
-//       <div className="flex gap-12">
+//     <section
+//       ref={sectionRef}
+//       className="p-16 bg-black text-white overflow-hidden"
+//     >
+//       <div className="flex flex-wrap gap-12">
+//         {/* Left Section */}
 //         <div className="w-[45%]">
 //           <p
 //             ref={headingRef}
-//             className="text-5xl font-semibold general-sans"
+//             className="text-5xl font-semibold general-sans leading-16"
 //           >
-//             Reach Us
-//           </p>
+// Get in Touch with YesToBoss
+// </p>
 
 //           <p
 //             ref={textRef}
-//             className="mt-12 text-white/60 general-sans"
+//             className="mt-12 text-white/60 general-sans will-change-transform"
 //           >
-//             Let us help you register, manage, and grow your
-//             business—stress-free. Contact us today for expert consultancy that
-//             puts your success first.
+//            Let us help you register, manage, and grow your business—stress-free.
+//  Contact us today for expert consultancy that puts your success first.
+
 //           </p>
 
-//           <div className="mt-32 rounded-2xl" ref={mapRef}>
+//           <div className="mt-32 rounded-2xl will-change-transform" ref={mapRef}>
 //             <iframe
 //               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1211.2141600090897!2d80.21654007928126!3d13.072275374019252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17d61bbb0f3f96d%3A0x8334512f5fca845a!2sARYU%20ACADEMY!5e0!3m2!1sen!2sin!4v1752495251666!5m2!1sen!2sin"
 //               loading="lazy"
-//               className="w-full rounded-2xl h-52"
+//               className="w-full rounded-2xl h-52 border-none"
 //             ></iframe>
 //           </div>
 //         </div>
 
+//         {/* Right Section - Form */}
 //         <div
 //           ref={formRef}
-//           className="flex general-sans flex-col flex-grow gap-8 border border-[#424242] p-14 rounded-2xl bg-[#1b1b1b]"
+//           className="flex general-sans flex-col flex-grow gap-8 border border-[#424242] p-14 rounded-2xl bg-[#1b1b1b] will-change-transform"
 //         >
 //           <div className="flex gap-5">
 //             <div className="flex flex-col gap-3 w-1/2">
-//               <label htmlFor="" className="text-sm font-semibold">
-//                 First Name
-//               </label>
+//               <label className="text-sm font-semibold">First Name</label>
 //               <input
 //                 type="text"
-//                 name=""
-//                 id=""
 //                 className="border border-[#FFFFFF]/30 rounded-lg p-3"
 //                 placeholder="Steve"
 //               />
 //             </div>
 
 //             <div className="flex flex-col gap-3 w-1/2">
-//               <label htmlFor="" className="text-sm font-semibold">
-//                 Last Name
-//               </label>
+//               <label className="text-sm font-semibold">Last Name</label>
 //               <input
 //                 type="text"
-//                 name=""
-//                 id=""
 //                 className="border border-[#FFFFFF]/30 rounded-lg p-3"
-//                 placeholder="Steve"
+//                 placeholder="Rogers"
 //               />
 //             </div>
 //           </div>
 
 //           <div className="flex flex-col gap-3">
-//             <label htmlFor="" className="text-sm font-semibold">
-//               Last Name
-//             </label>
+//             <label className="text-sm font-semibold">Email</label>
 //             <input
-//               type="text"
-//               name=""
-//               id=""
+//               type="email"
 //               className="border border-[#FFFFFF]/30 rounded-lg p-3"
-//               placeholder="Steve"
+//               placeholder="steve@avengers.com"
 //             />
 //           </div>
 
 //           <div className="flex flex-col gap-3">
-//             <label htmlFor="" className="text-sm font-semibold">
-//               Last Name
-//             </label>
+//             <label className="text-sm font-semibold">Phone</label>
 //             <input
-//               type="text"
-//               name=""
-//               id=""
+//               type="tel"
 //               className="border border-[#FFFFFF]/30 rounded-lg p-3"
-//               placeholder="Steve"
+//               placeholder="+91 9876543210"
 //             />
 //           </div>
 
 //           <div className="flex flex-col gap-3">
-//             <label htmlFor="" className="text-sm font-semibold">
-//               Last Name
-//             </label>
+//             <label className="text-sm font-semibold">Message</label>
 //             <input
 //               type="text"
-//               name=""
-//               id=""
 //               className="border border-[#FFFFFF]/30 rounded-lg p-3"
-//               placeholder="Steve"
+//               placeholder="Your message..."
 //             />
 //           </div>
 
@@ -238,23 +159,6 @@
 //   );
 // };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -262,7 +166,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const HomeReachUs = () => {
+ const HomeReachUs = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const textRef = useRef(null);
@@ -278,7 +182,7 @@ export const HomeReachUs = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: headingRef.current,
-          start: "top 60%", // smoother entrance
+          start: "top 60%",
         },
       });
 
@@ -325,28 +229,31 @@ export const HomeReachUs = () => {
   return (
     <section
       ref={sectionRef}
-      className="p-16 bg-black text-white overflow-hidden"
+      className="p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16 bg-black text-white overflow-hidden"
     >
-      <div className="flex gap-12">
+      <div className="flex flex-col lg:flex-row gap-12">
         {/* Left Section */}
-        <div className="w-[45%]">
+        <div className="w-full lg:w-[50%] flex-grow">
           <p
             ref={headingRef}
-            className="text-5xl font-semibold general-sans leading-16"
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold general-sans leading-tight"
           >
-Get in Touch with YesToBoss
-</p>
+            Get in Touch with YesToBoss
+          </p>
 
           <p
             ref={textRef}
-            className="mt-12 text-white/60 general-sans will-change-transform"
+            className="mt-8 md:mt-12 text-white/60 general-sans will-change-transform"
           >
-           Let us help you register, manage, and grow your business—stress-free.
- Contact us today for expert consultancy that puts your success first.
-
+            Let us help you register, manage, and grow your
+            business—stress-free. Contact us today for expert consultancy that
+            puts your success first.
           </p>
 
-          <div className="mt-32 rounded-2xl will-change-transform" ref={mapRef}>
+          <div
+            className="mt-12 md:mt-20 rounded-2xl will-change-transform"
+            ref={mapRef}
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1211.2141600090897!2d80.21654007928126!3d13.072275374019252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17d61bbb0f3f96d%3A0x8334512f5fca845a!2sARYU%20ACADEMY!5e0!3m2!1sen!2sin!4v1752495251666!5m2!1sen!2sin"
               loading="lazy"
@@ -358,11 +265,11 @@ Get in Touch with YesToBoss
         {/* Right Section - Form */}
         <div
           ref={formRef}
-          className="flex general-sans flex-col flex-grow gap-8 border border-[#424242] p-14 rounded-2xl bg-[#1b1b1b] will-change-transform"
+          className="flex flex-col gap-5 md:gap-8 border border-[#424242] p-3 sm:p-5 md:p-10 lg:p-14 rounded-xl md:rounded-2xl bg-[#1b1b1b] w-full lg:w-[50%] flex-grow"
         >
-          <div className="flex gap-5">
-            <div className="flex flex-col gap-3 w-1/2">
-              <label className="text-sm font-semibold">First Name</label>
+          <div className="flex flex-col md:flex-row gap-5">
+            <div className="flex flex-col gap-3  flex-grow md:w-2/5 xl:w-1/2">
+              <label className="text-sm font-medium">First Name</label>
               <input
                 type="text"
                 className="border border-[#FFFFFF]/30 rounded-lg p-3"
@@ -370,8 +277,8 @@ Get in Touch with YesToBoss
               />
             </div>
 
-            <div className="flex flex-col gap-3 w-1/2">
-              <label className="text-sm font-semibold">Last Name</label>
+            <div className="flex flex-col gap-3  flex-grow md:w-2/5 xl:w-1/2">
+              <label className="text-sm font-medium">Last Name</label>
               <input
                 type="text"
                 className="border border-[#FFFFFF]/30 rounded-lg p-3"
@@ -381,7 +288,7 @@ Get in Touch with YesToBoss
           </div>
 
           <div className="flex flex-col gap-3">
-            <label className="text-sm font-semibold">Email</label>
+            <label className="text-sm font-medium">Email</label>
             <input
               type="email"
               className="border border-[#FFFFFF]/30 rounded-lg p-3"
@@ -390,7 +297,7 @@ Get in Touch with YesToBoss
           </div>
 
           <div className="flex flex-col gap-3">
-            <label className="text-sm font-semibold">Phone</label>
+            <label className="text-sm font-medium">Phone</label>
             <input
               type="tel"
               className="border border-[#FFFFFF]/30 rounded-lg p-3"
@@ -399,7 +306,7 @@ Get in Touch with YesToBoss
           </div>
 
           <div className="flex flex-col gap-3">
-            <label className="text-sm font-semibold">Message</label>
+            <label className="text-sm font-medium">Message</label>
             <input
               type="text"
               className="border border-[#FFFFFF]/30 rounded-lg p-3"
@@ -415,3 +322,5 @@ Get in Touch with YesToBoss
     </section>
   );
 };
+
+export default HomeReachUs;

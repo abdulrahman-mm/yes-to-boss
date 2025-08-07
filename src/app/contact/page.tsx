@@ -1,5 +1,12 @@
-import { ContactEmpowerYourBusiness, ContactFollowUs, ContactTrustedInsights, ContactUsForm, ContactUsHero } from "@/components/contact";
-import { Footer } from "@/components/layout";
+import dynamic from "next/dynamic";
+
+const ContactUsHero = dynamic(() => import("@/components/contact/ContactUsHero"));
+const ContactUsForm = dynamic(() => import("@/components/contact/ContactUsForm"));
+const ContactEmpowerYourBusiness = dynamic(() => import("@/components/contact/ContactEmpowerYourBusiness"));
+const ContactTrustedInsights = dynamic(() => import("@/components/contact/ContactTrustedInsights"));
+const ContactFollowUs = dynamic(() => import("@/components/contact/ContactFollowUs"));
+
+
 
 const contact = () => {
   return (

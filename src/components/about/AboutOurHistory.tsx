@@ -294,7 +294,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const AboutOurHistory = () => {
+ const AboutOurHistory = () => {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -322,113 +322,233 @@ export const AboutOurHistory = () => {
   }, []);
 
   return (
+    // <section className="min-h-screen">
+    //   <div className="grid grid-cols-3 general-sans p-16 gap-5">
+    //     {/* Left Column */}
+    //     <div className="grid gap-5 grid-cols-1 grid-rows-3 rounded-2xl">
+    //       <div
+    //         ref={(el) => {cardsRef.current[0] = el}}
+    //         className="bg-white rounded-2xl row-span-2 will-change-transform"
+    //       >
+    //         <div className="w-full h-[70%] relative rounded-2xl">
+    //           <Image
+    //             src={"/images/dummy-image1.svg"}
+    //             fill
+    //             className="absolute w-full h-full object-cover rounded-t-2xl"
+    //             alt="a"
+    //           />
+    //         </div>
+    //         <div className="p-3">
+    //           <p className="font-medium text-2xl">Company Registration</p>
+    //           <p className="font-normal text-sm">
+    //           Fast, accurate registration services that launch your business while we handle formalities.
+
+    //           </p>
+    //         </div>
+    //       </div>
+
+    //       <div
+    //         ref={(el) => {cardsRef.current[1] = el}}
+    //         className="bg-gradient-to-b from-[#FFFFFF] p-3 rounded-2xl to-[#FF9B79] will-change-transform"
+    //       >
+    //         <Image
+    //           src={"/icons/home-history-icon.svg"}
+    //           width={50}
+    //           height={50}
+    //           alt="aa"
+    //         />
+    //         <p className="font-medium text-2xl mt-5">Licensing</p>
+    //         <p className="font-normal text-sm">
+    //         Expert guidance securing trade, GST, and FSSAI licenses to meet legal requirements smoothly.
+    //         </p>
+    //       </div>
+    //     </div>
+
+    //     {/* Middle Column */}
+    //     <div className="grid gap-5 grid-cols-1 grid-rows-3">
+    //       <div
+    //         ref={(el) => {cardsRef.current[2] = el}}
+    //         className="bg-white rounded-2xl row-span-4 will-change-transform"
+    //       >
+    //         <div className="w-full h-[80%] relative rounded-2xl">
+    //           <Image
+    //             src={"/images/dummy-image1.svg"}
+    //             fill
+    //             className="absolute w-full h-full object-cover rounded-t-2xl"
+    //             alt="a"
+    //           />
+    //         </div>
+    //         <div className="p-3">
+    //           <p className="font-medium text-2xl">Trade Mark </p>
+    //           <p className="font-normal text-sm">
+    //           Complete support in trademark search, filing, and protection to legally secure your brand identity.
+
+    //           </p>
+    //         </div>
+    //       </div>
+    //     </div>
+
+    //     {/* Right Column */}
+    //     <div className="grid gap-5 grid-cols-1 grid-rows-3 rounded-2xl">
+    //       <div
+    //         ref={(el) => {cardsRef.current[3] = el}}
+    //         className="bg-white rounded-2xl row-span-2 will-change-transform"
+    //       >
+    //         <div className="w-full h-[70%] relative rounded-2xl">
+    //           <Image
+    //             src={"/images/dummy-image1.svg"}
+    //             fill
+    //             className="absolute w-full h-full object-cover rounded-t-2xl"
+    //             alt="a"
+    //           />
+    //         </div>
+    //         <div className="p-3">
+    //           <p className="font-medium text-2xl">Tax Compliance</p>
+    //           <p className="font-normal text-sm">
+    //           From GST to income tax, we ensure timely, stress-free financial compliance.
+
+    //           </p>
+    //         </div>
+    //       </div>
+
+    //       <div
+    //         ref={(el) => {cardsRef.current[4] = el}}
+    //         className="bg-gradient-to-b from-[#FFFFFF] p-3 rounded-2xl to-[#FF9B79] will-change-transform"
+    //       >
+    //         <Image
+    //           src={"/icons/home-history-icon.svg"}
+    //           width={50}
+    //           height={50}
+    //           alt="aa"
+    //         />
+    //         <p className="font-medium text-2xl mt-5">Legal Documentation</p>
+    //         <p className="font-normal text-sm">
+    //         Professional drafting and review of NDAs, MOAs, and partnership agreements.
+
+    //         </p>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
+
     <section className="min-h-screen">
-      <div className="grid grid-cols-3 general-sans p-16 gap-5">
-        {/* Left Column */}
-        <div className="grid gap-5 grid-cols-1 grid-rows-3 rounded-2xl">
-          <div
-            ref={(el) => {cardsRef.current[0] = el}}
-            className="bg-white rounded-2xl row-span-2 will-change-transform"
-          >
-            <div className="w-full h-[70%] relative rounded-2xl">
-              <Image
-                src={"/images/dummy-image1.svg"}
-                fill
-                className="absolute w-full h-full object-cover rounded-t-2xl"
-                alt="a"
-              />
-            </div>
-            <div className="p-3">
-              <p className="font-medium text-2xl">Company Registration</p>
-              <p className="font-normal text-sm">
-              Fast, accurate registration services that launch your business while we handle formalities.
-
-              </p>
-            </div>
-          </div>
-
-          <div
-            ref={(el) => {cardsRef.current[1] = el}}
-            className="bg-gradient-to-b from-[#FFFFFF] p-3 rounded-2xl to-[#FF9B79] will-change-transform"
-          >
-            <Image
-              src={"/icons/home-history-icon.svg"}
-              width={50}
-              height={50}
-              alt="aa"
-            />
-            <p className="font-medium text-2xl mt-5">Licensing</p>
-            <p className="font-normal text-sm">
-            Expert guidance securing trade, GST, and FSSAI licenses to meet legal requirements smoothly.
-            </p>
-          </div>
+  <div className="grid grid-cols-1 md:grid-cols-3 general-sans  p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16
+ gap-5">
+    {/* Left Column */}
+    <div className="grid gap-5 grid-cols-1 grid-rows-3 rounded-2xl">
+      <div
+        ref={(el) => {
+          cardsRef.current[0] = el;
+        }}
+        className="bg-white rounded-2xl flex flex-col row-span-2 will-change-transform"
+      >
+        <div className="w-full min-h-[200px] flex-grow md:h-[250px] lg:h-[70%] relative rounded-2xl">
+          <Image
+            src={"/images/dummy-image1.svg"}
+            fill
+            className="absolute w-full h-full object-cover rounded-t-2xl"
+            alt="a"
+          />
         </div>
-
-        {/* Middle Column */}
-        <div className="grid gap-5 grid-cols-1 grid-rows-3">
-          <div
-            ref={(el) => {cardsRef.current[2] = el}}
-            className="bg-white rounded-2xl row-span-4 will-change-transform"
-          >
-            <div className="w-full h-[80%] relative rounded-2xl">
-              <Image
-                src={"/images/dummy-image1.svg"}
-                fill
-                className="absolute w-full h-full object-cover rounded-t-2xl"
-                alt="a"
-              />
-            </div>
-            <div className="p-3">
-              <p className="font-medium text-2xl">Trade Mark </p>
-              <p className="font-normal text-sm">
-              Complete support in trademark search, filing, and protection to legally secure your brand identity.
-
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Column */}
-        <div className="grid gap-5 grid-cols-1 grid-rows-3 rounded-2xl">
-          <div
-            ref={(el) => {cardsRef.current[3] = el}}
-            className="bg-white rounded-2xl row-span-2 will-change-transform"
-          >
-            <div className="w-full h-[70%] relative rounded-2xl">
-              <Image
-                src={"/images/dummy-image1.svg"}
-                fill
-                className="absolute w-full h-full object-cover rounded-t-2xl"
-                alt="a"
-              />
-            </div>
-            <div className="p-3">
-              <p className="font-medium text-2xl">Tax Compliance</p>
-              <p className="font-normal text-sm">
-              From GST to income tax, we ensure timely, stress-free financial compliance.
-
-              </p>
-            </div>
-          </div>
-
-          <div
-            ref={(el) => {cardsRef.current[4] = el}}
-            className="bg-gradient-to-b from-[#FFFFFF] p-3 rounded-2xl to-[#FF9B79] will-change-transform"
-          >
-            <Image
-              src={"/icons/home-history-icon.svg"}
-              width={50}
-              height={50}
-              alt="aa"
-            />
-            <p className="font-medium text-2xl mt-5">Legal Documentation</p>
-            <p className="font-normal text-sm">
-            Professional drafting and review of NDAs, MOAs, and partnership agreements.
-
-            </p>
-          </div>
+        <div className="p-3">
+          <p className="font-medium text-2xl">Company Registration</p>
+          <p className="font-normal text-sm">
+            Fast, accurate registration services that launch your business while we handle formalities.
+          </p>
         </div>
       </div>
-    </section>
+
+      <div
+        ref={(el) => {
+          cardsRef.current[1] = el;
+        }}
+        className="bg-gradient-to-b from-[#FFFFFF] p-3 rounded-2xl to-[#FF9B79] will-change-transform"
+      >
+        <Image
+          src={"/icons/home-history-icon.svg"}
+          width={50}
+          height={50}
+          alt="aa"
+        />
+        <p className="font-medium text-2xl mt-5">Licensing</p>
+        <p className="font-normal text-sm">
+          Expert guidance securing trade, GST, and FSSAI licenses to meet legal requirements smoothly.
+        </p>
+      </div>
+    </div>
+
+    {/* Middle Column */}
+    <div className="grid gap-5 grid-cols-1 grid-rows-3">
+      <div
+        ref={(el) => {
+          cardsRef.current[2] = el;
+        }}
+        className="bg-white flex flex-col rounded-2xl row-span-4 will-change-transform"
+      >
+        <div className="w-full flex-grow h-[250px] md:h-[300px] lg:h-[80%] relative rounded-2xl">
+          <Image
+            src={"/images/dummy-image1.svg"}
+            fill
+            className="absolute w-full h-full object-cover rounded-t-2xl"
+            alt="a"
+          />
+        </div>
+        <div className="p-3">
+          <p className="font-medium text-2xl">Trade Mark</p>
+          <p className="font-normal text-sm">
+            Complete support in trademark search, filing, and protection to legally secure your brand identity.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Right Column */}
+    <div className="grid gap-5 grid-cols-1 grid-rows-3 rounded-2xl">
+      <div
+        ref={(el) => {
+          cardsRef.current[3] = el;
+        }}
+        className="bg-white rounded-2xl flex flex-col row-span-2 will-change-transform"
+      >
+        <div className="w-full h-[200px] flex-grow md:h-[250px] lg:h-[70%] relative rounded-2xl">
+          <Image
+            src={"/images/dummy-image1.svg"}
+            fill
+            className="absolute w-full h-full object-cover rounded-t-2xl"
+            alt="a"
+          />
+        </div>
+        <div className="p-3">
+          <p className="font-medium text-2xl">Tax Compliance</p>
+          <p className="font-normal text-sm">
+            From GST to income tax, we ensure timely, stress-free financial compliance.
+          </p>
+        </div>
+      </div>
+
+      <div
+        ref={(el) => {
+          cardsRef.current[4] = el;
+        }}
+        className="bg-gradient-to-b from-[#FFFFFF] p-3 rounded-2xl to-[#FF9B79] will-change-transform"
+      >
+        <Image
+          src={"/icons/home-history-icon.svg"}
+          width={50}
+          height={50}
+          alt="aa"
+        />
+        <p className="font-medium text-2xl mt-5">Legal Documentation</p>
+        <p className="font-normal text-sm">
+          Professional drafting and review of NDAs, MOAs, and partnership agreements.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
   );
 };
+
+
+export default AboutOurHistory

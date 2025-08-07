@@ -1,6 +1,12 @@
-import { AboutCertification, AboutHero,AboutOurHistory,AboutSecondSection } from '@/components/about'
-import { Footer } from '@/components/layout'
-import React from 'react'
+
+
+import dynamic from "next/dynamic";
+
+const AboutHero = dynamic(() => import("@/components/about/AboutHero"));
+const AboutSecondSection = dynamic(() => import("@/components/about/AboutSecondSection"));
+const AboutOurHistory = dynamic(() => import("@/components/about/AboutOurHistory"));
+const AboutCertification = dynamic(() => import("@/components/about/AboutCertification"));
+
 
 export default function About() {
   return (

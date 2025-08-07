@@ -221,7 +221,7 @@ import { Header } from "../layout";
 import Image from "next/image";
 import gsap from "gsap";
 
-export const ContactUsHero = () => {
+ const ContactUsHero = () => {
   const titleRef = useRef(null);
   const textRefs = useRef<(HTMLParagraphElement | null)[]>([]);
   const buttonRef = useRef(null);
@@ -311,74 +311,151 @@ export const ContactUsHero = () => {
   }, []);
 
   return (
-    <main className="rounded-b-[60px] bg-white">
-      <div className="pt-2 rounded-b-[60px]">
-        <div className="w-[90vw] mx-auto">
-          <Header bgColor="black" textColor="white" />
-        </div>
+    // <main className="rounded-b-[60px] bg-white">
+    //   <div className="pt-2 rounded-b-[60px]">
+    //     <div className="w-[90vw] mx-auto">
+    //       <Header bgColor="black" textColor="white" />
+    //     </div>
 
-        <div className="flex gap-5 general-sans px-44 justify-between pt-16 h-full items-center">
-          {/* Left Section */}
-          <div className="flex flex-col gap-7 w-2/3">
-            <p ref={titleRef} className="text-5xl font-medium">
-              Get Your Queries Answered Instantly on{" "}
-              <span className="font-semibold bg-gradient-to-r from-[#047D00] to-[#0DC707] text-transparent bg-clip-text">
-                WhatsApp
-              </span>
-            </p>
-            <p
-              ref={(el) => {
-                textRefs.current[0] = el;
-              }}
-              className="text-lg"
-            >
-              Whether you need help with services, pricing, or general inquiries, our team is just a message away
-            </p>
-            <p
-              ref={(el) => {
-                textRefs.current[1] = el;
-              }}
-              className="text-lg"
-            >
-              Connect With Our Support Team!
-            </p>
-            <button
-              ref={buttonRef}
-              className="bg-gradient-to-r from-[#212121] to-[#070707] px-8 py-3 rounded-4xl w-fit text-white"
-            >
-              Chat now
-            </button>
-          </div>
+    //     <div className="flex gap-5 general-sans px-44 justify-between pt-16 h-full items-center">
+    //       {/* Left Section */}
+    //       <div className="flex flex-col gap-7 w-2/3">
+    //         <p ref={titleRef} className="text-5xl font-medium">
+    //           Get Your Queries Answered Instantly on{" "}
+    //           <span className="font-semibold bg-gradient-to-r from-[#047D00] to-[#0DC707] text-transparent bg-clip-text">
+    //             WhatsApp
+    //           </span>
+    //         </p>
+    //         <p
+    //           ref={(el) => {
+    //             textRefs.current[0] = el;
+    //           }}
+    //           className="text-lg"
+    //         >
+    //           Whether you need help with services, pricing, or general inquiries, our team is just a message away
+    //         </p>
+    //         <p
+    //           ref={(el) => {
+    //             textRefs.current[1] = el;
+    //           }}
+    //           className="text-lg"
+    //         >
+    //           Connect With Our Support Team!
+    //         </p>
+    //         <button
+    //           ref={buttonRef}
+    //           className="bg-gradient-to-r from-[#212121] to-[#070707] px-8 py-3 rounded-4xl w-fit text-white"
+    //         >
+    //           Chat now
+    //         </button>
+    //       </div>
 
-          {/* Right Image + Icons */}
-          <div className="relative w-[400px] h-[400px] will-change-transform">
-            <Image
-              alt="contact-hero"
-              className="absolute w-full h-full object-cover"
-              src={"/images/contact-us-hero.svg"}
-              width={400}
-              height={500}
-              ref={heroImgRef}
-            />
-            <Image
-              alt="whatsapp-icon"
-              className="absolute top-1/3"
-              src={"/icons/whatsapp-icon.svg"}
-              width={100}
-              height={100}
-              ref={icon1Ref}
-            />
-            <Image
-              alt="whatsapp-icon"
-              className="absolute right-0 top-1/2"
-              src={"/icons/whatsapp-icon.svg"}
-              width={60}
-              height={60}
-              ref={icon2Ref}
-            />
-          </div>
+    //       {/* Right Image + Icons */}
+    //       <div className="relative w-[400px] h-[400px] will-change-transform">
+    //         <Image
+    //           alt="contact-hero"
+    //           className="absolute w-full h-full object-cover"
+    //           src={"/images/contact-us-hero.svg"}
+    //           width={400}
+    //           height={500}
+    //           ref={heroImgRef}
+    //         />
+    //         <Image
+    //           alt="whatsapp-icon"
+    //           className="absolute top-1/3"
+    //           src={"/icons/whatsapp-icon.svg"}
+    //           width={100}
+    //           height={100}
+    //           ref={icon1Ref}
+    //         />
+    //         <Image
+    //           alt="whatsapp-icon"
+    //           className="absolute right-0 top-1/2"
+    //           src={"/icons/whatsapp-icon.svg"}
+    //           width={60}
+    //           height={60}
+    //           ref={icon2Ref}
+    //         />
+    //       </div>
+    //     </div>
+    //   </div>
+    // </main>
+
+    <main className="rounded-b-[40px] bg-white">
+  <div className="pt-2 rounded-b-[40px]">
+    <div className="w-[90vw] mx-auto">
+      <Header bgColor="black" textColor="white" />
+    </div>
+
+    <div className="flex flex-col-reverse md:flex-row gap-3 md:gap-10 general-sans px-5 md:px-14 lg:px-32 xl:px-40 justify-between pt-7 md:pt-12 lg:pt-16 h-full items-center">
+      {/* Left Section */}
+      <div className="flex flex-col pb-5 md:pb-20 gap-6 w-full lg:w-2/3 text-center lg:text-left">
+        <p ref={titleRef} className="text-3xl md:text-4xl lg:text-5xl font-medium">
+          Get Your Queries Answered Instantly on{" "}
+          <span className="font-semibold bg-gradient-to-r from-[#047D00] to-[#0DC707] text-transparent bg-clip-text">
+            WhatsApp
+          </span>
+        </p>
+        <p
+          ref={(el) => {
+            textRefs.current[0] = el;
+          }}
+          className="text-base md:text-lg"
+        >
+          Whether you need help with services, pricing, or general inquiries,
+          our team is just a message away
+        </p>
+        <p
+          ref={(el) => {
+            textRefs.current[1] = el;
+          }}
+          className="text-base md:text-lg"
+        >
+          Connect With Our Support Team!
+        </p>
+        <div className="flex justify-center lg:justify-start">
+          <button
+            ref={buttonRef}
+            className="bg-gradient-to-r from-[#212121] to-[#070707] px-8 py-3 rounded-4xl text-white"
+          >
+            Chat now
+          </button>
         </div>
       </div>
-    </main>
+
+      {/* Right Image + Icons */}
+      <div className="relative w-full h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] will-change-transform">
+        <Image
+          alt="contact-hero"
+          className="absolute w-full h-full object-contain sm:object-cover"
+          src={"/images/contact-us-hero.svg"}
+          width={400}
+          height={500}
+          ref={heroImgRef}
+        />
+        <Image
+          alt="whatsapp-icon"
+          className="absolute top-1/3 left-0"
+          src={"/icons/whatsapp-icon.svg"}
+          width={80}
+          height={80}
+          ref={icon1Ref}
+        />
+        <Image
+          alt="whatsapp-icon"
+          className="absolute right-0 top-1/2"
+          src={"/icons/whatsapp-icon.svg"}
+          width={60}
+          height={60}
+          ref={icon2Ref}
+        />
+      </div>
+    </div>
+  </div>
+</main>
+
   );
 };
+
+
+export default ContactUsHero

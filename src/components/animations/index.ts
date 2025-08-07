@@ -6,3 +6,4 @@ export { default as BlurText } from "./BlurText";
 export { default as ShinnyText } from "./ShinyText";
 export { default as ScrollReveal } from "./ScrollReveal";
 export { default as DotGrid } from "./DotGrid";
+export { default as VariableProximity } from "./VariableProximity";

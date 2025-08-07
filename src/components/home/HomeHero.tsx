@@ -770,17 +770,29 @@
 // };
 
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Header } from "../layout";
 import { IoSearchOutline } from "react-icons/io5";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ShinnyText } from "../animations";
+import Marquee from "react-fast-marquee";
+import { error } from "console";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const HomeHero = () => {
+const services = [
+  "GST Registration",
+  "ITR Filing",
+  "Company Incorporation",
+  "Trademark Registration",
+  "Accounting Service",
+  "MSME Registration",
+  "PAN Application",
+];
+
+ const HomeHero = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const line1Ref = useRef<HTMLParagraphElement | null>(null);
   const line2Ref = useRef<HTMLParagraphElement | null>(null);
@@ -830,8 +842,8 @@ export const HomeHero = () => {
           const directionY = 1; // Optional: same vertical for both
 
           gsap.to(card, {
-            rotateY: (deltaX / 9) * directionX,
-            rotateX: (-deltaY / 9) * directionY,
+            rotateY: (deltaX / 17) * directionX,
+            rotateX: (-deltaY / 17) * directionY,
             duration: 0.6,
             ease: "power2.out",
             overwrite: true,
@@ -894,20 +906,69 @@ export const HomeHero = () => {
     return () => ctx.revert();
   }, []);
 
+  const [query, setQuery] = useState("");
+  const [filteredServices, setFilteredServices] = useState<string[]>([]);
+  const [placeholder, setPlaceholder] = useState("");
+  const [typingIndex, setTypingIndex] = useState(0);
+  const [serviceIndex, setServiceIndex] = useState(0);
+
+  // Typing effect
+  useEffect(() => {
+    const currentService = services[serviceIndex];
+    const typingDelay = 100;
+    const holdDelay = 2000;
+
+    if (typingIndex < currentService.length) {
+      const timeout = setTimeout(() => {
+        setPlaceholder(`${currentService.slice(0, typingIndex + 1)}`);
+        setTypingIndex(typingIndex + 1);
+      }, typingDelay);
+
+      return () => clearTimeout(timeout);
+    } else {
+      const timeout = setTimeout(() => {
+        setTypingIndex(0);
+        setServiceIndex((prev) => (prev + 1) % services.length);
+      }, holdDelay);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [typingIndex, serviceIndex]);
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value;
+    setQuery(input);
+
+    if (input.trim() === "") {
+      setFilteredServices([]);
+      return;
+    }
+
+    const filtered = services.filter((service) =>
+      service.toLowerCase().includes(input.toLowerCase())
+    );
+
+    setFilteredServices(filtered);
+  };
+
+  {
+    /* bg-[url('/images/home-hero-bg-image.svg')] */
+  }
+
+
   return (
     <main>
-      {/* bg-[url('/images/home-hero-bg-image.svg')] */}
-      <div className="min-h-screen py-2 bg-no-repeat  bg-[url('/images/home-hero-bg-image.svg')] bg-cover bg-center text-white ">
+      <div className=" py-2 pb-10 bg-no-repeat  bg-[url('/images/home-hero-bg-image.svg')] bg-cover bg-center text-white ">
         <div className="w-[90vw] mx-auto">
           <Header />
         </div>
 
-        <div className="flex items-center justify-center gap-10 px-16 mt-24">
+        <div className="flex items-center justify-center gap-5 lg:gap-8 xl:gap-10 px-5 sm:px-8 md:px-10  xl:px-16 mt-14 lg:mt-16 xl:mt-24">
           {/* Left Cards */}
-          <div className="flex flex-col justify-between h-[75vh]">
+          <div className="hidden lg:flex flex-col    justify-between h-[75vh]">
             <div
               ref={addToRefs}
-              className="w-72 h-48 rounded-xl  relative"
+              className="w-44 lg:w-52 xl:w-72 h-56 xl:h-48 rounded-xl  relative"
             >
               <div className="absolute left-14 -bottom-5 z-50">
                 <Image
@@ -920,15 +981,25 @@ export const HomeHero = () => {
                 />
               </div>
 
-              <div className="w-full h-full">
-                <Image
+              {/* <div className="w-full h-full"> */}
+              {/* <Image
                   src="/images/home-hero-image1.svg"
                   alt="calculator"
                   className="bg-[#2a2a2a] rounded-md object-cover"
                   priority
                   fill
-                />
-              </div>
+                /> */}
+
+              <video
+                src="/videos/home-hero-video1.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="rounded-lg object-cover absolute w-full h-full hover:scale-125 transition-all duration-700"
+              />
+              {/* </div> */}
             </div>
 
             <div ref={addToRefs}>
@@ -943,19 +1014,20 @@ export const HomeHero = () => {
                 />
               </div>
 
-              <div className="w-72 h-48 rounded-xl bg-gradient-to-r from-[#37373726] via-[#FFFFFF26] to-[#3D3D3D26] border border-[#FFFFFF]/15 p-5">
+              <div className="w-44 lg:w-52 xl:w-72 h-56 xl:h-48 rounded-xl  hover:scale-125 transition-all duration-700 bg-gradient-to-r from-[#37373726] via-[#FFFFFF26] to-[#3D3D3D26] border border-[#FFFFFF]/15 p-5">
                 <Image
                   src="/icons/home-coins.svg"
                   width={30}
                   height={30}
                   alt="coins"
+                  className="hidden lg:block"
                 />
                 <p className="mt-5 font-Bricolage_Grotesque font-medium">
                   Accounting Services
                 </p>
                 <p className="text-xs mt-3 font-Bricolage_Grotesque">
-                From bookkeeping to balance sheets, we handle it all. Gain clarity, control, and peace of mind.
-
+                  From bookkeeping to balance sheets, we handle it all. Gain
+                  clarity, control, and peace of mind.
                 </p>
               </div>
             </div>
@@ -964,49 +1036,75 @@ export const HomeHero = () => {
           {/* Center Text */}
           <div
             ref={sectionRef}
-            className="basis-[40%] flex-grow flex flex-col items-center gap-5"
+            className="basis-[50%] xl:basis-[40%] flex-grow flex flex-col items-center gap-0 md:gap-2"
           >
             <p
               ref={line1Ref}
-              className="text-6xl font-medium font-Bricolage_Grotesque overflow-hidden"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center font-medium font-Bricolage_Grotesque overflow-hidden"
             >
               Tax and Business
             </p>
             <p
               ref={line2Ref}
-              className="text-6xl font-medium font-Bricolage_Grotesque overflow-hidden"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-center font-Bricolage_Grotesque overflow-hidden"
             >
               Consultancy Services
             </p>
-            <p className="text-sm w-3/4 text-center font-Bricolage_Grotesque">
+            <div className="text-sm mt-3 sm:mt-0 sm:w-3/4 text-center font-Bricolage_Grotesque">
               <ShinnyText
                 text="At YesToBoss, we provide expert Tax and Business Consultancy Services to minimize your taxes and grow."
                 disabled={false}
                 speed={2}
                 className="custom-class"
               />
-            </p>
+            </div>
 
-            <div
-              ref={searchBoxRef}
-              className="bg-white rounded-4xl flex mt-5 items-center w-3/4 justify-between py-1 px-1"
-            >
-              <div className="flex gap-2">
-                <IoSearchOutline className="text-black ms-5 text-2xl" />
-                <input
-                  type="text"
-                  className="border-none outline-none text-black"
-                  placeholder="Search services..."
-                />
+            <div className="relative xl:w-3/4 mt-5" ref={searchBoxRef}>
+              <div className="bg-white rounded-4xl flex gap-3 items-center justify-between py-1 px-1">
+                <div className="flex gap-2 flex-grow items-center">
+                  <IoSearchOutline className="text-black ms-5 text-2xl" />
+                  <input
+                    type="text"
+                    className="border-none outline-none text-black w-full text-sm"
+                    placeholder={placeholder}
+                    value={query}
+                    onChange={handleSearch}
+                  />
+                </div>
+                <button className="bg-black text-white rounded-4xl px-5 py-2 md:py-4 w-fit">
+                  Search <span className="hidden sm:inline-block">Service</span> 
+                </button>
               </div>
-              <button className="bg-black text-white rounded-4xl px-5 py-4">
-                Search Service
-              </button>
+
+              <div
+                className={`absolute left-0 right-0 mt-2 bg-white rounded-xl  shadow-lg z-10 overflow-hidden transition-all duration-500 ease-in-out
+         ${
+           query
+             ? "opacity-100 scale-y-100 h-fit max-h-28 scrollbar-hide overflow-y-auto pointer-events-auto"
+             : "opacity-0 scale-y-0 pointer-events-none"
+         } `}
+              >
+                {filteredServices.length > 0 ? (
+                  filteredServices.map((service, index) => (
+                    <div
+                      key={index}
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black"
+                    >
+                      {service}
+                    </div>
+                  ))
+                ) : (
+                  <div className="px-4 py-2 text-gray-500">
+                    No service found
+                  </div>
+                )}
+              </div>
+            
             </div>
           </div>
 
           {/* Right Cards */}
-          <div className="flex flex-col justify-between h-[75vh]">
+          <div className="hidden lg:flex flex-col  justify-between h-[75vh]">
             <div ref={addToRefs}>
               <div className="flex relative top-3 -left-4 z-50">
                 <Image
@@ -1019,25 +1117,28 @@ export const HomeHero = () => {
                 />
               </div>
 
-              <div className="w-72 h-48 rounded-xl bg-gradient-to-br from-[#FFFFFF26] to-[#0D0D0D80] border border-[#FFFFFF]/15 p-5">
+              <div className="w-44 lg:w-52 xl:w-72 h-56 xl:h-48 hover:scale-125 transition-all duration-700  rounded-xl bg-gradient-to-br from-[#FFFFFF26] to-[#0D0D0D80] border border-[#FFFFFF]/15 p-5">
                 <Image
                   src="/icons/home-coins.svg"
                   width={30}
                   height={30}
                   alt="coins"
+                  className="hidden lg:block"
                 />
                 <p className="mt-5 font-Bricolage_Grotesque font-medium">
                   Auditing Services
                 </p>
                 <p className="text-xs mt-3 font-Bricolage_Grotesque">
-                Our expert auditing services deliver precise reporting, uncover risks, and ensure total financial transparency and compliance.	
+                  Our expert auditing services deliver precise reporting,
+                  uncover risks, and ensure total financial transparency and
+                  compliance.
                 </p>
               </div>
             </div>
 
             <div
               ref={addToRefs}
-              className="w-72 h-48 rounded-xl  relative"
+              className="w-44 lg:w-52 xl:w-72 h-56 xl:h-48 rounded-xl  relative"
             >
               <div className="absolute left-4 -top-5 z-50">
                 <Image
@@ -1050,7 +1151,7 @@ export const HomeHero = () => {
                 />
               </div>
 
-              <div className="w-full h-full">
+              {/* <div className="w-full h-full">
                 <Image
                   src="/images/home-hero-image2.svg"
                   alt="calculator"
@@ -1058,7 +1159,17 @@ export const HomeHero = () => {
                   priority
                   fill
                 />
-              </div>
+              </div> */}
+
+              <video
+                src="/videos/home-hero-video2.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="rounded-lg object-cover absolute w-full h-full hover:scale-125 transition-all duration-700"
+              />
             </div>
           </div>
         </div>
@@ -1066,3 +1177,5 @@ export const HomeHero = () => {
     </main>
   );
 };
+
+export default HomeHero;
