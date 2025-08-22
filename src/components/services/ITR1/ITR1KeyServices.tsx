@@ -1,300 +1,3 @@
-// import React from "react";
-
-
-// export const ITR1KeyServices = () => {
-//   return (
-//     <section className="bg-white min-h-screen p-16 font-Bricolage_Grotesque">
-//       <div className="flex justify-between items-center gap-5">
-      
-//         <div className="flex flex-col gap-4 w-2/5">
-//           <p className="text-sm ">Key Services</p>
-//           <p className="text-5xl">
-//             Comprehensive Audit Solutions for Every Challenge
-//           </p>
-//           <p className="text-sm">
-//             Explore our specialized internal audit services designed to manage
-//             risk, enhance control, and ensure operational and regulatory
-//             excellence
-//           </p>
-//           <button className="bg-[#070707] px-8 py-3 rounded-4xl text-white w-fit">
-//             Book Consultation
-//           </button>
-//         </div>
-
-//         <div className="grid grid-cols-2 gap-4 flex-grow">
-//           <div className="relative h-80  rounded-2xl top-5">
-//             <img
-//               src="/images/itr1KeySerivces1.jpg"
-//               alt="fdf"
-//               className="absolute w-full z-10 h-full object-cover  rounded-2xl"
-//             />
-//             <div className="bg-black/75 absolute w-full h-full z-20  rounded-2xl"></div>
-
-//             <div className="flex flex-col  rounded-2xl justify-between absolute w-full h-full z-30 text-white p-5">
-//               <p className="text-3xl">01</p>
-
-//               <div className="flex flex-col gap-2">
-//                 <p className="text-3xl">Risk Assessment</p>
-//                 <p className="text-sm">
-//                   We evaluate your organization’s key risk areas and assess the
-//                   design and effectiveness of internal controls to ensure
-//                   proactive risk mitigation.
-//                 </p>
-//               </div>
-
-//               <div className="flex justify-end">
-//                 <img
-//                   src="/icons/ArrowUpRight.svg"
-//                   alt=""
-//                   className="w-10 h-10"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-
-//           <div className="relative h-80  rounded-2xl ">
-//             <img
-//               src="/images/itr1KeySerivces2.jpg"
-//               alt="fdf"
-//               className="absolute w-full z-10 h-full object-cover  rounded-2xl"
-//             />
-//             <div className="bg-black/75 absolute w-full h-full z-20  rounded-2xl"></div>
-
-//             <div className="flex flex-col  rounded-2xl justify-between absolute w-full h-full z-30 text-white p-5">
-//               <p className="text-3xl">02</p>
-
-//               <div className="flex flex-col gap-2">
-//                 <p className="text-3xl">Operational & Financial Audits</p>
-//                 <p className="text-sm">
-//                   We evaluate your organization’s key risk areas and assess the
-//                   design and effectiveness of internal controls to ensure
-//                   proactive risk mitigation.
-//                 </p>
-//               </div>
-
-//               <div className="flex justify-end">
-//                 <img
-//                   src="/icons/ArrowUpRight.svg"
-//                   alt=""
-//                   className="w-10 h-10"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-
-//           <div className="relative h-80  rounded-2xl top-5">
-//             <img
-//               src="/images/itr1KeySerivces3.jpg"
-//               alt="fdf"
-//               className="absolute w-full z-10 h-full object-cover  rounded-2xl"
-//             />
-//             <div className="bg-black/75 absolute w-full h-full z-20  rounded-2xl"></div>
-
-//             <div className="flex flex-col  rounded-2xl justify-between absolute w-full h-full z-30 text-white p-5">
-//               <p className="text-3xl">03</p>
-
-//               <div className="flex flex-col gap-2">
-//                 <p className="text-3xl">Risk Compliance Audits</p>
-//                 <p className="text-sm">
-//                   We evaluate your organization’s key risk areas and assess the
-//                   design and effectiveness of internal controls to ensure
-//                   proactive risk mitigation.
-//                 </p>
-//               </div>
-
-//               <div className="flex justify-end">
-//                 <img
-//                   src="/icons/ArrowUpRight.svg"
-//                   alt=""
-//                   className="w-10 h-10"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-
-//           <div className="relative h-80  rounded-2xl">
-//             <img
-//               src="/images/itr1KeySerivces4.jpg"
-//               alt="fdf"
-//               className="absolute w-full z-10 h-full object-cover  rounded-2xl"
-//             />
-//             <div className="bg-black/75 absolute w-full h-full z-20  rounded-2xl"></div>
-
-//             <div className="flex flex-col  rounded-2xl justify-between absolute w-full h-full z-30 text-white p-5">
-//               <p className="text-3xl">04</p>
-
-//               <div className="flex flex-col gap-2">
-//                 <p className="text-3xl">IT & Cybersecurity Audits</p>
-//                 <p className="text-sm">
-//                   We evaluate your organization’s key risk areas and assess the
-//                   design and effectiveness of internal controls to ensure
-//                   proactive risk mitigation.
-//                 </p>
-//               </div>
-
-//               <div className="flex justify-end">
-//                 <img
-//                   src="/icons/ArrowUpRight.svg"
-//                   alt=""
-//                   className="w-10 h-10"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// "use client";
-// import React, { useEffect, useRef } from "react";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// export const ITR1KeyServices = () => {
-//   const textRef = useRef<HTMLDivElement>(null);
-//   const cardRefs = useRef<HTMLDivElement[]>([]);
-
-//   const addToCardRefs = (el: HTMLDivElement) => {
-//     if (el && !cardRefs.current.includes(el)) {
-//       cardRefs.current.push(el);
-//     }
-//   };
-
-//   useEffect(() => {
-//     gsap.from(textRef.current, {
-//       opacity: 0,
-//       y: 50,
-//       duration: 1,
-//       ease: "power3.out",
-//       scrollTrigger: {
-//         trigger: textRef.current,
-//         start: "top 80%",
-//       },
-//     });
-
-//     gsap.from(cardRefs.current, {
-//       opacity: 0,
-//       scale: 0.9,
-//       stagger: 0.2,
-//       duration: 1,
-//       ease: "power2.out",
-//       scrollTrigger: {
-//         trigger: cardRefs.current[0],
-//         start: "top 85%",
-//       },
-//     });
-//   }, []);
-
-//   return (
-//     <section className="bg-white min-h-screen p-16 font-Bricolage_Grotesque">
-//       <div className="flex justify-between items-center gap-5 flex-wrap lg:flex-nowrap">
-//         {/* Text Section */}
-//         <div className="flex flex-col gap-4 w-full lg:w-2/5" ref={textRef}>
-//           <p className="text-sm">Key Services</p>
-//           <p className="text-5xl">
-//             Comprehensive Audit Solutions for Every Challenge
-//           </p>
-//           <p className="text-sm">
-//             Explore our specialized internal audit services designed to manage
-//             risk, enhance control, and ensure operational and regulatory
-//             excellence
-//           </p>
-//           <button className="bg-[#070707] px-8 py-3 rounded-4xl text-white w-fit">
-//             Book Consultation
-//           </button>
-//         </div>
-
-//         {/* Cards Section */}
-//         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow">
-//           {[
-//             {
-//               title: "Risk Assessment",
-//               image: "/images/itr1KeySerivces1.jpg",
-//               index: "01",
-//             },
-//             {
-//               title: "Operational & Financial Audits",
-//               image: "/images/itr1KeySerivces2.jpg",
-//               index: "02",
-//             },
-//             {
-//               title: "Risk Compliance Audits",
-//               image: "/images/itr1KeySerivces3.jpg",
-//               index: "03",
-//             },
-//             {
-//               title: "IT & Cybersecurity Audits",
-//               image: "/images/itr1KeySerivces4.jpg",
-//               index: "04",
-//             },
-//           ].map((service, i) => (
-//             <div
-//               key={i}
-//               className={`relative h-80 rounded-2xl ${i % 2 === 0 ? "top-5" : ""}`}
-//               ref={addToCardRefs}
-//             >
-//               <img
-//                 src={service.image}
-//                 alt=""
-//                 className="absolute w-full z-10 h-full object-cover rounded-2xl"
-//               />
-//               <div className="bg-black/75 absolute w-full h-full z-20 rounded-2xl"></div>
-
-//               <div className="flex flex-col justify-between absolute w-full h-full z-30 text-white p-5 rounded-2xl">
-//                 <p className="text-3xl">{service.index}</p>
-//                 <div className="flex flex-col gap-2">
-//                   <p className="text-3xl">{service.title}</p>
-//                   <p className="text-sm">
-//                     We evaluate your organization’s key risk areas and assess
-//                     the design and effectiveness of internal controls to ensure
-//                     proactive risk mitigation.
-//                   </p>
-//                 </div>
-//                 <div className="flex justify-end">
-//                   <img
-//                     src="/icons/ArrowUpRight.svg"
-//                     alt=""
-//                     className="w-10 h-10"
-//                   />
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-
-
-
-
-
-
-
-
 "use client";
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
@@ -302,128 +5,122 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const ITR1KeyServices = () => {
+const ITR1KeyServices = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<HTMLDivElement[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-  // ✅ Function to collect refs
-  const addToCardRefs = (el: HTMLDivElement | null) => {
-    if (el && !cardRefs.current.includes(el)) {
-      cardRefs.current.push(el);
-    }
-  };
+  // const addToCardRefs = (el: HTMLDivElement | null) => {
+  //   if (el && !cardRefs.current.includes(el)) {
+  //     cardRefs.current.push(el);
+  //   }
+  // };
 
-  // ✅ Clear refs BEFORE rendering
-  cardRefs.current = [];
+  // useLayoutEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     // Animate text
+  //     gsap.from(textRef.current, {
+  //       opacity: 0,
+  //       y: 80,
+  //       duration: 1.2,
+  //       ease: "power4.out",
+  //       scrollTrigger: {
+  //         trigger: textRef.current,
+  //         start: "top 80%",
+  //         once: true,
+  //       },
+  //     });
 
-  useLayoutEffect(() => {
-    // Animate text section
-    if (textRef.current) {
-      gsap.from(textRef.current, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: textRef.current,
-          start: "top 80%",
-        },
-      });
-    }
+  //     // Animate cards with smooth stagger
+  //     ScrollTrigger.batch(cardRefs.current, {
+  //       interval: 0.2,
+  //       batchMax: 3,
+  //       onEnter: (batch) =>
+  //         gsap.fromTo(
+  //           batch,
+  //           { opacity: 0, y: 80, scale: 0.95 },
+  //           {
+  //             opacity: 1,
+  //             y: 0,
+  //             scale: 1,
+  //             duration: 1.2,
+  //             ease: "power4.out",
+  //             stagger: { each: 0.25, from: "start" },
+  //           }
+  //         ),
+  //       once: true,
+  //     });
 
-    // Animate each card individually
-    cardRefs.current.forEach((card, i) => {
-      gsap.from(card, {
-        opacity: 0,
-        scale: 0.9,
-        duration: 1,
-        ease: "power2.out",
-        delay: i * 0.2,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-        },
-      });
-    });
-  }, []);
+  //     // Refresh after images load
+  //     window.addEventListener("load", () => ScrollTrigger.refresh());
+  //   }, sectionRef);
+
+  //   return () => ctx.revert();
+  // }, []);
 
   const services = [
-    {
-      title: "Risk Assessment",
-      image: "/images/itr1KeySerivces1.jpg",
-      index: "01",
-    },
-    {
-      title: "Operational & Financial Audits",
-      image: "/images/itr1KeySerivces2.jpg",
-      index: "02",
-    },
-    {
-      title: "Risk Compliance Audits",
-      image: "/images/itr1KeySerivces3.jpg",
-      index: "03",
-    },
-    {
-      title: "IT & Cybersecurity Audits",
-      image: "/images/itr1KeySerivces4.jpg",
-      index: "04",
-    },
+    { title: "E-Verify Return", image: "/images/itr1KeySerivces1.jpg", description: "Use Aadhaar OTP or EVC. If that fails, send signed ITR-V to CPC Bengaluru for completion." },
+    { title: "Track ITR Status", image: "/images/itr1KeySerivces2.jpg", description:'Monitor your return and refund status on the income tax portal.' },
+    { title: "Revise if Needed:", image: "/images/itr1KeySerivces2.jpg", description:' Made a mistake? File a Revised Return under Section 139(5).' },
+    { title: "Stay Alert", image: "/images/itr1KeySerivces2.jpg", description:' Respond to any notices from the department with expert help.' },
+   
   ];
 
   return (
-    <section className="bg-white min-h-screen p-16 font-Bricolage_Grotesque">
-      <div className="flex justify-between items-center gap-5 flex-wrap lg:flex-nowrap">
+    <section
+      ref={sectionRef}
+      className="bg-white min-h-screen px-4 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 font-Bricolage_Grotesque"
+    >
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 lg:gap-5">
         {/* Text Section */}
         <div
           className="flex flex-col gap-4 w-full lg:w-2/5 will-change-transform"
           ref={textRef}
         >
-          <p className="text-sm">Key Services</p>
-          <p className="text-5xl">
-            Comprehensive Audit Solutions for Every Challenge
+          {/* <p className="text-xs sm:text-sm">Key Services</p> */}
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug lg:leading-tight">
+          What Happens After Filing?
           </p>
-          <p className="text-sm">
+          {/* <p className="text-xs sm:text-sm md:text-base leading-5 sm:leading-6 text-gray-700">
             Explore our specialized internal audit services designed to manage
             risk, enhance control, and ensure operational and regulatory
             excellence
-          </p>
-          <button className="bg-[#070707] px-8 py-3 rounded-4xl text-white w-fit">
+          </p> */}
+          <button className="bg-[#070707] px-5 sm:px-8 py-2 sm:py-3 rounded-3xl text-white text-xs sm:text-sm w-fit">
             Book Consultation
           </button>
         </div>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow w-full lg:w-3/5">
           {services.map((service, i) => (
             <div
               key={i}
-              className={`relative h-80 rounded-2xl will-change-transform ${
-                i % 2 === 0 ? "top-5" : ""
+              className={`relative h-64 sm:h-72 md:h-80 rounded-2xl transform transition-transform duration-500 hover:scale-[1.03] hover:-translate-y-2 will-change-transform ${
+                i % 2 === 0 ? "sm:top-5" : ""
               }`}
-              ref={addToCardRefs}
+              // ref={addToCardRefs}
             >
               <img
                 loading="lazy"
                 src={service.image}
-                alt=""
+                alt={service.title}
                 className="absolute w-full z-10 h-full object-cover rounded-2xl"
               />
               <div className="bg-black/75 absolute w-full h-full z-20 rounded-2xl" />
-              <div className="flex flex-col justify-between absolute w-full h-full z-30 text-white p-5 rounded-2xl">
-                <p className="text-3xl">{service.index}</p>
-                <div className="flex flex-col gap-2">
-                  <p className="text-3xl">{service.title}</p>
-                  <p className="text-sm">
-                    We evaluate your organization’s key risk areas and assess
-                    the design and effectiveness of internal controls to ensure
-                    proactive risk mitigation.
+              <div className="flex flex-col justify-between absolute w-full h-full z-30 text-white p-4 sm:p-5 rounded-2xl">
+                <p className="text-xl sm:text-2xl md:text-3xl">0{i+1}</p>
+                <div className="flex flex-col gap-1 sm:gap-2">
+                  <p className="text-lg sm:text-xl md:text-2xl">{service.title}</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm leading-4 sm:leading-5">
+                   {service.description}
                   </p>
                 </div>
                 <div className="flex justify-end">
                   <img
                     src="/icons/ArrowUpRight.svg"
-                    alt=""
-                    className="w-10 h-10"
+                    alt="Arrow Icon"
+                    className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10"
                   />
                 </div>
               </div>
@@ -435,3 +132,4 @@ export const ITR1KeyServices = () => {
   );
 };
 
+export default ITR1KeyServices;

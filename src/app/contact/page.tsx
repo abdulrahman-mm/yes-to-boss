@@ -10,12 +10,12 @@ const ContactFollowUs = dynamic(() => import("@/components/contact/ContactFollow
 
 const contact = () => {
   return (
-    <div className=" bg-gradient-to-br pb-20 from-[#212121] to-[#070707]">
+    <div className=" bg-gradient-to-br  from-[#212121] to-[#070707]">
       <ContactUsHero />
       <ContactUsForm/>
-      <ContactEmpowerYourBusiness/>
+      {/* <ContactEmpowerYourBusiness/> */}
       <ContactFollowUs/>
-      <ContactTrustedInsights/>
+      {/* <ContactTrustedInsights/> */}
     </div>
   );
 };

@@ -1,452 +1,13 @@
-// 'use client'
-// import { BlurText } from "@/components/animations";
-// import { Header } from "@/components/layout";
-// import React from "react";
-
-// export const ITR1Hero = () => {
-//   return (
-//     <section className="bg-white min-h-screen pt-2 general-sans p-16">
-//       <div className="w-[90vw] mx-auto">
-//         <Header bgColor="black" textColor="white" />
-//       </div>
-
-//       <div className="flex justify-center  items-center py-28 flex-col gap-2">
-//         <p className="font-semibold text-6xl ">ITR-1 Return Filing (Sahaj)</p>
-        
-//         <p className="font-semibold text-6xl ">
-//           in <span className="text-[#6A6A6A]">India</span>
-//         </p>
-//         <p className="font-normal text-sm w-2/5 text-center">
-//           Providing expert accounting, tax planning, and financial consulting
-//           services to help businesses grow, comply, and achieve long-term
-//           success.
-//         </p>
-
-//         <div className="flex gap-4 mt-5 items-center">
-//           <button className="bg-black text-white rounded-full px-16 py-3 font-medium text-sm">
-//             Get Started
-//           </button>
-
-//           <div className="flex items-start gap-3">
-//             <div className="flex items-center">
-//               <p className="w-8 h-8 rounded-full bg-gray-500"></p>
-//               <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
-//               <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
-//             </div>
-
-//             <div>
-//               <p className="font-medium">100k+</p>
-//               <p className="font-normal text-sm">Customer</p>
-//               <p className="font-normal text-sm">Satisfied</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="flex  gap-28 justify-between">
-//         <div className="flex flex-col gap-3 w-[60%]">
-//           <p className=" font-medium text-sm font-Bricolage_Grotesque">Key Services</p>
-//           {/* <p className="font-semibold text-5xl">What Is ITR-1 Sahaj Return Filing?</p> */}
-
-//           <BlurText
-//             text="What Is ITR-1 Sahaj Return Filing?"
-//             delay={50}
-//             animateBy="words"
-//             direction="top"
-//             className="font-semibold text-5xl"
-//           />
-//           <p className="text-sm leading-5 font-medium font-Bricolage_Grotesque">
-//             ITR-1, also known as Sahaj, is a simplified income tax return form
-//             prescribed under the Income Tax Act, 1961, for resident individuals
-//             earning up to ₹50,00,000 from eligible income sources. This form is
-//             ideal for most salaried taxpayers, and offers a streamlined approach
-//             for filing returns online.ITR-1, also known as Sahaj, is a
-//             simplified income tax return form prescribed under the Income Tax
-//             Act, 1961, for resident individuals earning up to ₹50,00,000 from
-//             eligible income sources. This form is ideal for most salaried
-//             taxpayers, and offers a streamlined approach for filing returns
-//             online.ITR-1, also known as Sahaj, is a simplified income tax return
-//             form prescribed under the Income Tax Act, 1961, for resident
-//             individuals earning up to ₹50,00,000 from eligible income sources.
-//             This form is ideal for most salaried taxpayers, and offers a
-//             streamlined approach for filing returns online.ITR-1, also known as
-//             Sahaj, is a simplified income tax return form prescribed under the
-//             Income Tax Act, 1961, for resident individuals earning up to
-//             ₹50,00,000 from eligible income sources. This form is ideal for most
-//             salaried taxpayers, and offers a streamlined approach for filing
-//             returns online.ITR-1, also known as Sahaj, is a simplified income
-//             tax return form prescribed under the Income Tax Act, 1961, for
-//             resident individuals earning up to ₹50,00,000 from eligible income
-//             sources. This form is ideal for most salaried taxpayers, and offers
-//             a streamlined approach for filing returns online.ITR-1, also known
-//             as Sahaj, is a simplified income tax return form prescribed under
-//             the Income Tax Act, 1961, for resident individuals earning up to
-//             ₹50,00,000 from eligible income sources. This form is ideal for most
-//             salaried taxpayers, and offers a streamlined approach for filing
-//             returns online.
-//           </p>
-//         </div>
-
-//         <div className="h-96 w-96 flex-grow bg-gray-300">
-
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-
-
-
-
-
-
-// "use client";
-
-// import { BlurText } from "@/components/animations";
-// import { Header } from "@/components/layout";
-// import React, { useEffect, useRef } from "react";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// export const ITR1Hero = () => {
-//   const headingRef = useRef(null);
-//   const subheadingRef = useRef(null);
-//   const descRef = useRef(null);
-//   const btnRef = useRef(null);
-//   const userStatsRef = useRef(null);
-//   const sectionTextRef = useRef(null);
-//   const imageBoxRef = useRef(null);
-
-//   useEffect(() => {
-//     const tl = gsap.timeline({
-//       defaults: { ease: "power3.out", duration: 1 },
-//     });
-
-//     tl.from(headingRef.current, {
-//       y: 50,
-//       opacity: 0,
-//     })
-//       .from(subheadingRef.current, {
-//         y: 50,
-//         opacity: 0,
-//       }, "-=0.8")
-//       .from(descRef.current, {
-//         y: 30,
-//         opacity: 0,
-//       }, "-=0.7")
-//       .from(btnRef.current, {
-//         scale: 0.8,
-//         opacity: 0,
-//       }, "-=0.7")
-//       .from(userStatsRef.current, {
-//         x: 50,
-//         opacity: 0,
-//       }, "-=0.8");
-
-//     gsap.from(sectionTextRef.current, {
-//       scrollTrigger: {
-//         trigger: sectionTextRef.current,
-//         start: "top 80%",
-//       },
-//       y: 50,
-//       opacity: 0,
-//       duration: 1,
-//       ease: "power3.out",
-//     });
-
-//     gsap.from(imageBoxRef.current, {
-//       scrollTrigger: {
-//         trigger: imageBoxRef.current,
-//         start: "top 90%",
-//       },
-//       scale: 0.8,
-//       opacity: 0,
-//       duration: 1.2,
-//       ease: "power3.out",
-//     });
-//   }, []);
-
-//   return (
-//     <section className="bg-white min-h-screen pt-2 general-sans p-16">
-//       <div className="w-[90vw] mx-auto">
-//         <Header bgColor="black" textColor="white" />
-//       </div>
-
-//       <div className="flex justify-center items-center py-28 flex-col gap-2">
-//         <p ref={headingRef} className="font-semibold text-6xl">
-//           ITR-1 Return Filing (Sahaj)
-//         </p>
-
-//         <p ref={subheadingRef} className="font-semibold text-6xl">
-//           in <span className="text-[#6A6A6A]">India</span>
-//         </p>
-
-//         <p ref={descRef} className="font-normal text-sm w-2/5 text-center">
-//           Providing expert accounting, tax planning, and financial consulting
-//           services to help businesses grow, comply, and achieve long-term
-//           success.
-//         </p>
-
-//         <div className="flex gap-4 mt-5 items-center" ref={btnRef}>
-//           <button className="bg-black text-white rounded-full px-16 py-3 font-medium text-sm">
-//             Get Started
-//           </button>
-
-//           <div className="flex items-start gap-3" ref={userStatsRef}>
-//             <div className="flex items-center">
-//               <p className="w-8 h-8 rounded-full bg-gray-500"></p>
-//               <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
-//               <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
-//             </div>
-
-//             <div>
-//               <p className="font-medium">100k+</p>
-//               <p className="font-normal text-sm">Customer</p>
-//               <p className="font-normal text-sm">Satisfied</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="flex gap-28 justify-between">
-//         <div className="flex flex-col gap-3 w-[60%]" ref={sectionTextRef}>
-//           <p className="font-medium text-sm font-Bricolage_Grotesque">Key Services</p>
-
-//           <BlurText
-//             text="What Is ITR-1 Sahaj Return Filing?"
-//             delay={50}
-//             animateBy="words"
-//             direction="top"
-//             className="font-semibold text-5xl"
-//           />
-//           <p className="text-sm leading-5 font-medium font-Bricolage_Grotesque">
-//             ITR-1, also known as Sahaj, is a simplified income tax return form
-//             prescribed under the Income Tax Act, 1961, for resident individuals
-//             earning up to ₹50,00,000 from eligible income sources. This form is
-//             ideal for most salaried taxpayers and offers a streamlined approach
-//             for filing returns online.
-//           </p>
-//         </div>
-
-//         <div className="h-96 w-96 flex-grow bg-gray-300" ref={imageBoxRef}></div>
-//       </div>
-//     </section>
-//   );
-// };
-
-
-
-
-
-
-// "use client";
-
-// import { BlurText } from "@/components/animations";
-// import { Header } from "@/components/layout";
-// import React, { useEffect, useRef } from "react";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// export const ITR1Hero = () => {
-//   const headingRef = useRef(null);
-//   const subheadingRef = useRef(null);
-//   const descRef = useRef(null);
-//   const btnRef = useRef(null);
-//   const userStatsRef = useRef(null);
-//   const sectionTextRef = useRef(null);
-//   const imageBoxRef = useRef(null);
-
-//   useEffect(() => {
-//     const ctx = gsap.context(() => {
-//       const tl = gsap.timeline({
-//         defaults: {
-//           ease: "power3.out",
-//           duration: 1,
-//           lazy: true,
-//           immediateRender: false,
-//         },
-//       });
-
-//       tl.from(headingRef.current, {
-//         y: 50,
-//         opacity: 0,
-//       })
-//         .from(
-//           subheadingRef.current,
-//           {
-//             y: 50,
-//             opacity: 0,
-//           },
-//           "-=0.8"
-//         )
-//         .from(
-//           descRef.current,
-//           {
-//             y: 30,
-//             opacity: 0,
-//           },
-//           "-=0.7"
-//         )
-//         .from(
-//           btnRef.current,
-//           {
-//             scale: 0.8,
-//             opacity: 0,
-//           },
-//           "-=0.7"
-//         )
-//         .from(
-//           userStatsRef.current,
-//           {
-//             x: 50,
-//             opacity: 0,
-//           },
-//           "-=0.8"
-//         );
-
-//       gsap.from(sectionTextRef.current, {
-//         scrollTrigger: {
-//           trigger: sectionTextRef.current,
-//           start: "top 80%",
-//           once: true,
-//         },
-//         y: 50,
-//         opacity: 0,
-//         duration: 1,
-//         ease: "power3.out",
-//       });
-
-//       gsap.from(imageBoxRef.current, {
-//         scrollTrigger: {
-//           trigger: imageBoxRef.current,
-//           start: "top 90%",
-//           once: true,
-//         },
-//         scale: 0.8,
-//         opacity: 0,
-//         duration: 1.2,
-//         ease: "power3.out",
-//       });
-//     });
-
-//     return () => ctx.revert(); // Cleanup
-//   }, []);
-
-//   return (
-//     <section className="bg-white min-h-screen pt-2 general-sans p-16">
-//       <div className="w-[90vw] mx-auto">
-//         <Header bgColor="black" textColor="white" />
-//       </div>
-
-//       <div className="flex justify-center items-center py-28 flex-col gap-2">
-//         <p
-//           ref={headingRef}
-//           className="font-semibold text-6xl will-change-transform translate-z-0"
-//         >
-//           ITR-1 Return Filing (Sahaj)
-//         </p>
-
-//         <p
-//           ref={subheadingRef}
-//           className="font-semibold text-6xl will-change-transform translate-z-0"
-//         >
-//           in <span className="text-[#6A6A6A]">India</span>
-//         </p>
-
-//         <p
-//           ref={descRef}
-//           className="font-normal text-sm w-2/5 text-center will-change-transform translate-z-0"
-//         >
-//           Providing expert accounting, tax planning, and financial consulting
-//           services to help businesses grow, comply, and achieve long-term
-//           success.
-//         </p>
-
-//         <div
-//           className="flex gap-4 mt-5 items-center will-change-transform translate-z-0"
-//           ref={btnRef}
-//         >
-//           <button className="bg-black text-white rounded-full px-16 py-3 font-medium text-sm">
-//             Get Started
-//           </button>
-
-//           <div
-//             className="flex items-start gap-3 will-change-transform translate-z-0"
-//             ref={userStatsRef}
-//           >
-//             <div className="flex items-center">
-//               <p className="w-8 h-8 rounded-full bg-gray-500"></p>
-//               <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
-//               <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
-//             </div>
-
-//             <div>
-//               <p className="font-medium">100k+</p>
-//               <p className="font-normal text-sm">Customer</p>
-//               <p className="font-normal text-sm">Satisfied</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="flex gap-28 justify-between">
-//         <div
-//           className="flex flex-col gap-3 w-[60%] will-change-transform translate-z-0"
-//           ref={sectionTextRef}
-//         >
-//           <p className="font-medium text-sm font-Bricolage_Grotesque">
-//             Key Services
-//           </p>
-
-//           <BlurText
-//             text="What Is ITR-1 Sahaj Return Filing?"
-//             delay={50}
-//             animateBy="words"
-//             direction="top"
-//             className="font-semibold text-5xl"
-//           />
-
-//           <p className="text-sm leading-5 font-medium font-Bricolage_Grotesque">
-//             ITR-1, also known as Sahaj, is a simplified income tax return form
-//             prescribed under the Income Tax Act, 1961, for resident individuals
-//             earning up to ₹50,00,000 from eligible income sources. This form is
-//             ideal for most salaried taxpayers and offers a streamlined approach
-//             for filing returns online.
-//           </p>
-//         </div>
-
-//         <div
-//           className="h-96 w-96 flex-grow bg-gray-300 will-change-transform translate-z-0"
-//           ref={imageBoxRef}
-//         ></div>
-//       </div>
-//     </section>
-//   );
-// };
-
-
-
-
-
-
-
-
 "use client";
-
 import { BlurText } from "@/components/animations";
 import { Header } from "@/components/layout";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
-export const ITR1Hero = () => {
+const ITR1Hero = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
   const descRef = useRef(null);
@@ -538,65 +99,70 @@ export const ITR1Hero = () => {
   }, []);
 
   return (
-    <section className="bg-white min-h-screen pt-2 general-sans p-16">
-      <div className="w-[90vw] mx-auto">
+    <section className="bg-white min-h-screen pt-2 pb-5 md:pb-0 general-sans px-4 sm:px-8 md:px-12 lg:px-16">
+      <div className="w-full md:w-[90vw] mx-auto">
         <Header bgColor="black" textColor="white" />
       </div>
 
-      <div className="flex justify-center items-center py-28 flex-col gap-2">
+      {/* Hero Texts */}
+      <div className="flex justify-center items-center py-16 md:py-28 flex-col gap-2 text-center">
         <p
           ref={headingRef}
-          className="font-semibold text-6xl will-change-transform translate-z-0"
+          className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl will-change-transform translate-z-0"
         >
           ITR-1 Return Filing (Sahaj)
         </p>
 
         <p
           ref={subheadingRef}
-          className="font-semibold text-6xl will-change-transform translate-z-0"
+          className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl will-change-transform translate-z-0"
         >
           in <span className="text-[#6A6A6A]">India</span>
         </p>
 
         <p
           ref={descRef}
-          className="font-normal text-sm w-2/5 text-center will-change-transform translate-z-0"
+          className="font-normal text-sm sm:text-base md:text-lg lg:text-sm w-full sm:w-4/5 md:w-3/5 lg:w-2/5 text-center will-change-transform translate-z-0"
         >
-          Providing expert accounting, tax planning, and financial consulting
-          services to help businesses grow, comply, and achieve long-term
-          success.
+          We simplify ITR-1 (Sahaj) return filing for individuals earning up to
+          ₹50 lakhs from salary, pension, property, or interest, with expert
+          support.
         </p>
 
         <div
-          className="flex gap-4 mt-5 items-center will-change-transform translate-z-0"
+          className="flex flex-col sm:flex-row gap-4 mt-5 items-center will-change-transform translate-z-0"
           ref={btnRef}
         >
-          <button className="bg-black text-white rounded-full px-16 py-3 font-medium text-sm">
-            Get Started
-          </button>
+          <Link href="/contact">
+            <button className="bg-black hover:bg-gray-600 cursor-pointer transition-all duration-500 text-white rounded-full px-8 sm:px-12 md:px-16 py-3 font-medium text-sm">
+              Get Started
+            </button>
+          </Link>
 
           <div
-            className="flex items-start gap-3 will-change-transform translate-z-0"
+            className="flex items-center gap-3 will-change-transform translate-z-0"
             ref={userStatsRef}
           >
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <p className="w-8 h-8 rounded-full bg-gray-500"></p>
               <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
               <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
-            </div>
+            </div> */}
+            <img src="/icons/three-persons-image.svg" alt="" />
 
-            <div>
-              <p className="font-medium">100k+</p>
-              <p className="font-normal text-sm">Customer</p>
-              <p className="font-normal text-sm">Satisfied</p>
+            <div className="text-center sm:text-left">
+              <p className="font-medium text-sm sm:text-base">100k+</p>
+              <p className="font-normal text-xs sm:text-sm">Customer</p>
+              <p className="font-normal text-xs sm:text-sm">Satisfied</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex gap-28 justify-between">
+      {/* Key Services Section */}
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-28 justify-between items-center lg:items-start">
         <div
-          className="flex flex-col gap-3 w-[60%] will-change-transform translate-z-0"
+          className="flex flex-col gap-3 w-full lg:w-[60%] will-change-transform translate-z-0"
           ref={sectionTextRef}
         >
           <p className="font-medium text-sm font-Bricolage_Grotesque">
@@ -608,10 +174,10 @@ export const ITR1Hero = () => {
             delay={50}
             animateBy="words"
             direction="top"
-            className="font-semibold text-5xl"
+            className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
           />
 
-          <p className="text-sm leading-5 font-medium font-Bricolage_Grotesque">
+          <p className="text-sm sm:text-base md:text-lg lg:text-sm leading-5 font-medium font-Bricolage_Grotesque">
             ITR-1, also known as Sahaj, is a simplified income tax return form
             prescribed under the Income Tax Act, 1961, for resident individuals
             earning up to ₹50,00,000 from eligible income sources. This form is
@@ -621,101 +187,14 @@ export const ITR1Hero = () => {
         </div>
 
         <div
-          className="h-96 w-96 flex-grow bg-gray-300 will-change-transform translate-z-0"
+          className="h-64 sm:h-80 md:h-96 w-full sm:w-80 md:w-96 flex-grow overflow-hidden  will-change-transform translate-z-0"
           ref={imageBoxRef}
-        ></div>
+        >
+          <img src="/images/ITR1-Return-Filing-hero-image1.svg" alt="" className="object-cover w-full h-full object-top"/>
+        </div>
       </div>
     </section>
-
-
-//     <section className="bg-white min-h-screen pt-2 general-sans p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16
-// ">
-//   <div className="w-full max-w-[90vw] mx-auto">
-//     <Header bgColor="black" textColor="white" />
-//   </div>
-
-//   <div className="flex justify-center items-center py-16 sm:py-20 md:py-24 lg:py-28 flex-col gap-2 text-center">
-//     <p
-//       ref={headingRef}
-//       className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl will-change-transform translate-z-0"
-//     >
-//       ITR-1 Return Filing (Sahaj)
-//     </p>
-
-//     <p
-//       ref={subheadingRef}
-//       className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl will-change-transform translate-z-0"
-//     >
-//       in <span className="text-[#6A6A6A]">India</span>
-//     </p>
-
-//     <p
-//       ref={descRef}
-//       className="font-normal text-xs sm:text-sm max-w-[90%] md:w-3/5 lg:w-2/5 will-change-transform translate-z-0"
-//     >
-//       Providing expert accounting, tax planning, and financial consulting
-//       services to help businesses grow, comply, and achieve long-term success.
-//     </p>
-
-//     <div
-//       className="flex flex-col sm:flex-row gap-4 mt-5 items-center will-change-transform translate-z-0"
-//       ref={btnRef}
-//     >
-//       <button className="bg-black text-white rounded-full px-10 sm:px-12 md:px-16 py-3 font-medium text-sm">
-//         Get Started
-//       </button>
-
-//       <div
-//         className="flex items-center gap-3 will-change-transform translate-z-0"
-//         ref={userStatsRef}
-//       >
-//         <div className="flex items-center">
-//           <p className="w-8 h-8 rounded-full bg-gray-500"></p>
-//           <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
-//           <p className="w-8 h-8 -ms-3 rounded-full bg-gray-500"></p>
-//         </div>
-
-//         <div>
-//           <p className="font-medium">100k+</p>
-//           <p className="font-normal text-sm">Customer</p>
-//           <p className="font-normal text-sm">Satisfied</p>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-
-//   <div className="flex flex-col lg:flex-row gap-10 lg:gap-28 justify-between items-center lg:items-start">
-//     <div
-//       className="flex flex-col gap-3 w-full lg:w-[60%] will-change-transform translate-z-0"
-//       ref={sectionTextRef}
-//     >
-//       <p className="font-medium text-sm font-Bricolage_Grotesque">
-//         Key Services
-//       </p>
-
-//       <BlurText
-//         text="What Is ITR-1 Sahaj Return Filing?"
-//         delay={50}
-//         animateBy="words"
-//         direction="top"
-//         className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
-//       />
-
-//       <p className="text-sm leading-5 font-medium font-Bricolage_Grotesque">
-//         ITR-1, also known as Sahaj, is a simplified income tax return form
-//         prescribed under the Income Tax Act, 1961, for resident individuals
-//         earning up to ₹50,00,000 from eligible income sources. This form is
-//         ideal for most salaried taxpayers and offers a streamlined approach
-//         for filing returns online.
-//       </p>
-//     </div>
-
-//     <div
-//       className="w-full h-64 sm:h-72 md:h-80 lg:h-96 lg:w-96 bg-gray-300 will-change-transform translate-z-0"
-//       ref={imageBoxRef}
-//     ></div>
-//   </div>
-// </section>
-
   );
 };
+
+export default ITR1Hero;

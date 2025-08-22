@@ -16,30 +16,32 @@ const HomeTestimonial = dynamic(() => import('@/components/home/HomeTestimonial'
 
 
 export default function Home() {
-  useEffect(() => {
-    const trigger = ScrollTrigger.create({
-      trigger: ".xxx",
-      start: "bottom 20%", // When the bottom of the section hits the bottom of the viewport
-      onEnter: () => {
-        gsap.to(".xxx", {
-          backgroundColor: "white",
-          color: "black",
-          duration: 1,
-        });
-      },
-      onLeaveBack: () => {
-        gsap.to(".xxx", {
-          backgroundColor: "black",
-          color: "white",
-          duration: 1,
-        });
-      },
-    });
+ 
+ 
+  // useEffect(() => {
+  //   const trigger = ScrollTrigger.create({
+  //     trigger: ".xxx",
+  //     start: "bottom 20%", // When the bottom of the section hits the bottom of the viewport
+  //     onEnter: () => {
+  //       gsap.to(".xxx", {
+  //         backgroundColor: "white",
+  //         color: "black",
+  //         duration: 1,
+  //       });
+  //     },
+  //     onLeaveBack: () => {
+  //       gsap.to(".xxx", {
+  //         backgroundColor: "black",
+  //         color: "white",
+  //         duration: 1,
+  //       });
+  //     },
+  //   });
 
-    return () => {
-      trigger.kill(); // clean up only this trigger
-    };
-  }, []);
+  //   return () => {
+  //     trigger.kill(); // clean up only this trigger
+  //   };
+  // }, []);
 
   // useEffect(() => {
   //   const elements = gsap.utils.toArray(".xxx");
@@ -79,7 +81,7 @@ export default function Home() {
       <HomeTaxBusinessConsultingService />
       <HomeSpecializedRegistrationFilings />
       <HomeReachUs />
-      <HomeTestimonial />/
+      {/* <HomeTestimonial />/ */}
     </>
   );
 }

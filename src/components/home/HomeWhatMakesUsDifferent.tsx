@@ -32,7 +32,7 @@ const data = [
   },
 ];
 
- const HomeWhatMakesUsDifferent = () => {
+const HomeWhatMakesUsDifferent = () => {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const headingTextRef = useRef<HTMLDivElement>(null);
@@ -52,6 +52,11 @@ const data = [
           scrollTrigger: {
             trigger: headingTextRef.current,
             start: "top 85%",
+            toggleActions: "play none none reverse",
+            markers: false,
+            scroller: undefined,
+            fastScrollEnd: true,
+            anticipatePin: 1,
           },
         });
       }
@@ -68,6 +73,7 @@ const data = [
             scrollTrigger: {
               trigger: containerRef.current,
               start: "top 90%",
+              toggleActions: "play none none reverse",
             },
           }
         );
@@ -80,6 +86,7 @@ const data = [
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 90%",
+            toggleActions: "play none none none",
           },
         });
       }
@@ -94,18 +101,19 @@ const data = [
           scrollTrigger: {
             trigger: subHeadingTextRef.current,
             start: "top 90%",
+            toggleActions: "play none none reverse",
           },
         });
       }
 
       if (cardsWrapperRef.current) {
-        const cards = cardsWrapperRef.current.querySelectorAll(".service-card");
+        const cards = gsap.utils.toArray<HTMLDivElement>(".service-card");
         cards.forEach((card, i) => {
           gsap.fromTo(
             card,
             {
               opacity: 0,
-              y: 100,
+              y: 20,
               scale: 0.8,
               rotateY: 15,
               transformOrigin: "center",
@@ -145,18 +153,14 @@ const data = [
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className=" general-sans   xxx"
-    >
+    <section ref={containerRef} className="general-sans xxx bg-white text-black">
       {/* Heading Section */}
-      <div className="flex flex-col p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16  gap-2 sm:gap-5  items-center justify-center text-center">
+      <div className="flex flex-col p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16 gap-2 sm:gap-5 items-center justify-center text-center">
         <div
-          ref={headingTextRef}
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-5 font-medium text-2xl sm:text-4xl md:text-5xl"
+          // ref={headingTextRef}
+          className="flex flex-wrap  items-center justify-center gap-2 sm:gap-5 font-medium text-2xl sm:text-4xl md:text-5xl"
         >
           <p>What</p>
-
           <video
             src="/videos/home-what-makeus-different-video1.mp4"
             autoPlay
@@ -167,7 +171,10 @@ const data = [
             className="w-20 sm:w-28 h-9 md:h-13 rounded-3xl hover:w-40 transition-all duration-500 ease-in object-cover"
           />
           <p>Makes Us Different</p>
-          <div className="w-10 sm:w-14 h-auto overflow-hidden" ref={imageRef}>
+          <div
+            className="w-10 sm:w-14 h-auto overflow-hidden will-change-transform"
+            ref={imageRef}
+          >
             <Image
               alt="tax-business-consulting"
               src="/icons/home-cirlce-icon.svg"
@@ -208,14 +215,14 @@ const data = [
       {/* Cards Section */}
       <div
         ref={cardsWrapperRef}
-        className="hidden p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16 md:grid grid-cols-2 lg:grid-cols-4 pt-12 lg:pt-16 gap-5 sm:gap-7 md:gap-12 "
+        className="hidden p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16 md:grid grid-cols-2 lg:grid-cols-4 pt-12 lg:pt-16 gap-5 sm:gap-7 md:gap-12"
       >
         {data.map((item, index) => (
           <div
             key={item.id}
-            className={`service-card  bg-[#E8E8E8] lg:saturate-0 relative rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer h-[300px] md:h-[26rem]  transition-all duration-700 ${
+            className={`service-card bg-[#E8E8E8] lg:saturate-0 relative rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer h-[300px] md:h-[26rem] transition-all duration-700 ${
               index === 0 ? "hover:saturate-500" : "hover:saturate-100"
-            }`}
+            } will-change-transform`}
           >
             <img
               src={item.image}
@@ -235,7 +242,8 @@ const data = [
         ))}
       </div>
 
-      <div className="md:hidden py-5 h-80 overflow-hidden  relative w-full flex ">
+      {/* Mobile Swiper */}
+      <div className="md:hidden py-5 h-80 overflow-hidden relative w-full flex">
         <Swiper
           effect="cards"
           grabCursor={true}
@@ -246,7 +254,7 @@ const data = [
           {data.map((item, index) => (
             <SwiperSlide
               key={index}
-              className="relative flex items-center justify-center rounded-3xl  shadow-sm shadow-black/10 hover:shadow-xl"
+              className="relative flex items-center justify-center rounded-3xl shadow-sm shadow-black/10 hover:shadow-xl"
             >
               <div className="absolute -z-20 bg-gradient-to-b from-transparent from-60% to-black h-full w-full"></div>
               <img
@@ -254,8 +262,7 @@ const data = [
                 alt=""
                 className="w-full rounded-3xl h-full -z-40 bg-gradient shadow-black object-cover absolute inset-0"
               />
-              <div className="absolute bottom-5 z-10 w-full h-fit   justify-start items-end text-white  left-4">
-                {/* <p className="text-xs font-medium">{item.id}</p> */}
+              <div className="absolute bottom-5 z-10 w-full h-fit justify-start items-end text-white left-4">
                 <p className="font-medium text-xl">{item.title}</p>
               </div>
             </SwiperSlide>
@@ -266,6 +273,4 @@ const data = [
   );
 };
 
-
 export default HomeWhatMakesUsDifferent;
-

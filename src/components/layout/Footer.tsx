@@ -5,6 +5,7 @@ import { LuMailOpen } from "react-icons/lu";
 import { FiPhoneCall } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
 import TextPressure from "../animations/TextPressure";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -19,12 +20,12 @@ export const Footer = () => {
               width={140}
               height={100}
             />
-            <p className="text-2xl md:text-3xl lg:text-4xl font-medium">
+            {/* <p className="text-2xl md:text-3xl lg:text-4xl font-medium">
               Subscribe Newsletter & Get Latest Updates
-            </p>
+            </p> */}
           </div>
 
-          <div className="flex flex-col gap-1 justify-center items-center w-full lg:w-auto  lg:mt-0">
+          {/* <div className="flex flex-col gap-1 justify-center items-center w-full lg:w-auto  lg:mt-0">
             <div className="bg-white rounded-4xl w-full max-w-md flex items-center justify-between py-1 px-1">
               <input
                 type="text"
@@ -36,48 +37,101 @@ export const Footer = () => {
               </button>
             </div>
             <p className="text-sm mt-2">Signup to get first order free..</p>
-          </div>
+          </div> */}
         </div>
 
         <hr className="border border-white/10 w-full mt-11" />
 
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 mt-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-10 mt-14">
           {/* Contact */}
           <div className=" ">
             <div className="flex flex-col gap-5">
               <div className="flex justify-between text-sm">
                 <p>Mobile</p>
-                <p>+61 232 32425</p>
+                <p>+91 63799 20255</p>
               </div>
               <hr className="border border-white/10 w-full " />
               <div className="flex justify-between text-sm">
                 <p>Email</p>
-                <p>yestoboss.com</p>
+                <a href="mailto:yestobossservices@gmail.com">
+                  <p>yestobossservices@gmail.com</p>
+                </a>
               </div>
               <hr className="border border-white/10 w-full " />
             </div>
 
             <p className="mt-8">Follow Us</p>
             <div className="mt-2 flex gap-2">
-              <Image
-                alt="facebook-icon"
-                src={"/icons/facebook-icon.svg"}
-                width={20}
-                height={20}
-              />
-              <Image
+              <Link
+                target="_blank"
+                href="https://www.facebook.com/share/1EkhGhedjN/"
+              >
+                <Image
+                  alt="facebook-icon"
+                  src={"/icons/facebook-icon.svg"}
+                  width={20}
+                  height={20}
+                />
+              </Link>
+              {/* <Image
                 alt="x-icon"
                 src={"/icons/x-icon.svg"}
                 width={20}
                 height={20}
-              />
-              <Image
-                alt="threads-icon"
-                src={"/icons/threads-icon.svg"}
-                width={20}
-                height={20}
-              />
+              /> */}
+
+              <Link
+                target="_blank"
+                href="https://www.instagram.com/yestobossservices?igsh=MTkzdWY3YmtpdGUwNQ=="
+              >
+                <Image
+                  alt="threads-icon"
+                  src={"/icons/instagram-icon.svg"}
+                  width={20}
+                  height={20}
+                />
+              </Link>
+
+              <Link
+                target="_blank"
+                href="https://www.linkedin.com/company/yestoboss/"
+              >
+                <Image
+                  alt="threads-icon"
+                  src={"/icons/linkedin-icon.svg"}
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </div>
+          </div>
+
+          <div className=" ">
+            <p className="font-semibold text-xl">Office Address</p>
+            <div className="mt-6 flex flex-col gap-5">
+              <div className="flex gap-2">
+                {/* <IoLocationOutline className="text-2xl " /> */}
+                <img src="/icons/footer-location-icon.svg" alt="" className="h-fit" />
+                <p className="text-sm">
+                  No 33/14, Ground floor, Jayammal St, Ayyavoo Colony,
+                  Aminjikarai, Chennai, Tamil Nadu 600029
+                </p>
+              </div>
+              <div className="flex gap-2 items-center">
+              <img src="/icons/footer-mail-icon.svg" alt="" className="h-fit" />
+                {/* <LuMailOpen className="text-md" /> */}
+                {/* <p className="text-sm">yestobossservices@gmail.com</p> */}
+                <a href="mailto:yestobossservices@gmail.com">
+                  <p className="text-sm">yestobossservices@gmail.com</p>
+                </a>
+              </div>
+              <div className="flex gap-2 items-center">
+              <img src="/icons/footer-phone-icon.svg" alt="" className="h-fit" />
+                {/* <FiPhoneCall className="text-md" /> */}
+                <p className="text-sm">Phone : +91 63799 20255</p>
+              </div>
+              {/* <p className="underline text-sm text-center">View Map</p> */}
             </div>
           </div>
 
@@ -85,18 +139,30 @@ export const Footer = () => {
           <div className=" ">
             <p className="font-semibold text-xl">Link</p>
             <div className="mt-6 flex flex-col gap-2">
-              <p className="text-sm">Home</p>
-              <p className="text-sm">About Us</p>
-              <p className="text-sm">Services</p>
-              <p className="text-sm">Projects</p>
-              <p className="text-sm">Blog</p>
-              <p className="text-sm">Faq</p>
-              <p className="text-sm">Contact Us</p>
+              <Link href="/" className="text-sm">
+                Home
+              </Link>
+              <Link href="/about" className="text-sm">
+                About Us
+              </Link>
+              <Link href="/contact" className="text-sm">
+                Contact
+              </Link>
+              <Link href="/services" className="text-sm">
+                Services
+              </Link>
+              {/* <p className="text-sm">About Us</p> */}
+              {/* <p className="text-sm">Contact Us</p> */}
+
+              {/* <p className="text-sm">Services</p> */}
+              {/* <p className="text-sm">Projects</p> */}
+              {/* <p className="text-sm">Blog</p> */}
+              {/* <p className="text-sm">Faq</p> */}
             </div>
           </div>
 
           {/* Creative Links */}
-          <div className=" ">
+          {/* <div className=" ">
             <p className="font-semibold text-xl">Creative Link</p>
             <div className="mt-6 flex flex-col gap-2">
               <p className="text-sm">Strategy</p>
@@ -106,10 +172,10 @@ export const Footer = () => {
               <p className="text-sm">Digital Marketing</p>
               <p className="text-sm">Insights</p>
             </div>
-          </div>
+          </div> */}
 
           {/* Policy */}
-          <div className=" ">
+          {/* <div className=" ">
             <p className="font-semibold text-xl">Policy</p>
             <div className="mt-6 flex flex-col gap-2">
               <p className="text-sm">Support</p>
@@ -119,30 +185,9 @@ export const Footer = () => {
               <p className="text-sm">Signup</p>
               <p className="text-sm">Signin</p>
             </div>
-          </div>
+          </div> */}
 
           {/* Office Address */}
-          <div className=" ">
-            <p className="font-semibold text-xl">Office Address</p>
-            <div className="mt-6 flex flex-col gap-5">
-              <div className="flex gap-2">
-                <IoLocationOutline className="text-2xl w-10 md:w-16 lg:w-20" />
-                <p className="text-sm">
-                  No 33/14, Ground floor, Jayammal St, Ayyavoo Colony,
-                  Aminjikarai, Chennai, Tamil Nadu 600029
-                </p>
-              </div>
-              <div className="flex gap-2 items-center">
-                <LuMailOpen className="text-md" />
-                <p className="text-sm">yestoboss@gmail.com</p>
-              </div>
-              <div className="flex gap-2 items-center">
-                <FiPhoneCall className="text-md" />
-                <p className="text-sm">Phone : 234 3834 549</p>
-              </div>
-              <p className="underline text-sm text-center">View Map</p>
-            </div>
-          </div>
         </div>
 
         <hr className="border border-white/10 w-full mt-7" />
@@ -159,13 +204,13 @@ export const Footer = () => {
             <p className="text-sm sm:text-base">
               Monday-Saturday : 10.00 AM - 07.00 PM
             </p>
-            <p className="border border-r border-white/40 h-4 hidden sm:block"></p>
+            {/* <p className="border border-r border-white/40 h-4 hidden sm:block"></p>
             <p>
               Book An Appointments{" "}
               <span>
                 <FaPlay className="text-white inline ms-2 text-xs" />
               </span>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
@@ -184,6 +229,20 @@ export const Footer = () => {
           strokeColor="#ff0000"
           minFontSize={36}
         />
+      </div>
+
+      <div className="w-screen  px-3 flex md:hidden items-center justify-center">
+        <div className="flex w-full h-full text-[10vw] font-bold">
+          <p className="flex-1 text-center">Y</p>
+          <p className="flex-1 text-center">E</p>
+          <p className="flex-1 text-center">S</p>
+          <p className="flex-1 text-center">T</p>
+          <p className="flex-1 text-center">O</p>
+          <p className="flex-1 text-center">B</p>
+          <p className="flex-1 text-center">O</p>
+          <p className="flex-1 text-center">S</p>
+          <p className="flex-1 text-center">S</p>
+        </div>
       </div>
     </section>
   );
