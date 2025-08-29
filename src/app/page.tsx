@@ -2,7 +2,6 @@
 
 import gsap from "gsap";
 import dynamic from "next/dynamic";
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 const HomeHero = dynamic(() => import('@/components/home/HomeHero'));
@@ -12,7 +11,7 @@ const HomeWhatMakesUsDifferent = dynamic(() => import('@/components/home/HomeWha
 const HomeTaxBusinessConsultingService = dynamic(() => import('@/components/home/HomeTaxBusinessConsultingService'));
 const HomeSpecializedRegistrationFilings = dynamic(() => import('@/components/home/HomeSpecializedRegistrationFilings'));
 const HomeReachUs = dynamic(() => import('@/components/home/HomeReachUs'));
-const HomeTestimonial = dynamic(() => import('@/components/home/HomeTestimonial'));
+// const HomeTestimonial = dynamic(() => import('@/components/home/HomeTestimonial'));
 
 
 export default function Home() {

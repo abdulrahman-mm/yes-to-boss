@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import React from "react";
 
 const data = [
@@ -55,8 +54,8 @@ const ITR1FinanceServices = () => {
         <div className="border hidden lg:block border-b border-black/40"></div>
 
         <div className="flex  flex-col gap-5 md:gap-8 ">
-          {data.slice(3).map((item, index,array) => (
-            <div                 key={index}
+          {data.slice(3).map((item, index) => (
+            <div key={index}
             className="flex flex-col">
               <div
                 className="flex flex-grow items-start  gap-5 text-[#292833] sm:items-center"

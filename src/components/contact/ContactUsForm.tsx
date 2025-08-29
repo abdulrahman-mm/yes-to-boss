@@ -125,7 +125,7 @@ const ContactUsForm = () => {
 
   // Validation logic
   const validate = () => {
-    let newErrors: { [key: string]: string } = {};
+    const newErrors: { [key: string]: string } = {};
 
     if (!formData.firstName.trim())
       newErrors.firstName = "First Name is required";
@@ -293,7 +293,8 @@ const ContactUsForm = () => {
                   className="will-change-transform"
                 />
                 <p className="font-inter font-medium text-sm md:text-base">
-                  yestobossservices@gmail.com
+                  {/* yestobossservices@gmail.com */}
+                  yestobossconsultancy@gmail.com
                 </p>
               </div>
               <div className="flex gap-3 items-center mt-5 md:mt-7">

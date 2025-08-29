@@ -1,9 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { IoLocationOutline } from "react-icons/io5";
-import { LuMailOpen } from "react-icons/lu";
-import { FiPhoneCall } from "react-icons/fi";
-import { FaPlay } from "react-icons/fa";
 import TextPressure from "../animations/TextPressure";
 import Link from "next/link";
 
@@ -55,7 +51,7 @@ export const Footer = () => {
               <div className="flex justify-between text-sm">
                 <p>Email</p>
                 <a href="mailto:yestobossservices@gmail.com">
-                  <p>yestobossservices@gmail.com</p>
+                  <p>yestobossconsultancy@gmail.com</p>
                 </a>
               </div>
               <hr className="border border-white/10 w-full " />
@@ -123,7 +119,7 @@ export const Footer = () => {
                 {/* <LuMailOpen className="text-md" /> */}
                 {/* <p className="text-sm">yestobossservices@gmail.com</p> */}
                 <a href="mailto:yestobossservices@gmail.com">
-                  <p className="text-sm">yestobossservices@gmail.com</p>
+                  <p className="text-sm">yestobossconsultancy@gmail.com</p>
                 </a>
               </div>
               <div className="flex gap-2 items-center">

@@ -414,7 +414,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Header } from "../layout";
-import { IoSearchOutline } from "react-icons/io5";
+// import { IoSearchOutline } from "react-icons/io5";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -436,7 +436,7 @@ const HomeHero = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const line1Ref = useRef<HTMLParagraphElement | null>(null);
   const line2Ref = useRef<HTMLParagraphElement | null>(null);
-  const searchBoxRef = useRef<HTMLDivElement | null>(null);
+  // const searchBoxRef = useRef<HTMLDivElement | null>(null);
   const circularRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
@@ -544,9 +544,9 @@ const HomeHero = () => {
   }, []);
 
   // 3. Typing animation
-  const [query, setQuery] = useState("");
-  const [filteredServices, setFilteredServices] = useState<string[]>([]);
-  const [placeholder, setPlaceholder] = useState("");
+  // const [query, setQuery] = useState("");
+  // const [filteredServices, setFilteredServices] = useState<string[]>([]);
+  // const [placeholder, setPlaceholder] = useState("");
   const [typingIndex, setTypingIndex] = useState(0);
   const [serviceIndex, setServiceIndex] = useState(0);
 
@@ -557,7 +557,7 @@ const HomeHero = () => {
 
     if (typingIndex < currentService.length) {
       const timeout = setTimeout(() => {
-        setPlaceholder(currentService.slice(0, typingIndex + 1));
+        // setPlaceholder(currentService.slice(0, typingIndex + 1));
         setTypingIndex((prev) => prev + 1);
       }, typingDelay);
       return () => clearTimeout(timeout);
@@ -571,21 +571,21 @@ const HomeHero = () => {
   }, [typingIndex, serviceIndex]);
 
   // 4. Search filter
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const input = e.target.value;
-    setQuery(input);
+  // const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const input = e.target.value;
+  //   setQuery(input);
 
-    if (input.trim() === "") {
-      setFilteredServices([]);
-      return;
-    }
+  //   if (input.trim() === "") {
+  //     setFilteredServices([]);
+  //     return;
+  //   }
 
-    const filtered = services.filter((service) =>
-      service.toLowerCase().includes(input.toLowerCase())
-    );
+  //   const filtered = services.filter((service) =>
+  //     service.toLowerCase().includes(input.toLowerCase())
+  //   );
 
-    setFilteredServices(filtered);
-  };
+  //   setFilteredServices(filtered);
+  // };
 
   return (
     <main>

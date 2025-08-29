@@ -421,7 +421,7 @@ const HomeReachUs = () => {
 
   // Validation logic
   const validate = () => {
-    let newErrors: { [key: string]: string } = {};
+    const newErrors: { [key: string]: string } = {};
 
     if (!formData.firstName.trim()) {
       newErrors.firstName = "First Name is required";
@@ -440,7 +440,7 @@ const HomeReachUs = () => {
     if (!formData.phone) {
       newErrors.phone = "Phone number is required";
     } else if (!/^\+?\d{10,15}$/.test(formData.phone)) {
-      newErrors.phone = "Enter a valid phone number (10–15 digits)";
+      newErrors.phone = "Enter a valid phone number";
     }
 
     if (!formData.city.trim()) {
@@ -751,7 +751,7 @@ const HomeReachUs = () => {
           <button
             type="submit"
             disabled={status === "loading"}
-            className={`px-8 py-3 w-fit rounded font-semibold transition duration-300 flex items-center gap-2
+            className={`px-8 py-3 w-fit rounded font-semibold cursor-pointer transition duration-300 flex items-center gap-2
           ${
             status === "loading"
               ? "bg-gray-400 cursor-not-allowed text-white"

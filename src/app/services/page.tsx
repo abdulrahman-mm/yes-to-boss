@@ -33,7 +33,7 @@ const services = [
   },
 ];
 
-const page = () => {
+const Page = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
   const targetPosition = useRef({ x: 0, y: 0 });
@@ -175,4 +175,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

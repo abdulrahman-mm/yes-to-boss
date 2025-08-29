@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -16,54 +16,62 @@ const ServiceSectionTables: React.FC<ServiceSectionWhyProps> = ({
   const tableRef = useRef<HTMLTableElement>(null);
   const rowRefs = useRef<HTMLTableRowElement[]>([]);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Animate heading
-      gsap.from(headingRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 85%",
-        },
-      });
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     // Animate heading
+  //     gsap.from(headingRef.current, {
+  //       opacity: 0,
+  //       y: 40,
+  //       duration: 1,
+  //       ease: "power3.out",
+  //       scrollTrigger: {
+  //         trigger: headingRef.current,
+  //         start: "top 85%",
+  //       },
+  //     });
 
-      // Animate table
-      gsap.from(tableRef.current, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: tableRef.current,
-          start: "top 85%",
-        },
-      });
+  //     // Animate table
+  //     gsap.from(tableRef.current, {
+  //       opacity: 0,
+  //       y: 50,
+  //       duration: 1,
+  //       ease: "power3.out",
+  //       scrollTrigger: {
+  //         trigger: tableRef.current,
+  //         start: "top 85%",
+  //       },
+  //     });
 
-      // Animate rows stagger
-      rowRefs.current.forEach((row, i) => {
-        gsap.from(row, {
-          opacity: 0,
-          y: 30,
-          duration: 0.8,
-          ease: "power2.out",
-          delay: i * 0.15, // stagger effect
-          scrollTrigger: {
-            trigger: row,
-            start: "top 120%",
-            toggleActions: "play none none none",
-          },
-        });
-      });
-    });
+  //     // Animate rows stagger
+  //     rowRefs.current.forEach((row, i) => {
+  //       gsap.from(row, {
+  //         opacity: 0,
+  //         y: 30,
+  //         duration: 0.8,
+  //         ease: "power2.out",
+  //         delay: i * 0.15, // stagger effect
+  //         scrollTrigger: {
+  //           trigger: row,
+  //           start: "top 120%",
+  //           toggleActions: "play none none none",
+  //         },
+  //       });
+  //     });
+  //   });
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
-    <section className="bg-gradient-to-b general-sans text-white from-[#212121] to-[#070707] min-h-screen p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16">
+    // <section className={`bg-gradient-to-b text-white from-[#212121] to-[#070707] general-sans   p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16 ${tableData.tableStyle} bg-white`}>
+
+    <section
+      className={`${
+        tableData.tableStyle === "gradient"
+          ? "bg-gradient-to-b from-[#212121] to-[#070707]"
+          : "bg-white text-black"
+      }  general-sans p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16`}
+    >
       {/* Heading */}
       <div ref={headingRef} className="will-change-transform translate-z-0">
         <p className="text-4xl md:text-5xl font-semibold leading-tight">
@@ -77,13 +85,24 @@ const ServiceSectionTables: React.FC<ServiceSectionWhyProps> = ({
       <div className="overflow-x-auto">
         <table
           ref={tableRef}
-          className="border border-white mt-10 w-full text-left rounded-lg overflow-hidden will-change-transform translate-z-0"
+          className={`border ${
+            tableData.tableStyle === "gradient"
+              ? "border-white"
+              : "border-black"
+          }  mt-10 w-full text-left rounded-lg overflow-hidden will-change-transform translate-z-0`}
         >
           <thead className="bg-white/10">
             {/* Dynamic Headers */}
             <tr>
               {tableData.tableHeadData.map((heading, i) => (
-                <th key={i} className="border border-white p-4 px-6 md:px-8">
+                <th
+                  key={i}
+                  className={`border ${
+                    tableData.tableStyle === "gradient"
+                      ? "border-white"
+                      : "border-black"
+                  } p-4 px-6 md:px-8`}
+                >
                   {heading}
                 </th>
               ))}
@@ -102,7 +121,11 @@ const ServiceSectionTables: React.FC<ServiceSectionWhyProps> = ({
                 {Object.values(row).map((cell, cellIndex) => (
                   <td
                     key={cellIndex}
-                    className="border border-white p-4 px-6 md:px-12"
+                    className={`border ${
+                      tableData.tableStyle === "gradient"
+                        ? "border-white"
+                        : "border-black"
+                    } p-4 px-6 md:px-12`}
                   >
                     {cell}
                   </td>

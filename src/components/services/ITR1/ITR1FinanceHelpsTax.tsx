@@ -86,7 +86,7 @@ gsap.registerPlugin(ScrollTrigger);
           className="w-full sm:w-4/5 lg:w-2/5 text-center text-sm sm:text-base will-change-transform translate-z-0"
         >
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard
+          industry. Lorem Ipsum has been the industry&apos;s standard
         </p>
       </div>
 

@@ -1,5 +1,5 @@
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ITR1KeyServices = () => {
   const textRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<HTMLDivElement[]>([]);
+  // const cardRefs = useRef<HTMLDivElement[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // const addToCardRefs = (el: HTMLDivElement | null) => {

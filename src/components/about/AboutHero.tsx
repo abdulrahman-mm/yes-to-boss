@@ -107,7 +107,7 @@
 //               </p>
 //               <div className=" font-semibold md:leading-13 xl:leading-16">
 //                 for Every{" "}
-              
+
 //                 <ShinnyText
 //                   text=" Indian"
 //                   disabled={false}
@@ -232,13 +232,7 @@
 //   );
 // };
 
-
 // export default AboutHero;
-
-
-
-
-
 
 "use client";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
@@ -371,13 +365,11 @@ const AboutHero = () => {
               ref={avatarRef}
               style={{ willChange: "transform, opacity" }}
             >
-
-<Link href='/contact' >
-<button className="bg-white px-10 py-2 cursor-pointer hover:text-white hover:bg-gray-700 transition-all duration-300 text-black rounded-4xl h-full text-sm font-medium">
-                Get Started
-              </button>
-</Link>
-            
+              <Link href="/contact">
+                <button className="bg-white px-10 py-2 cursor-pointer hover:text-white hover:bg-gray-700 transition-all duration-300 text-black rounded-4xl h-full text-sm font-medium">
+                  Get Started
+                </button>
+              </Link>
 
               <div className="flex gap-3">
                 <div className="flex -space-x-3">
@@ -407,7 +399,7 @@ const AboutHero = () => {
                 className="w-full h-full"
               />
 
-              <div className="absolute p-5 hidden md:block -left-32 -top-16 bg-white text-black rounded-2xl w-full h-fit z-10">
+              {/* <div className="absolute p-5 hidden md:block -left-32 -top-16 bg-white text-black rounded-2xl w-full h-fit z-10">
                 <div className="flex gap-5 ">
                   <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gray-200"></div>
                   <div>
@@ -423,7 +415,7 @@ const AboutHero = () => {
                   <p>Reply</p>
                   <p>19:00 PM</p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="relative h-96 w-72 xl:w-80">

@@ -671,7 +671,7 @@ const AboutSecondSection = () => {
           </p>
 
           <p className="font-normal text-sm leading-6">
-            Whether you're in a metro or a growing city, our nationwide
+            Whether you&apos;re in a metro or a growing city, our nationwide
             footprint ensures your business is supported with speed, precision,
             and consistency. With deep local insights and seamless coordination
             across regions, we deliver reliable, fast, and region-specific

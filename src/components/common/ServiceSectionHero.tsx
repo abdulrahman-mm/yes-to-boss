@@ -182,7 +182,7 @@ const ServiceSectionHero: React.FC<ServiceSectionFAQProps> = ({
             className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
           />
 
-          <p className="text-sm sm:text-base md:text-lg lg:text-sm leading-5 font-medium font-Bricolage_Grotesque">
+          <p className="text-[#292833] font-medium font-Bricolage_Grotesque leading-7">
             {heroSectionData.answer}
           </p>
 
@@ -191,8 +191,8 @@ const ServiceSectionHero: React.FC<ServiceSectionFAQProps> = ({
               <p className="text-sm sm:text-base md:text-lg lg:text-sm leading-5 font-medium font-Bricolage_Grotesque">
                 {heroSectionData.bulletPointsTitle}
               </p>
-              <ol className="list-disc list-inside text-sm sm:text-base md:text-lg lg:text-sm leading-5 font-medium font-Bricolage_Grotesque">
-                {heroSectionData.bulletPoints.map((item, index) => (
+              <ol className="list-disc leading-7 list-inside text-sm sm:text-base md:text-lg lg:text-sm  font-medium font-Bricolage_Grotesque">
+                {heroSectionData.bulletPoints?.map((item, index) => (
                   <li>{item}</li>
                 ))}
               </ol>

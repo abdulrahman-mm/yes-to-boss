@@ -1,6 +1,6 @@
-import { faqTypes } from "@/types";
+import {serviceFaqTypes } from "@/types";
 
-export const gstFaqData: faqTypes[] = [
+export const gstFaqData: serviceFaqTypes[] = [
   {
     label: "How often should I file GST returns?",
     value:

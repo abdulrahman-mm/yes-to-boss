@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import "./globals.css";
 import { roboto, lora, poppins,BricolageGrotesque,inter } from './fonts'
 import { Footer } from "@/components/layout";

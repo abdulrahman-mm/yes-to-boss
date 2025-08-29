@@ -500,7 +500,7 @@ const ContactUsHero = () => {
           <div className="relative w-full h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] will-change-transform">
             <Image
               alt="contact-hero"
-              className="absolute w-full h-full object-contain sm:object-cover will-change-transform"
+              className="absolute w-full h-full object-contain sm:object-cover "
               src={"/images/contact-us-hero2.png"}
               width={400}
               height={500}
