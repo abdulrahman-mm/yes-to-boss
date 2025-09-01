@@ -35,7 +35,7 @@ const ServiceSectionFAQ: React.FC<ServiceSectionFAQProps> = ({ faqData }) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <section className="bg-gradient-to-b min-h-screen text-white from-[#212121] to-[#070707] general-sans p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16 ">
+    <section className="bg-gradient-to-b  text-white from-[#212121] to-[#070707] general-sans p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16 ">
       {/* Header */}
       <div className="flex justify-center">
         <p className="px-10 py-2 border rounded-full w-fit font-medium text-sm">

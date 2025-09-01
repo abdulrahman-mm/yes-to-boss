@@ -182,7 +182,6 @@
 //     /* bg-[url('/images/home-hero-bg-image.svg')] */
 //   }
 
-
 //   return (
 //     <main>
 //       <div className=" py-2 pb-10 bg-no-repeat  bg-[url('/images/home-hero-bg-image.svg')] bg-cover bg-center text-white ">
@@ -299,7 +298,7 @@
 //                   />
 //                 </div>
 //                 <button className="bg-black text-white rounded-4xl px-5 py-2 md:py-4 w-fit">
-//                   Search <span className="hidden sm:inline-block">Service</span> 
+//                   Search <span className="hidden sm:inline-block">Service</span>
 //                 </button>
 //               </div>
 
@@ -326,7 +325,7 @@
 //                   </div>
 //                 )}
 //               </div>
-            
+
 //             </div>
 //           </div>
 
@@ -407,36 +406,39 @@
 
 // export default HomeHero;
 
-
-
-
-
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Header } from "../layout";
-// import { IoSearchOutline } from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ShinnyText } from "../animations";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
+  "ITR-1 Filing",
+  "GST Return Filing",
+  "FSSAI Registration",
+  "DIN eKYC Filing",
+  "TDS Return Filing",
+  "EPFO Registration",
+  "Udayam Registration",
+  "ITR-4 Return Filing",
+  "ITR-3 Return Filing",
+  "ITR-2 Return Filing",
+  "Income Tax e-Filing",
   "GST Registration",
-  "ITR Filing",
-  "Company Incorporation",
-  "Trademark Registration",
-  "Accounting Service",
-  "MSME Registration",
-  "PAN Application",
+  "Sole Proprietorship",
 ];
 
 const HomeHero = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const line1Ref = useRef<HTMLParagraphElement | null>(null);
   const line2Ref = useRef<HTMLParagraphElement | null>(null);
-  // const searchBoxRef = useRef<HTMLDivElement | null>(null);
+  const searchBoxRef = useRef<HTMLDivElement | null>(null);
   const circularRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
@@ -544,9 +546,9 @@ const HomeHero = () => {
   }, []);
 
   // 3. Typing animation
-  // const [query, setQuery] = useState("");
-  // const [filteredServices, setFilteredServices] = useState<string[]>([]);
-  // const [placeholder, setPlaceholder] = useState("");
+  const [query, setQuery] = useState("");
+  const [filteredServices, setFilteredServices] = useState<string[]>([]);
+  const [placeholder, setPlaceholder] = useState("");
   const [typingIndex, setTypingIndex] = useState(0);
   const [serviceIndex, setServiceIndex] = useState(0);
 
@@ -557,7 +559,7 @@ const HomeHero = () => {
 
     if (typingIndex < currentService.length) {
       const timeout = setTimeout(() => {
-        // setPlaceholder(currentService.slice(0, typingIndex + 1));
+        setPlaceholder(currentService.slice(0, typingIndex + 1));
         setTypingIndex((prev) => prev + 1);
       }, typingDelay);
       return () => clearTimeout(timeout);
@@ -571,21 +573,21 @@ const HomeHero = () => {
   }, [typingIndex, serviceIndex]);
 
   // 4. Search filter
-  // const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const input = e.target.value;
-  //   setQuery(input);
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value;
+    setQuery(input);
 
-  //   if (input.trim() === "") {
-  //     setFilteredServices([]);
-  //     return;
-  //   }
+    if (input.trim() === "") {
+      setFilteredServices([]);
+      return;
+    }
 
-  //   const filtered = services.filter((service) =>
-  //     service.toLowerCase().includes(input.toLowerCase())
-  //   );
+    const filtered = services.filter((service) =>
+      service.toLowerCase().includes(input.toLowerCase())
+    );
 
-  //   setFilteredServices(filtered);
-  // };
+    setFilteredServices(filtered);
+  };
 
   return (
     <main>
@@ -594,11 +596,10 @@ const HomeHero = () => {
           <Header />
         </div>
 
-
         <div className="flex items-center justify-center gap-5 lg:gap-8 xl:gap-10 px-5 sm:px-8 md:px-10  xl:px-16 mt-14 lg:mt-16 xl:mt-24">
-           {/* Left Cards */}
-           <div className="hidden lg:flex flex-col    justify-between h-[75vh]">
-             <div
+          {/* Left Cards */}
+          <div className="hidden lg:flex flex-col    justify-between h-[75vh]">
+            <div
               ref={addToRefs}
               className="w-44 lg:w-52 xl:w-72 h-56 xl:h-48 rounded-xl  relative"
             >
@@ -691,7 +692,7 @@ const HomeHero = () => {
               />
             </div>
 
-            {/* <div className="relative xl:w-3/4 mt-5" ref={searchBoxRef}>
+            <div className="relative xl:w-3/4 mt-5" ref={searchBoxRef}>
               <div className="bg-white rounded-4xl flex gap-3 items-center justify-between py-1 px-1">
                 <div className="flex gap-2 flex-grow items-center">
                   <IoSearchOutline className="text-black ms-5 text-2xl" />
@@ -704,7 +705,7 @@ const HomeHero = () => {
                   />
                 </div>
                 <button className="bg-black text-white rounded-4xl px-5 py-2 md:py-4 w-fit">
-                  Search <span className="hidden sm:inline-block">Service</span> 
+                  Search <span className="hidden sm:inline-block">Service</span>
                 </button>
               </div>
 
@@ -718,12 +719,20 @@ const HomeHero = () => {
               >
                 {filteredServices.length > 0 ? (
                   filteredServices.map((service, index) => (
-                    <div
-                      key={index}
-                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black"
+                    <Link
+                    key={index}
+
+                      href={`/services/${service
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")
+                        .replace(/[()]/g, "")}`}
                     >
-                      {service}
-                    </div>
+                      <div
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black"
+                      >
+                        {service}
+                      </div>
+                    </Link>
                   ))
                 ) : (
                   <div className="px-4 py-2 text-gray-500">
@@ -731,8 +740,7 @@ const HomeHero = () => {
                   </div>
                 )}
               </div>
-            
-            </div> */}
+            </div>
           </div>
 
           {/* Right Cards */}
@@ -804,8 +812,7 @@ const HomeHero = () => {
               />
             </div>
           </div>
-      </div>
-        
+        </div>
       </div>
     </main>
   );

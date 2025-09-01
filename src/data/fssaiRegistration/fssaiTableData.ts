@@ -21,4 +21,6 @@ export const fssaiTableData: ServiceTableTypes = {
       columnThree: "Large manufacturers, import/export businesses",
     },
   ],
+  tableStyle:'gradient'
+  
 };

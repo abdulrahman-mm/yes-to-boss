@@ -7,5 +7,5 @@ export const soleProprietorshipHeroData: serviceHeroTypes = {
   question: "What Is a Sole Proprietorship?",
   answer:
     "A sole proprietorship is a simple business structure where one individual owns and manages the entire business. You don’t need to register a separate company. Just obtain the necessary licenses and start operating using your own name or a business name of your choice.",
-  image: "/images/ITR1-Return-Filing-hero-image1.svg",
+    image: "/images/x.svg",
 };

@@ -165,7 +165,7 @@ const ServiceSectionHero: React.FC<ServiceSectionFAQProps> = ({
       </div>
 
       {/* Key Services Section */}
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-28 justify-between items-center lg:items-start">
+      <div className="flex flex-col lg:flex-row flex-grow gap-12 lg:gap-28 justify-between items-center lg:items-start">
         <div
           className="flex flex-col gap-3 w-full lg:w-[60%] will-change-transform translate-z-0"
           ref={sectionTextRef}
@@ -182,7 +182,7 @@ const ServiceSectionHero: React.FC<ServiceSectionFAQProps> = ({
             className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
           />
 
-          <p className="text-[#292833] font-medium font-Bricolage_Grotesque leading-7">
+          <p className="text-[#292833] mt-8 font-medium font-Bricolage_Grotesque leading-7">
             {heroSectionData.answer}
           </p>
 
@@ -201,7 +201,7 @@ const ServiceSectionHero: React.FC<ServiceSectionFAQProps> = ({
         </div>
 
         <div
-          className="h-64 sm:h-80 md:h-96 w-full sm:w-80 md:w-96 flex-grow overflow-hidden  will-change-transform translate-z-0"
+          className="h-full w-full sm:w-80 md:w-96 flex-grow overflow-hidden  will-change-transform translate-z-0"
           ref={imageBoxRef}
         >
           <img

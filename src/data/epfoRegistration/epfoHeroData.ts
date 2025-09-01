@@ -7,5 +7,6 @@ export const epfoHeroData: serviceHeroTypes = {
   question: "What Is EPFO Registration?",
   answer:
     "EPFO Registration is the official process through which an employer or establishment is enrolled under the Employees' Provident Fund Organisation (EPFO). It ensures that employees are included in the Provident Fund (PF) scheme, a compulsory social security program that supports workers financially after retirement, during medical emergencies, or in the event of death.",
-  image: "/images/ITR1-Return-Filing-hero-image1.svg",
+    image: "/images/x.svg",
+
 };

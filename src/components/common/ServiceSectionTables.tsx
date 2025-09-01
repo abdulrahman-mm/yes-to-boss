@@ -68,7 +68,7 @@ const ServiceSectionTables: React.FC<ServiceSectionWhyProps> = ({
     <section
       className={`${
         tableData.tableStyle === "gradient"
-          ? "bg-gradient-to-b from-[#212121] to-[#070707]"
+          ? "bg-gradient-to-b from-[#212121] to-[#070707] text-white"
           : "bg-white text-black"
       }  general-sans p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16`}
     >

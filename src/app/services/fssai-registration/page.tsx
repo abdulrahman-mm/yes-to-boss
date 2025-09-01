@@ -1,5 +1,5 @@
-import ServiceSectionFAQ from "@/components/common/ServiceSectionFAQ";
-import ServiceSectionHero from "@/components/common/ServiceSectionHero";
+"use client";
+import dynamic from "next/dynamic";
 import React from "react";
 import {
   fssaiRegistrationFaqData,
@@ -11,33 +11,30 @@ import {
   fssaiWhoNeedFssaiRegistrationData,
   fssaiWhyChooseYesToBossForFssaiRegistrationData,
 } from "@/data";
-import ServiceSectionWhy from "@/components/common/ServiceSectionWhy";
-import ServiceSectionTables from "@/components/common/ServiceSectionTables";
-import ServiceSectionBulletpoints from "@/components/common/ServiceSectionBulletpoints";
-import FSSAIRegistrationRenewal from "@/components/services/FSSAI Registration/FSSAIRegistrationRenewal";
 
-const page = () => {
+// Dynamic imports
+const ServiceSectionFAQ = dynamic(() => import("@/components/common/ServiceSectionFAQ"));
+const ServiceSectionHero = dynamic(() => import("@/components/common/ServiceSectionHero"));
+const ServiceSectionWhy = dynamic(() => import("@/components/common/ServiceSectionWhy"));
+const ServiceSectionTables = dynamic(() => import("@/components/common/ServiceSectionTables"));
+const ServiceSectionBulletpoints = dynamic(() => import("@/components/common/ServiceSectionBulletpoints"));
+const FSSAIRegistrationRenewal = dynamic(() => import("@/components/services/FSSAI Registration/FSSAIRegistrationRenewal"));
+const ServiceWhyChooseUs = dynamic(() => import("@/components/common/ServiceWhyChooseUs"));
+
+const Page = () => {
   return (
     <>
       <ServiceSectionHero heroSectionData={fssaiHeroData} />
       <ServiceSectionWhy WhyData={fssaiWhyRegisterForFssaiLicense} />
-      <FSSAIRegistrationRenewal/>
-      <ServiceSectionBulletpoints
-        listData={fssaiConsequencesOfNotRegisteringData}
-      />
-      <ServiceSectionBulletpoints
-        listData={fssaiDocumentsRequiredForFssaiReistrationData}
-      />
-      <ServiceSectionBulletpoints
-        listData={fssaiWhoNeedFssaiRegistrationData}
-      />
-      <ServiceSectionBulletpoints
-        listData={fssaiWhyChooseYesToBossForFssaiRegistrationData}
-      />
+      <ServiceSectionBulletpoints listData={fssaiWhoNeedFssaiRegistrationData} />
       <ServiceSectionTables tableData={fssaiTableData} />
+      <ServiceSectionBulletpoints listData={fssaiDocumentsRequiredForFssaiReistrationData} />
+      <FSSAIRegistrationRenewal />
+      <ServiceSectionBulletpoints listData={fssaiConsequencesOfNotRegisteringData} />
+      <ServiceWhyChooseUs WhyChooseUsData={fssaiWhyChooseYesToBossForFssaiRegistrationData} />
       <ServiceSectionFAQ faqData={fssaiRegistrationFaqData} />
     </>
   );
 };
 
-export default page;
+export default Page;

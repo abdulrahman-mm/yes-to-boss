@@ -94,7 +94,8 @@ const ServiceSectionWhy: React.FC<ServiceSectionWhyProps> = ({WhyData}) => {
               <p className="text-lg sm:text-xl md:text-2xl font-medium">
                 {card.detailsHeading}
               </p>
-              <p className="text-xs sm:text-sm md:text-base font-normal mt-3 sm:mt-4">
+              {/* <p className="text-xs sm:text-sm md:text-base font-extralight mt-3 sm:mt-4"> */}
+              <p className="text-xs sm:text-sm md:text-base  font-light mt-3 sm:mt-4">
                 {card.detailsDescription}
               </p>
             </div>
