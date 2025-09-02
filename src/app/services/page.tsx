@@ -4,32 +4,63 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Header } from "@/components/layout";
 gsap.registerPlugin(ScrollTrigger);
+import Link from "next/link";
 
 const services = [
   {
     id: "01",
-    title: "Startup Proprietorship Firm Formation",
-    image: "./images/home-ourcoreservice-image1.svg",
+    title: "ITR-1 Filing",
   },
   {
     id: "02",
-    title: "GST Registration",
-    image: "./images/home-ourcoreservice-image2.svg",
+    title: "GST Return Filing",
   },
   {
     id: "03",
-    title: "Income Tax Return (ITR) Filing",
-    image: "./images/home-ourcoreservice-image4.svg",
+    title: "FSSAI Registration",
   },
   {
     id: "04",
-    title: "Private Limited Company Registration",
-    image: "./images/home-ourcoreservice-image5.svg",
+    title: "DIN eKYC Filing",
   },
   {
     id: "05",
-    title: "TDS Returns Filing",
-    image: "./images/home-ourcoreservice-image3.svg",
+    title: "TDS Return Filing",
+  },
+  {
+    id: "06",
+    title: "EPFO Registration",
+  },
+  {
+    id: "07",
+    title: "Udayam Registration",
+  },
+  {
+    id: "08",
+    title: "ITR-4 Return Filing",
+  },
+  {
+    id: "09",
+    title: "ITR-3 Return Filing",
+  },
+  {
+    id: "10",
+    title: "ITR-2 Return Filing",
+  },
+
+  {
+    id: "11",
+    title: "Income Tax e-Filing",
+  },
+
+  {
+    id: "12",
+    title: "GST Registration",
+  },
+
+  {
+    id: "13",
+    title: "Sole Proprietorship",
   },
 ];
 
@@ -116,6 +147,7 @@ const Page = () => {
       );
     }
   }, [hovered]);
+
   return (
     <main className="overflow-hidden">
       <div className="py-2 pb-10 bg-gradient-to-b from-[#212121] to-[#070707] min-h-screen bg-cover bg-center text-white">
@@ -144,9 +176,17 @@ const Page = () => {
                 onTouchStart={() => setHovered(index)}
                 onTouchEnd={() => setHovered(null)}
               >
-                <p className="text-gray-100 md:text-[#575757] md:text-3xl lg:text-4xl font-medium hover:text-white hover:scale-105 md:hover:scale-110 transition-all duration-500">
-                  {service.id}. {service.title}
-                </p>
+                <Link
+                  href={`/services/${service.title
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/[()]/g, "")}`}
+                >
+                  <p className="text-gray-100 md:text-[#575757] md:text-3xl lg:text-4xl font-medium hover:text-white hover:scale-105 md:hover:scale-110 transition-all duration-500">
+                    {service.id}. {service.title}
+                  </p>
+                </Link>
+
                 {index !== services.length - 1 && (
                   <hr className="border border-[#464646] w-full md:w-2/3 mx-auto mt-8 md:mt-14" />
                 )}
@@ -155,20 +195,32 @@ const Page = () => {
           </div>
 
           {/* Floating Image (hidden on small screens) */}
-          <div className="block pointer-events-none fixed top-0 left-0 z-50">
+          {/* <div className="block pointer-events-none fixed top-0 left-0 z-50">
             {hovered !== null && (
-              <img
+              // <img
+              //   key={hovered}
+              //   ref={imageRef}
+              //   src={services[hovered].image}
+              //   alt="hover"
+              //   className="w-32 sm:w-40 md:w-64 h-20 sm:h-28 md:h-40 object-cover rounded-xl shadow-2xl will-change-transform"
+              //   style={{
+              //     transformOrigin: "top left",
+              //   }}
+              // />
+              <Image
                 key={hovered}
                 ref={imageRef}
                 src={services[hovered].image}
                 alt="hover"
+                width={256} // must provide width
+                height={160} // must provide height
                 className="w-32 sm:w-40 md:w-64 h-20 sm:h-28 md:h-40 object-cover rounded-xl shadow-2xl will-change-transform"
                 style={{
                   transformOrigin: "top left",
                 }}
               />
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </main>

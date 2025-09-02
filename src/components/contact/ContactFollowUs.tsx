@@ -243,6 +243,7 @@ const ContactFollowUs = () => {
             <p className="text-white font-extralight text-[60px] sm:text-[100px] md:text-[130px] lg:text-[150px] whitespace-nowrap">
               Follow Us
             </p>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="./icons/yes-to-boss-circle-logo.svg"
               alt="logo"

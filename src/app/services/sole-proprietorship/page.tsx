@@ -8,24 +8,17 @@ import React from 'react'
 
 const page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
     <ServiceSectionHero heroSectionData={soleProprietorshipHeroData}/>
     <ServiceSectionWhy WhyData={soleProprietorshipWhyRegisterData}/>
-
-
     <ServiceSectionBulletpoints listData={soleRulesAndRegulationsData}/>
     <ServiceSectionBulletpoints listData={soleTypesOfSoleProprietorshipData}/>
     <ServiceSectionBulletpoints listData={soleEligibilityForSoleProprietorshipData}/>
     <ServiceWhyChooseUs WhyChooseUsData={soleWhyChooseUs}/>
-
     <ServiceSectionBulletpoints listData={soletDocumentsRequired}/>
     <ServiceSectionBulletpoints listData={soleOngoingComplianceAfterRegistrationData}/>
-
     <ServiceSectionFAQ faqData={soleProprietorshipFaqData}/>
-
-
-
-    </>
+    </div>
   )
 }
 

@@ -379,6 +379,7 @@
 
 
 
+/* eslint-disable @next/next/no-img-element */
 
 "use client";
 import gsap from "gsap";
@@ -536,7 +537,9 @@ const HomeOurCoreServices = () => {
 
         {/* Floating Image (hidden on small screens) */}
         <div className="block pointer-events-none fixed top-0 left-0 z-50">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           {hovered !== null && (
+          
             <img
               key={hovered}
               ref={imageRef}

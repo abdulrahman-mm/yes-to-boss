@@ -12,7 +12,7 @@ import { dinEKycPenaltyForNonFiling } from "@/data/dinEkycFiling/dinEKycPenaltyF
 
 const page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <ServiceSectionHero heroSectionData={dinEKycFilingHeroData} />
       <ServiceSectionWhy WhyData={dinWhyFileDirKyc} />
       <DinWhoShouldFileDIR3KYC/>
@@ -22,7 +22,7 @@ const page = () => {
       <ServiceSectionBulletpoints listData={dinEKycDueDateData}/>
       <ServiceSectionBulletpoints listData={dinEKycPenaltyForNonFiling}/>
       <ServiceSectionFAQ faqData={dinFaqData} />
-    </>
+    </div>
   );
 };
 

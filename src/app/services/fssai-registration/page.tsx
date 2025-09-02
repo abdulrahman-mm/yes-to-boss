@@ -23,7 +23,7 @@ const ServiceWhyChooseUs = dynamic(() => import("@/components/common/ServiceWhyC
 
 const Page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <ServiceSectionHero heroSectionData={fssaiHeroData} />
       <ServiceSectionWhy WhyData={fssaiWhyRegisterForFssaiLicense} />
       <ServiceSectionBulletpoints listData={fssaiWhoNeedFssaiRegistrationData} />
@@ -33,7 +33,7 @@ const Page = () => {
       <ServiceSectionBulletpoints listData={fssaiConsequencesOfNotRegisteringData} />
       <ServiceWhyChooseUs WhyChooseUsData={fssaiWhyChooseYesToBossForFssaiRegistrationData} />
       <ServiceSectionFAQ faqData={fssaiRegistrationFaqData} />
-    </>
+    </div>
   );
 };
 

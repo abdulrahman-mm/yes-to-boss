@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";

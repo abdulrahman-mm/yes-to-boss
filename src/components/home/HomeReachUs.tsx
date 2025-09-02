@@ -468,7 +468,7 @@ const HomeReachUs = () => {
 
       emailjs
         .send(
-          "service_pyu7fec", // replace with EmailJS service ID
+          "service_krbaa7s", // replace with EmailJS service ID
           "template_bhc9wbc", // replace with EmailJS template ID
           {
             firstname: formData.firstName,

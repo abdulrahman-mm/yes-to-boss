@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -182,7 +184,6 @@ export const Header: React.FC<HeaderProps> = ({
             { name: "Home", path: "/" },
             { name: "About Us", path: "/about" },
             { name: "Contact Us", path: "/contact" },
-            // { name: "Services", path: "/services" },
           ].map((item, index) => (
             <Link
               key={item.name}

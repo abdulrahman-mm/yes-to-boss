@@ -199,6 +199,7 @@
 //   );
 // };
 
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -302,7 +303,9 @@ const ServiceWhyChooseUs: React.FC<ServiceSectionWhyChooseUsProps> = ({
                 className="w-4 sm:w-5"
               />
               <p className="font-medium text-sm sm:text-base md:text-lg">
-                {title}
+                {/* {title} */}
+                {typeof title === "string" ? title : title.text}
+
               </p>
             </div>
           ))}
@@ -319,7 +322,9 @@ const ServiceWhyChooseUs: React.FC<ServiceSectionWhyChooseUsProps> = ({
         </div>
 
         {/* Right side: image */}
-        <div className="w-full lg:w-96 h-52 sm:h-64 md:h-80 lg:h-[400px] flex-grow bg-gray-300 rounded-2xl sm:rounded-3xl shadow-2xl"></div>
+        <div className="w-full lg:w-96 h-52 sm:h-64 md:h-80 lg:h-[400px] flex-grow  rounded-2xl sm:rounded-3xl shadow-2xl">
+        <img src="/images/gst-what-you-get.png" alt="" className="w-full h-full object-cover rounded-3xl "/>
+        </div>
       </div>
     </section>
   );

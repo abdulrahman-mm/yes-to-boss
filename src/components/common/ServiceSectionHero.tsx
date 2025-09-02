@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { BlurText } from "@/components/animations";
 import { Header } from "@/components/layout";
@@ -192,8 +193,8 @@ const ServiceSectionHero: React.FC<ServiceSectionFAQProps> = ({
                 {heroSectionData.bulletPointsTitle}
               </p>
               <ol className="list-disc leading-7 list-inside text-sm sm:text-base md:text-lg lg:text-sm  font-medium font-Bricolage_Grotesque">
-                {heroSectionData.bulletPoints?.map((item, index) => (
-                  <li>{item}</li>
+                {heroSectionData.bulletPoints?.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ol>
             </div>

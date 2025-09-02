@@ -101,6 +101,7 @@ const ITR1KeyServices = () => {
               }`}
               // ref={addToCardRefs}
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 loading="lazy"
                 src={service.image}
@@ -117,6 +118,7 @@ const ITR1KeyServices = () => {
                   </p>
                 </div>
                 <div className="flex justify-end">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/icons/ArrowUpRight.svg"
                     alt="Arrow Icon"

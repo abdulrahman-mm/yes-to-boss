@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 import React, {  useRef } from "react";
 import gsap from "gsap";
@@ -32,7 +34,6 @@ const services = [
 ];
 const GSTPenaltyForLateGst = () => {
   const textRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<HTMLDivElement[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   return (

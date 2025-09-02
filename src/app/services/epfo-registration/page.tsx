@@ -8,7 +8,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <ServiceSectionHero heroSectionData={epfoHeroData} />
       <ServiceSectionWhy WhyData={epfoWhyRegisterData} />
       <ServiceSectionBulletpoints listData={epfoWhoCanApplyForRegistrationData}/>
@@ -19,7 +19,7 @@ const page = () => {
       <ServiceSectionBulletpoints listData={epfoBenefitsofEPFRegistrationData}/>
       <ServiceSectionFAQ faqData={epfoFaqData} />
 
-    </>
+    </div>
   )
 }
 

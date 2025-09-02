@@ -121,6 +121,9 @@ export * from './IncomeTaxEFiling/incomePostFilingData'
 export * from './IncomeTaxEFiling/incomeTaxWhoNeedsToFile'
 export * from './IncomeTaxEFiling/incomeTypesOfITRFilingsData'
 export * from './IncomeTaxEFiling/incomeWhyChooseUs'
+export * from './IncomeTaxEFiling/incomeNewTaxRegimeFY2024_25'
+export * from './IncomeTaxEFiling/incomeResidentIndividualsAged60_80Years'
+export * from './IncomeTaxEFiling/incomeResidentIndividualsAgedMoreThan80Years'
 
 
 // gst registration

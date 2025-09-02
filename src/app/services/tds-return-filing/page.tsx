@@ -9,7 +9,7 @@ import ServiceWhyChooseUs from '@/components/common/ServiceWhyChooseUs'
 
 const page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
     <ServiceSectionHero heroSectionData={tdsReturnFilingHeroData}/>
     <ServiceSectionWhy WhyData={tdsWhyFileTDSReturnsData}/>
     <ServiceSectionBulletpoints listData={tdsWhoMustFileTDSReturnsData}/>
@@ -21,9 +21,8 @@ const page = () => {
     <ServiceSectionTables tableData={tdsPenaltyForTDSNonComplianceData}/>
     <ServiceSectionBulletpoints listData={tdsThresholdsToRemember}/>
     <ServiceSectionFAQ faqData={tdsFaqData}/>
-
-    
-    </>
+  
+    </div>
   )
 }
 

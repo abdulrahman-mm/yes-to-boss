@@ -46,6 +46,16 @@ const CircularText: React.FC<CircularTextProps> = ({
   const controls = useAnimation();
   const rotation: MotionValue<number> = useMotionValue(0);
 
+  // useEffect(() => {
+  //   const start = rotation.get();
+  //   controls.start({
+  //     rotate: start + 360,
+  //     scale: 1,
+  //     transition: getTransition(spinDuration, start),
+  //   });
+  // }, [spinDuration, text, onHover, controls]);
+
+
   useEffect(() => {
     const start = rotation.get();
     controls.start({
@@ -53,7 +63,10 @@ const CircularText: React.FC<CircularTextProps> = ({
       scale: 1,
       transition: getTransition(spinDuration, start),
     });
-  }, [spinDuration, text, onHover, controls]);
+  }, [spinDuration, text, onHover, controls, rotation]);
+  
+
+  
 
   const handleHoverStart = () => {
     const start = rotation.get();

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
@@ -292,10 +293,12 @@ const ContactUsForm = () => {
                   alt="email"
                   className="will-change-transform"
                 />
-                <p className="font-inter font-medium text-sm md:text-base">
-                  {/* yestobossservices@gmail.com */}
-                  yestobossconsultancy@gmail.com
-                </p>
+                <a href="mailto:yestobossconsultancy@gmail.com">
+                  <p className="font-inter font-medium text-sm md:text-base">
+                    {/* yestobossservices@gmail.com */}
+                    yestobossconsultancy@gmail.com
+                  </p>
+                </a>
               </div>
               <div className="flex gap-3 items-center mt-5 md:mt-7">
                 <img
@@ -303,9 +306,13 @@ const ContactUsForm = () => {
                   alt="phone"
                   className="will-change-transform"
                 />
+                <a href="tel:+91 6379920255">
+
                 <p className="font-inter font-medium text-sm md:text-base">
                   +91 6379920255
                 </p>
+                </a>
+
               </div>
               <div className="flex gap-3 items-start mt-5 md:mt-7">
                 <img

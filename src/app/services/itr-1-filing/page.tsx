@@ -113,7 +113,7 @@ const ITR1PenaltyForLateFiling = dynamic(
 
 const Page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <ServiceSectionHero heroSectionData={itr1HeroData} />
       <ServiceSectionWhy WhyData={itr1WhyFileData} />
       <ServiceSectionBulletpoints listData={itr1WhoCanFileData} />
@@ -126,7 +126,7 @@ const Page = () => {
       <ITR1StructureOfITR1 />
       <ITR1PenaltyForLateFiling />
       <ServiceSectionFAQ faqData={itr1FaqData} />
-    </>
+    </div>
   );
 };
 

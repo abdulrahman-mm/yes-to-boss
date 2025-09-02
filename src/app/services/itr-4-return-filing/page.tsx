@@ -13,7 +13,7 @@ const page = () => {
 
   
   return (
-    <>
+    <div className="overflow-hidden">
     <ServiceSectionHero heroSectionData={ITR4ReturnFilingHeroData}/>
     <ServiceSectionWhy WhyData={ITR4WhyFileData}/>
     <ITR4WhoCanFile/>
@@ -25,7 +25,7 @@ const page = () => {
 <ITR4StructureOfForm/>
 <ITR4PenaltyForLateFiling/>
     <ServiceSectionFAQ faqData={ITR4FaqData}/>
-    </>
+    </div>
   )
 }
 

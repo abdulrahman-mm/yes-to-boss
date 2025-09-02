@@ -12,7 +12,7 @@ import ServiceSectionTables from "@/components/common/ServiceSectionTables";
 
 const page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <ServiceSectionHero heroSectionData={gstHeroData} />
       <ServiceSectionWhy WhyData={gstWhyFile} />
       <GSTWhoMustFileGSTReturns />
@@ -22,7 +22,7 @@ const page = () => {
       <GSTPenaltyForLateGst />
       <GSTWhatHappenIfIFileGstLate />
       <ServiceSectionFAQ faqData={gstFaqData} />
-    </>
+    </div>
   );
 };
 

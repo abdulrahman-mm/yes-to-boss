@@ -19,7 +19,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <ServiceSectionHero heroSectionData={gstRegistrationHeroData} />
       <ServiceSectionWhy WhyData={gstRegistrationWhyRegisterData} />
       <ServiceSectionBulletpoints listData={GSTWhoNeedsToRegisterData} />
@@ -33,7 +33,7 @@ const page = () => {
       <ServiceSectionBulletpoints listData={GSTCertificateData} />
       <ServiceSectionBulletpoints listData={GSTWhyChooseUs} />
       <ServiceSectionFAQ faqData={gstRegistrationFaqData} />
-    </>
+    </div>
   );
 };
 

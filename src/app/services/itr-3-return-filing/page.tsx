@@ -21,7 +21,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <ServiceSectionHero heroSectionData={ITR3ReturnFilingHeroData} />
       <ServiceSectionWhy WhyData={ITR3WhyFileData} />
       <ServiceSectionBulletpoints listData={ITR3WhoCanFileData} />
@@ -36,7 +36,7 @@ const page = () => {
       <ITR3StructureOfTheForm/>
       <ITR3PenaltyForLateFiling/>
       <ServiceSectionFAQ faqData={ITR3FaqData} />
-    </>
+    </div>
   );
 };
 

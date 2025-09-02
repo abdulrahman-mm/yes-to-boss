@@ -234,6 +234,8 @@
 
 // export default AboutHero;
 
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { Header } from "../layout";

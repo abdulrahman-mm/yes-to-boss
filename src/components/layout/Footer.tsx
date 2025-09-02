@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Image from "next/image";
 import React from "react";
 import TextPressure from "../animations/TextPressure";
@@ -45,12 +47,15 @@ export const Footer = () => {
             <div className="flex flex-col gap-5">
               <div className="flex justify-between text-sm">
                 <p>Mobile</p>
+                <a href="tel:+91 63799 20255">
                 <p>+91 63799 20255</p>
+
+                </a>
               </div>
               <hr className="border border-white/10 w-full " />
               <div className="flex justify-between text-sm">
                 <p>Email</p>
-                <a href="mailto:yestobossservices@gmail.com">
+                <a href="mailto:yestobossconsultancy@gmail.com">
                   <p>yestobossconsultancy@gmail.com</p>
                 </a>
               </div>
@@ -118,14 +123,17 @@ export const Footer = () => {
               <img src="/icons/footer-mail-icon.svg" alt="" className="h-fit" />
                 {/* <LuMailOpen className="text-md" /> */}
                 {/* <p className="text-sm">yestobossservices@gmail.com</p> */}
-                <a href="mailto:yestobossservices@gmail.com">
+                <a href="mailto:yestobossconsultancy@gmail.com">
                   <p className="text-sm">yestobossconsultancy@gmail.com</p>
                 </a>
               </div>
               <div className="flex gap-2 items-center">
               <img src="/icons/footer-phone-icon.svg" alt="" className="h-fit" />
                 {/* <FiPhoneCall className="text-md" /> */}
+                <a href="tel:+91 63799 20255">
                 <p className="text-sm">Phone : +91 63799 20255</p>
+
+                </a>
               </div>
               {/* <p className="underline text-sm text-center">View Map</p> */}
             </div>
@@ -147,13 +155,7 @@ export const Footer = () => {
               <Link href="/services" className="text-sm">
                 Services
               </Link>
-              {/* <p className="text-sm">About Us</p> */}
-              {/* <p className="text-sm">Contact Us</p> */}
-
-              {/* <p className="text-sm">Services</p> */}
-              {/* <p className="text-sm">Projects</p> */}
-              {/* <p className="text-sm">Blog</p> */}
-              {/* <p className="text-sm">Faq</p> */}
+            
             </div>
           </div>
 
@@ -183,7 +185,6 @@ export const Footer = () => {
             </div>
           </div> */}
 
-          {/* Office Address */}
         </div>
 
         <hr className="border border-white/10 w-full mt-7" />

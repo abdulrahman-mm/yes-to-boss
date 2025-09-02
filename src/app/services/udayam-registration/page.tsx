@@ -9,7 +9,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <>
+    <div className="overflow-hidden">
     <ServiceSectionHero heroSectionData={udayamHeroData}/>
     <ServiceSectionWhy WhyData={udayamWhyRegisterData}/>
     <ServiceSectionBulletpoints listData={udayamWhoCanApplyData}/>
@@ -18,7 +18,7 @@ const page = () => {
     <ServiceSectionBulletpoints listData={udayamDocumentsRequiredData}/>
     <ServiceSectionBulletpoints listData={udayamPenaltyForNotRegisteringData}/>
     <ServiceSectionFAQ faqData={udayamFaqData} />
-    </>
+    </div>
   )
 }
 
