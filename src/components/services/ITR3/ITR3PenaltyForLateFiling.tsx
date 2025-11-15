@@ -2,7 +2,8 @@ import React from "react";
 
 const ITR3PenaltyForLateFiling = () => {
   return (
-    <section className="general-sans bg-white px-5 py-4 sm:px-8 sm:py-7 md:px-10 md:py-8 lg:px-14 lg:py-10 xl:px-16">
+    <section className="general-sans bg-white px-4 py-4 sm:px-8 sm:py-7 md:px-10 md:py-8 lg:px-14 lg:py-10 xl:px-16">
+     
       <p className="text-2xl sm:text-3xl font-Bricolage_Grotesque md:text-4xl lg:text-5xl font-semibold">
         Penalty for Late Filing ITR-3
       </p>
@@ -27,11 +28,11 @@ const ITR3PenaltyForLateFiling = () => {
         </tbody>
       </table>
 
-      <p className="mt-5 font-medium text-xl">
+      <p className=" mt-5 text-lg sm:text-xl md:text-2xl font-medium">
         Unpaid taxes incur 1% monthly interest. Late filing may:
       </p>
 
-      <ul className="list-disc list-inside mt-5 space-y-2 text-lg">
+      <ul className="list-disc list-inside mt-5 space-y-2 text-base sm:text-lg md:text-xl mb-2">
         <li> Lead to legal notices or prosecution</li>
         <li>Prevent carry forward of business or capital losses</li>
         <li>Delay refund processing or result in penalties</li>

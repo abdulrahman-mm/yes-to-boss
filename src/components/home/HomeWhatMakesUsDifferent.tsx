@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 
-
 "use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
@@ -15,22 +14,22 @@ import { EffectCards } from "swiper/modules";
 const data = [
   {
     id: "01",
-    title: "Nationwide Expertise",
+    title: "Nationwide-Expertise",
     image: "/images/home-whatmakesus-differnet-image1.png",
   },
   {
     id: "02",
-    title: "Personalized Financial Solutions",
+    title: "Personalized Financial-Solutions",
     image: "/images/home-whatmakesus-differnet-image2.png",
   },
   {
     id: "03",
-    title: "Multi-Sector Proficiency",
+    title: "Multi Sector-Proficiency",
     image: "/images/home-whatmakesus-differnet-image3.png",
   },
   {
     id: "04",
-    title: "Tech-Enabled Delivery",
+    title: "Tech Enabled-Delivery",
     image: "/images/home-whatmakesus-differnet-image4.png",
   },
 ];
@@ -156,7 +155,10 @@ const HomeWhatMakesUsDifferent = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="general-sans xxx bg-white text-black">
+    <section
+      ref={containerRef}
+      className="general-sans xxx bg-white text-black"
+    >
       {/* Heading Section */}
       <div className="flex flex-col p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16 gap-2 sm:gap-5 items-center justify-center text-center">
         <div
@@ -171,7 +173,7 @@ const HomeWhatMakesUsDifferent = () => {
             muted
             playsInline
             preload="auto"
-            className="w-20 sm:w-28 h-9 md:h-13 rounded-3xl hover:w-40 transition-all duration-500 ease-in object-cover"
+            className="w-20 sm:w-28 h-9 md:h-13 rounded-3xl hover:w-50 transition-all duration-2000 ease-in object-cover"
           />
           <p>Makes Us Different</p>
           <div
@@ -238,7 +240,10 @@ const HomeWhatMakesUsDifferent = () => {
                 {item.id}
               </p>
               <p className="text-white text-xl sm:text-2xl font-medium md:font-semibold leading-snug">
-                {item.title}
+                {item.title.split('-')[0]}
+              </p>
+              <p className="text-white text-xl sm:text-2xl font-medium md:font-semibold leading-snug">
+                {item.title.split('-')[1]}
               </p>
             </div>
           </div>

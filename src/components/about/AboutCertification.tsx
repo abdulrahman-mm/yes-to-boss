@@ -106,13 +106,14 @@ const AboutCertification = () => {
       </div>
 
       <div className="flex flex-wrap gap-2 md:gap-6 mt-14">
+     
         <div
           ref={(el) => {
             cardsRef.current[0] = el;
           }}
           className="bg-gradient-to-b from-[#FFFFFF] to-[#E0F1F9] rounded-3xl p-6 text-black flex-grow min-w-[250px] md:w-[22%] w-full will-change-transform will-change-opacity"
         >
-          <p className="font-medium text-2xl  md:t-12">Honesty</p>
+          <p className="font-medium text-2xl  md:mt-12">Honesty</p>
           <p className="font-normal text-sm mt-2 text-black">
             We maintain transparency and ethical practices in every tax matter,
             fostering strong and dependable relationships with clients.
@@ -144,6 +145,7 @@ const AboutCertification = () => {
             improving to provide the highest professional standards.
           </p>
         </div>
+
       </div>
     </section>
   );

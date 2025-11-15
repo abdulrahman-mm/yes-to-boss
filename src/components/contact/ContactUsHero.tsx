@@ -97,11 +97,11 @@ const ContactUsHero = () => {
     <main className="rounded-b-[40px] bg-white">
       <div className="pt-2 rounded-b-[40px]">
         
-        <div className="w-[90vw] mx-auto">
+        <div className="w-[90vw] mx-auto relative z-50">
           <Header bgColor="black" textColor="white" />
         </div>
 
-        <div className="flex flex-col-reverse md:flex-row gap-3 md:gap-10 general-sans px-5 md:px-14 lg:px-32 xl:px-40 justify-between pt-7 md:pt-12 lg:pt-16 h-full items-center">
+        <div className="flex flex-col-reverse mt-28 sm:mt-20 md:mt-0 md:flex-row gap-3 md:gap-10 general-sans px-5 md:px-14 lg:px-32 xl:px-40 justify-between pt-7 md:pt-12 lg:pt-16 h-full items-center">
           {/* Left Section */}
           <div className="flex flex-col pb-5 md:pb-20 gap-6 w-full lg:w-2/3 text-center lg:text-left">
             <p
@@ -152,7 +152,6 @@ const ContactUsHero = () => {
               width={400}
               height={500}
               ref={heroImgRef}
-              priority // ✅ Optimizes image performance
             />
             <Image
               alt="whatsapp-icon"
@@ -172,7 +171,6 @@ const ContactUsHero = () => {
             />
           </div>
         </div>
-
       </div>
     </main>
   );

@@ -107,8 +107,8 @@ const ServiceSectionHero: React.FC<ServiceSectionFAQProps> = ({
   }, []);
 
   return (
-    <section className="bg-white min-h-screen pt-2 pb-5 md:pb-0 general-sans px-4 sm:px-8 md:px-12 lg:px-16">
-      <div className="w-full md:w-[90vw] mx-auto">
+    <section className="bg-white  pt-2 pb-5 md:pb-0 general-sans px-4 sm:px-8 md:px-12 lg:px-16">
+      <div className="w-full md:w-[90vw] mx-auto relative z-50">
         <Header bgColor="black" textColor="white" />
       </div>
 
@@ -183,7 +183,7 @@ const ServiceSectionHero: React.FC<ServiceSectionFAQProps> = ({
             className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
           />
 
-          <p className="text-[#292833] mt-8 font-medium font-Bricolage_Grotesque leading-7">
+          <p className="text-[#292833] mt-2 md:mt-8 md:text-justify font-medium font-Bricolage_Grotesque leading-7 md:leading-8">
             {heroSectionData.answer}
           </p>
 
@@ -202,13 +202,13 @@ const ServiceSectionHero: React.FC<ServiceSectionFAQProps> = ({
         </div>
 
         <div
-          className="h-full w-full sm:w-80 md:w-96 flex-grow overflow-hidden  will-change-transform translate-z-0"
+          className="h-80 md:h-full w-full sm:w-80 md:w-96 flex-grow overflow-hidden  will-change-transform translate-z-0"
           ref={imageBoxRef}
         >
           <img
             src={heroSectionData.image}
             alt=""
-            className="object-cover w-full h-full object-top"
+            className="object-contain md:object-cover w-full h-full object-top"
           />
         </div>
       </div>

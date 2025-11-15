@@ -6,3 +6,7 @@ export { default as BlurText } from "./BlurText";
 export { default as ShinnyText } from "./ShinyText";
 export { default as ScrollReveal } from "./ScrollReveal";
 export { default as VariableProximity } from "./VariableProximity";
+export { default as StaggerMenu } from "./StaggerMenu";
+export { default as Prism } from "./Prism";
+export { default as GlassSurface } from "./GlassSurface";
+export { default as ScrollSmooth } from "./ScrollSmooth";

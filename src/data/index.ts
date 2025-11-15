@@ -8,6 +8,7 @@ export * from "./ITR1ReturnFiling/itr1WhoCanFileData";
 export * from "./ITR1ReturnFiling/itr1WhoCannotFile";
 export * from "./ITR1ReturnFiling/itr1WhyChooseUs";
 export * from "./ITR1ReturnFiling/itr1WhatHappensAfterFilingData";
+export * from "./ITR1ReturnFiling/itr1DocumentsRequired";
 
 
 // gst
@@ -80,6 +81,7 @@ export * from './ITR4ReturnFiling/ITR4DocumentsRequiredData'
 export * from './ITR4ReturnFiling/ITR4FilingDueDateData'
 export * from './ITR4ReturnFiling/ITR4WhyChooseUs'
 export * from './ITR4ReturnFiling/ITR4WhatHappensAfterFilingData'
+export * from './ITR4ReturnFiling/ITR4WhoCanFileData'
 
 
 // itr3 return

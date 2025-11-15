@@ -1,22 +1,45 @@
-"use client";
-
 import gsap from "gsap";
 import dynamic from "next/dynamic";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-const HomeHero = dynamic(() => import('@/components/home/HomeHero'));
-const HomeWhyYouHaveToChooseUs = dynamic(() => import('@/components/home/HomeWhyYouHaveToChooseUs'));
-const HomeOurCoreServices = dynamic(() => import('@/components/home/HomeOurCoreServices'));
-const HomeWhatMakesUsDifferent = dynamic(() => import('@/components/home/HomeWhatMakesUsDifferent'));
-const HomeTaxBusinessConsultingService = dynamic(() => import('@/components/home/HomeTaxBusinessConsultingService'));
-const HomeSpecializedRegistrationFilings = dynamic(() => import('@/components/home/HomeSpecializedRegistrationFilings'));
-const HomeReachUs = dynamic(() => import('@/components/home/HomeReachUs'));
+const HomeHero = dynamic(() => import("@/components/home/HomeHero"));
+const HomeWhyYouHaveToChooseUs = dynamic(
+  () => import("@/components/home/HomeWhyYouHaveToChooseUs")
+);
+const HomeOurCoreServices = dynamic(
+  () => import("@/components/home/HomeOurCoreServices")
+);
+const HomeWhatMakesUsDifferent = dynamic(
+  () => import("@/components/home/HomeWhatMakesUsDifferent")
+);
+const HomeTaxBusinessConsultingService = dynamic(
+  () => import("@/components/home/HomeTaxBusinessConsultingService")
+);
+const HomeSpecializedRegistrationFilings = dynamic(
+  () => import("@/components/home/HomeSpecializedRegistrationFilings")
+);
+const HomeReachUs = dynamic(() => import("@/components/home/HomeReachUs"));
 // const HomeTestimonial = dynamic(() => import('@/components/home/HomeTestimonial'));
 
+import type { Metadata } from "next";
+// import HomeTestimonial from "@/components/home/HomeTestimonial";
+
+export const metadata: Metadata = {
+  title: "income tax consultancy services | YesToBoss",
+  description:
+    "YesToBoss offers expert Income Tax Consultancy Services for individuals & businesses. File ITR online, save tax legally, with professional financial support.",
+  keywords: [
+    "Tax consultancy services",
+    "Best chartered accountant firms in india",
+    "tax advisor in india",
+    "tax auditor in india",
+    "financial Consultancy services in India",
+    "tax consultancy services in chennai income tax consultancy services",
+    
+  ],
+};    
 
 export default function Home() {
- 
- 
   // useEffect(() => {
   //   const trigger = ScrollTrigger.create({
   //     trigger: ".xxx",
@@ -72,7 +95,7 @@ export default function Home() {
   // }, []);
 
   return (
-    <>
+    <div className="overflow-hidden">
       <HomeHero />
       <HomeWhyYouHaveToChooseUs />
       <HomeOurCoreServices />
@@ -81,6 +104,6 @@ export default function Home() {
       <HomeSpecializedRegistrationFilings />
       <HomeReachUs />
       {/* <HomeTestimonial />/ */}
-    </>
+    </div>
   );
 }

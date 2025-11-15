@@ -206,7 +206,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { serviceListTypes } from "@/types";
-import Link from "next/link";
 
 type ServiceSectionWhyChooseUsProps = {
   WhyChooseUsData: serviceListTypes;
@@ -262,11 +261,30 @@ const ServiceWhyChooseUs: React.FC<ServiceSectionWhyChooseUsProps> = ({
     return () => ctx.revert();
   }, []);
 
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (imgRef.current) {
+      gsap.to(imgRef.current, {
+        y: 100, // move down while scrolling
+        ease: "none",
+        scrollTrigger: {
+          trigger: imgRef.current,
+          start: "top bottom", // when image enters viewport
+          end: "bottom top",   // until it leaves
+          scrub: true,         // smooth scrubbing
+        },
+      });
+    }
+  }, []);
+
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen text-white px-4 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 general-sans bg-gradient-to-b from-[#212121] to-[#070707]"
-    >
+      // className=" text-white px-4 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 general-sans bg-gradient-to-b from-[#212121] to-[#070707]"
+
+    className="general-sans g-gradient-to-b from-[#212121] to-[#070707] text-white px-4 py-4 sm:px-8 sm:py-7 md:px-10 md:py-8 lg:px-14 lg:py-10 xl:px-16">
+    
       {/* Top label */}
       <div className="w-fit mb-4 flex items-center gap-2">
         <p className="text-xs sm:text-sm w-fit">{WhyChooseUsData.heading}</p>
@@ -288,7 +306,7 @@ const ServiceWhyChooseUs: React.FC<ServiceSectionWhyChooseUsProps> = ({
       </div>
 
       {/* Reasons + Image */}
-      <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-32 mt-12">
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-32 mt-8 md:mt-12">
         {/* Left side: reasons */}
         <div className="flex flex-col gap-5 w-full lg:w-2/5">
           {WhyChooseUsData.bulletPoints?.map((title, index) => (
@@ -302,29 +320,36 @@ const ServiceWhyChooseUs: React.FC<ServiceSectionWhyChooseUsProps> = ({
                 alt="Tick Icon"
                 className="w-4 sm:w-5"
               />
-              <p className="font-medium text-sm sm:text-base md:text-lg">
+              <p className="text-sm sm:text-base md:text-lg">
                 {/* {title} */}
                 {typeof title === "string" ? title : title.text}
-
               </p>
             </div>
           ))}
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 py-4 sm:py-5">
-            <p className="text-base sm:text-lg">Let’s Chat & Talk Us</p>
+          <div
+            ref={addToRefs}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 py-4 sm:py-5"
+          >
+            <p className="text-base  bg-white rounded-4xl text-black px-4 py-2">Let’s Connect</p>
 
-            <Link href="/contact" className="">
+            {/* <Link href="/contact" className="">
               <button className="bg-white hover:bg-gray-600 text-black hover:text-white transition-all duration-300 cursor-pointer rounded-3xl px-4 sm:px-5 py-1 font-medium text-xs sm:text-sm">
                 Contact Us
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
 
         {/* Right side: image */}
-        <div className="w-full lg:w-96 h-52 sm:h-64 md:h-80 lg:h-[400px] flex-grow  rounded-2xl sm:rounded-3xl shadow-2xl">
-        <img src="/images/gst-what-you-get.png" alt="" className="w-full h-full object-cover rounded-3xl "/>
-        </div>
+        <div className="w-full lg:w-96 h-52 sm:h-64 md:h-80 lg:h-[400px] flex-grow rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
+      <img
+        ref={imgRef}
+        src="/images/gst-what-you-get.png"
+        alt="GST Parallax"
+        className="w-full h-full object-cover rounded-3xl"
+      />
+    </div>
       </div>
     </section>
   );

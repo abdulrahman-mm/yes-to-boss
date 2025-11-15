@@ -181,8 +181,8 @@ const ContactUsForm = () => {
 
       emailjs
         .send(
-          "service_pyu7fec", // Replace with your EmailJS service ID
-          "template_bhc9wbc", // Replace with your EmailJS template ID
+          "service_krbaa7s", // replace with EmailJS service ID
+          "template_bhc9wbc", // replace with EmailJS template ID
           {
             firstname: formData.firstName,
             lastname: formData.lastName,
@@ -193,6 +193,7 @@ const ContactUsForm = () => {
             message: formData.message,
           },
           "7ihUlmNH72tVXsg9Y" // Replace with your EmailJS public key
+
         )
         .then(
           (response) => {
@@ -327,10 +328,12 @@ const ContactUsForm = () => {
                 </div>
               </div>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1211.2141600090897!2d80.21654007928126!3d13.072275374019252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17d61bbb0f3f96d%3A0x8334512f5fca845a!2sARYU%20ACADEMY!5e0!3m2!1sen!2sin!4v1752495251666!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.013816674507!2d80.21449647454808!3d13.072116712667583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52670077092479%3A0xd6cc547553aeed1f!2sYes%20To%20Boss!5e1!3m2!1sen!2sin!4v1757512027958!5m2!1sen!2sin"
                 loading="lazy"
                 className="w-full rounded-2xl h-40 md:h-52 mt-10 md:mt-20 will-change-transform"
               ></iframe>
+
+{/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.013816674507!2d80.21449647454808!3d13.072116712667583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52670077092479%3A0xd6cc547553aeed1f!2sYes%20To%20Boss!5e1!3m2!1sen!2sin!4v1757512027958!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
 
             {/* Right */}

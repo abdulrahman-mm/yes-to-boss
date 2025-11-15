@@ -8,7 +8,7 @@ const ITRResidentIndividualsAgedMoreThan80 = () => {
      <p className="text-2xl sm:text-3xl font-Bricolage_Grotesque md:text-4xl lg:text-5xl font-semibold">
        Resident Individuals Aged More Than 80 Years
      </p>
-     <p className='text-lg mt-2'>
+     <p className='text-lg font-medium mt-2'>
        Taxpayers aged above 80 years will enjoy a basic exemption limit of Rs. 5 lakh, making income up to Rs. 5 lakh exempt from tax
      </p>
 
@@ -61,7 +61,7 @@ const ITRResidentIndividualsAgedMoreThan80 = () => {
        </div>
      </section>
 
-     <p className='text-lg mt-5'>Section 87A provides a rebate for individual taxpayers whose income is below a specified threshold. while under the old regime, it is Rs. 5 lakh. If your income falls within these limits, your tax liability will be reduced to zero.
+     <p className='text-base sm:text-lg md:text-xl mt-5'>Section 87A provides a rebate for individual taxpayers whose income is below a specified threshold. while under the old regime, it is Rs. 5 lakh. If your income falls within these limits, your tax liability will be reduced to zero.
      </p>
    </section>
   )

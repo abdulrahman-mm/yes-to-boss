@@ -533,15 +533,16 @@ const HomeReachUs = () => {
           </p>
 
           <p ref={textRef} className="mt-8 md:mt-12 text-white/60 general-sans">
-            Let us help you register, manage, and grow your
+            {/* Let us help you register, manage, and grow your
             business—stress-free. Contact us today for expert consultancy that
-            puts your success first.
+            puts your success first. */}
+            Looking to start or grow your business the right way? YesToBoss is your trusted partner for business registration, compliance, and management solutions. Whether you’re an entrepreneur launching your first venture or a company looking to streamline operations, our team provides end-to-end business consultancy services tailored to your goals.
           </p>
 
           <div className="mt-12 md:mt-20 rounded-2xl" ref={mapRef}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1211.2141600090897!2d80.21654007928126!3d13.072275374019252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17d61bbb0f3f96d%3A0x8334512f5fca845a!2sARYU%20ACADEMY!5e0!3m2!1sen!2sin!4v1752495251666!5m2!1sen!2sin"
-              loading="lazy"
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3517.013816674507!2d80.21449647454808!3d13.072116712667583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52670077092479%3A0xd6cc547553aeed1f!2sYes%20To%20Boss!5e1!3m2!1sen!2sin!4v1757512027958!5m2!1sen!2sin"
+                loading="lazy"
               className="w-full rounded-2xl h-52 border-none"
             ></iframe>
           </div>
@@ -622,7 +623,6 @@ const HomeReachUs = () => {
                 className={`border ${
                   errors.firstName ? "border-red-500" : "border-[#FFFFFF]/30"
                 } rounded-lg p-3`}
-                placeholder="Steve"
               />
               {errors.firstName && (
                 <span className="text-red-500 text-sm">{errors.firstName}</span>
@@ -639,7 +639,6 @@ const HomeReachUs = () => {
                 className={`border ${
                   errors.lastName ? "border-red-500" : "border-[#FFFFFF]/30"
                 } rounded-lg p-3`}
-                placeholder="Rogers"
               />
               {errors.lastName && (
                 <span className="text-red-500 text-sm">{errors.lastName}</span>
@@ -659,7 +658,6 @@ const HomeReachUs = () => {
                 className={`border ${
                   errors.email ? "border-red-500" : "border-[#FFFFFF]/30"
                 } rounded-lg p-3`}
-                placeholder="steve@example.com"
               />
               {errors.email && (
                 <span className="text-red-500 text-sm">{errors.email}</span>
@@ -676,7 +674,6 @@ const HomeReachUs = () => {
                 className={`border ${
                   errors.phone ? "border-red-500" : "border-[#FFFFFF]/30"
                 } rounded-lg p-3`}
-                placeholder="+91 9876543210"
               />
               {errors.phone && (
                 <span className="text-red-500 text-sm">{errors.phone}</span>
@@ -696,7 +693,6 @@ const HomeReachUs = () => {
                 className={`border ${
                   errors.city ? "border-red-500" : "border-[#FFFFFF]/30"
                 } rounded-lg p-3`}
-                placeholder="New York"
               />
               {errors.city && (
                 <span className="text-red-500 text-sm">{errors.city}</span>
@@ -713,7 +709,6 @@ const HomeReachUs = () => {
                 className={`border ${
                   errors.state ? "border-red-500" : "border-[#FFFFFF]/30"
                 } rounded-lg p-3`}
-                placeholder="California"
               />
               {errors.state && (
                 <span className="text-red-500 text-sm">{errors.state}</span>
@@ -731,7 +726,6 @@ const HomeReachUs = () => {
               className={`border ${
                 errors.message ? "border-red-500" : "border-[#FFFFFF]/30"
               } rounded-lg p-3`}
-              placeholder="Your message..."
               rows={4}
             />
             {errors.message && (

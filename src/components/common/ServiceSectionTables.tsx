@@ -70,11 +70,11 @@ const ServiceSectionTables: React.FC<ServiceSectionWhyProps> = ({
         tableData.tableStyle === "gradient"
           ? "bg-gradient-to-b from-[#212121] to-[#070707] text-white"
           : "bg-white text-black"
-      }  general-sans p-5 sm:p-8 md:p-10 lg:p-14 xl:p-16`}
+      }  general-sans px-4 py-4 sm:px-6 sm:py-6 md:px-8 md:py-8 lg:px-12 lg:py-10 xl:px-16 xl:py-12`}
     >
       {/* Heading */}
       <div ref={headingRef} className="will-change-transform translate-z-0">
-        <p className="text-4xl md:text-5xl font-semibold leading-tight">
+        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-Bricolage_Grotesque font-semibold leading-snug">
           {tableData.tableTitle}
         </p>
         {/* <p className="text-4xl md:text-5xl">You May Need to File</p> */}
@@ -125,7 +125,7 @@ const ServiceSectionTables: React.FC<ServiceSectionWhyProps> = ({
                       tableData.tableStyle === "gradient"
                         ? "border-white"
                         : "border-black"
-                    } p-4 px-6 md:px-12`}
+                    } p-4 px-6 md:px-8`}
                   >
                     {cell}
                   </td>

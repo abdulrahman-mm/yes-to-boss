@@ -176,7 +176,7 @@ const socials = [
     link: "https://www.instagram.com/yestobossservices?igsh=MTkzdWY3YmtpdGUwNQ==",
   },
   { name: "Facebook", link: "https://www.facebook.com/share/1EkhGhedjN/" },
-  { name: "Linked In", link: "https://www.linkedin.com/company/yestoboss/" },
+  { name: "LinkedIn", link: "https://www.linkedin.com/company/yestoboss/" },
 ];
 const repeatedTextMap: Record<string, string> = {};
 socials.forEach((item) => {

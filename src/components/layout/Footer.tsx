@@ -1,14 +1,252 @@
 /* eslint-disable @next/next/no-img-element */
-
+"use client";
 import Image from "next/image";
-import React from "react";
 import TextPressure from "../animations/TextPressure";
 import Link from "next/link";
+import React, { useEffect, useRef } from "react";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation";
+gsap.registerPlugin(ScrollTrigger);
 export const Footer = () => {
+  const router = useRouter();
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const sunRef = useRef<HTMLDivElement>(null);
+
+  // useEffect(() => {
+  //   if (sunRef.current && textRef.current) {
+  //     // Sun animation
+  //     gsap.fromTo(
+  //       sunRef.current,
+  //       {
+  //         y: 120,
+  //         scale: 0.8,
+  //         opacity: 0.6,
+  //       },
+  //       {
+  //         y: -20,
+  //         scale: 1.2,
+  //         opacity: 1,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: sunRef.current,
+  //           start: "top 90%",
+  //           end: "center center", // animation finishes at center of screen
+  //           scrub: true,
+  //         },
+  //       }
+  //     );
+
+  //     // Text animation (synced with sun)
+  //     gsap.fromTo(
+  //       textRef.current,
+  //       {
+  //         y: 100,
+  //         opacity: 0,
+  //       },
+  //       {
+  //         y: 0,
+  //         opacity: 1,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: sunRef.current, // same trigger as sun
+  //           start: "top 90%", // start together
+  //           end: "top 50%", // finish together
+  //           scrub: true,
+  //         },
+  //       }
+  //     );
+  //   }
+  // }, []);
+
+  //   useEffect(() => {
+  //   if (sunRef.current && textRef.current) {
+  //     // Sun animation
+  //     gsap.fromTo(
+  //       sunRef.current,
+  //       {
+  //         y: 120,
+  //         scale: 0.8,
+  //         opacity: 0.6,
+  //       },
+  //       {
+  //         y: -20,
+  //         scale: 1.2,
+  //         opacity: 1,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: sunRef.current,
+  //           start: "top 90%",
+  //           end: "center center",
+  //           toggleActions: "play reverse play reverse", // 👈 this line
+  //         },
+  //       }
+  //     );
+
+  //     // Text animation (synced with sun)
+  //     gsap.fromTo(
+  //       textRef.current,
+  //       {
+  //         y: 100,
+  //         opacity: 0,
+  //       },
+  //       {
+  //         y: 0,
+  //         opacity: 1,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: sunRef.current,
+  //           start: "top 90%",
+  //           end: "top 50%",
+  //           toggleActions: "play reverse play reverse", // 👈 repeat on scroll up/down
+  //         },
+  //       }
+  //     );
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   if (sunRef.current && textRef.current) {
+  //     // Register GSAP plugins (if not already)
+  //     gsap.registerPlugin(ScrollTrigger);
+
+  //     // Sun animation — smooth and natural
+  //     gsap.fromTo(
+  //       sunRef.current,
+  //       {
+  //         y: 150,
+  //         scale: 0.8,
+  //         opacity: 0.5,
+  //       },
+  //       {
+  //         y: -40,
+  //         scale: 1.2,
+  //         opacity: 1,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: sunRef.current,
+  //           start: "top 95%", // starts early
+  //           end: "bottom center", // lasts longer
+  //           scrub: 1.5, // 👈 smooth scroll-linked animation (1.5s delay)
+  //           invalidateOnRefresh: true,
+  //         },
+  //       }
+  //     );
+
+  //     // Text animation — synced & smooth
+  //     gsap.fromTo(
+  //       textRef.current,
+  //       {
+  //         y: 80,
+  //         opacity: 0,
+  //       },
+  //       {
+  //         y: 0,
+  //         opacity: 1,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: sunRef.current,
+  //           start: "top 90%",
+  //           end: "bottom center",
+  //           scrub: 1.5, // 👈 same smoothing
+  //           invalidateOnRefresh: true,
+  //         },
+  //       }
+  //     );
+  //   }
+  // }, []);
+
+  useEffect(() => {
+    if (!sunRef.current || !textRef.current) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const sunAnim = gsap.fromTo(
+      sunRef.current,
+      {
+        y: 150,
+        scale: 0.8,
+        opacity: 0.5,
+      },
+      {
+        y: -40,
+        scale: 1.2,
+        opacity: 1,
+        ease: "power2.out",
+        force3D: true,
+        scrollTrigger: {
+          trigger: sunRef.current,
+          start: "top 95%",
+          end: "bottom center",
+          scrub: true,
+          invalidateOnRefresh: false,
+        },
+      }
+    );
+
+    const textAnim = gsap.fromTo(
+      textRef.current,
+      {
+        y: 80,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sunRef.current,
+          start: "top 90%",
+          end: "bottom center",
+          scrub: true,
+          invalidateOnRefresh: false,
+        },
+      }
+    );
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      sunAnim.kill();
+      textAnim.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
   return (
-    <section className="bg-black text-white max-w-screen min-h-screen general-sans">
+    <section className="bg-black text-white  min-h-screen general-sans">
       <div className="p-5 md:p-10 lg:p-16">
+        <div className="relative w-full h-[40vh] flex justify-center items-end overflow-hidden">
+          <div
+            ref={textRef}
+            className="absolute top-6 z-30 flex justify-center items-center gap-5 w-full flex-col"
+          >
+            <p className="text-transparent bg-gradient-to-r from-white/20 via-white to-white/20 bg-clip-text w-[60%]  font-medium text-5xl mx-auto text-center ">
+              Tax Made Simple. Growth Made Easy.
+            </p>
+
+            <button
+              onClick={() => router.push("/contact-us")}
+              className="relative overflow-hidden bg-white text-black px-20 py-5 font-medium text-lg cursor-pointer rounded-full transition-all duration-1000 group hover:shadow-[0_0_20px_5px_rgba(0,255,255,0.2)]"
+            >
+              <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
+                Get In Touch
+              </span>
+              <span className="absolute left-1/2 top-full -translate-x-1/2 transition-all duration-200 group-hover:top-1/2 group-hover:-translate-y-1/2">
+                Let’s Talk
+              </span>
+            </button>
+          </div>
+
+          <div className="absolute w-full h-[10%] bg-gradient-to-b from-black to-transparent top-0 z-30 overflow-hidden"></div>
+          <div className="absolute w-full h-full bottom-1 backdrop-blur-3xl z-20 overflow-hidden"></div>
+          <div
+            ref={sunRef}
+            className="h-48 w-96 bg-[#8695D4] z-10 rounded-full absolute bottom-[-10vh]"
+          ></div>
+        </div>
+
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
           <div className="flex items-center gap-5 md:gap-10 w-full lg:w-1/2 text-center lg:text-left flex-col lg:flex-row">
@@ -48,8 +286,7 @@ export const Footer = () => {
               <div className="flex justify-between text-sm">
                 <p>Mobile</p>
                 <a href="tel:+91 63799 20255">
-                <p>+91 63799 20255</p>
-
+                  <p>+91 63799 20255</p>
                 </a>
               </div>
               <hr className="border border-white/10 w-full " />
@@ -113,14 +350,22 @@ export const Footer = () => {
             <div className="mt-6 flex flex-col gap-5">
               <div className="flex gap-2">
                 {/* <IoLocationOutline className="text-2xl " /> */}
-                <img src="/icons/footer-location-icon.svg" alt="" className="h-fit" />
+                <img
+                  src="/icons/footer-location-icon.svg"
+                  alt=""
+                  className="h-fit"
+                />
                 <p className="text-sm">
                   No 33/14, Ground floor, Jayammal St, Ayyavoo Colony,
                   Aminjikarai, Chennai, Tamil Nadu 600029
                 </p>
               </div>
               <div className="flex gap-2 items-center">
-              <img src="/icons/footer-mail-icon.svg" alt="" className="h-fit" />
+                <img
+                  src="/icons/footer-mail-icon.svg"
+                  alt=""
+                  className="h-fit"
+                />
                 {/* <LuMailOpen className="text-md" /> */}
                 {/* <p className="text-sm">yestobossservices@gmail.com</p> */}
                 <a href="mailto:yestobossconsultancy@gmail.com">
@@ -128,14 +373,24 @@ export const Footer = () => {
                 </a>
               </div>
               <div className="flex gap-2 items-center">
-              <img src="/icons/footer-phone-icon.svg" alt="" className="h-fit" />
+                <img
+                  src="/icons/footer-phone-icon.svg"
+                  alt=""
+                  className="h-fit"
+                />
                 {/* <FiPhoneCall className="text-md" /> */}
                 <a href="tel:+91 63799 20255">
-                <p className="text-sm">Phone : +91 63799 20255</p>
-
+                  <p className="text-sm">Phone : +91 63799 20255</p>
                 </a>
               </div>
-              {/* <p className="underline text-sm text-center">View Map</p> */}
+
+              <a
+                target="_blank"
+                href="https://maps.app.goo.gl/jy9L1T6GHZW7G1gj7"
+                className="underline text-sm underline-offset-4"
+              >
+                View Map
+              </a>
             </div>
           </div>
 
@@ -146,16 +401,15 @@ export const Footer = () => {
               <Link href="/" className="text-sm">
                 Home
               </Link>
-              <Link href="/about" className="text-sm">
+              <Link href="/about-us" className="text-sm">
                 About Us
               </Link>
-              <Link href="/contact" className="text-sm">
+              <Link href="/contact-us" className="text-sm">
                 Contact
               </Link>
               <Link href="/services" className="text-sm">
                 Services
               </Link>
-            
             </div>
           </div>
 
@@ -184,7 +438,6 @@ export const Footer = () => {
               <p className="text-sm">Signin</p>
             </div>
           </div> */}
-
         </div>
 
         <hr className="border border-white/10 w-full mt-7" />
@@ -228,7 +481,7 @@ export const Footer = () => {
         />
       </div>
 
-      <div className="w-screen  px-3 flex md:hidden items-center justify-center">
+      <div className="max-w-screen  px-3 flex md:hidden items-center justify-center">
         <div className="flex w-full h-full text-[10vw] font-bold">
           <p className="flex-1 text-center">Y</p>
           <p className="flex-1 text-center">E</p>

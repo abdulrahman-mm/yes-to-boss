@@ -6,64 +6,60 @@ import { Header } from "@/components/layout";
 gsap.registerPlugin(ScrollTrigger);
 import Link from "next/link";
 
-const services = [
+const dropdownData = [
   {
-    id: "01",
-    title: "ITR-1 Filing",
+    pathName: "sole-proprietorship-registration-online",
+    label: "Sole Proprietorship",
   },
   {
-    id: "02",
-    title: "GST Return Filing",
+    pathName: "apply-udyam-registration-online",
+    label: "Udayam Registration",
   },
   {
-    id: "03",
-    title: "FSSAI Registration",
+    pathName: "apply-gst-registration-online",
+    label: "GST Registration",
   },
   {
-    id: "04",
-    title: "DIN eKYC Filing",
+    pathName: "apply-fssai-registration-online",
+    label: "FSSAI Registration",
   },
   {
-    id: "05",
-    title: "TDS Return Filing",
+    pathName: "epfo-registration-online-for-employees",
+    label: "EPFO Registration",
   },
   {
-    id: "06",
-    title: "EPFO Registration",
+    pathName: "income-tax-efiling-in-india",
+    label: "Income Tax e-Filing",
   },
   {
-    id: "07",
-    title: "Udayam Registration",
+    pathName: "gst-return-filing-online",
+    label: "GST Return Filing",
   },
   {
-    id: "08",
-    title: "ITR-4 Return Filing",
+    pathName: "dir-3-kyc-filing-online",
+    label: " DIN eKYC Filing",
   },
   {
-    id: "09",
-    title: "ITR-3 Return Filing",
+    pathName: "income-tax-return-itr-4-filing-online",
+    label: "ITR-2 Return Filing",
   },
   {
-    id: "10",
-    title: "ITR-2 Return Filing",
+    pathName: "file-income-tax-return-itr-3-online",
+    label: "ITR-3 Return Filing",
   },
-
   {
-    id: "11",
-    title: "Income Tax e-Filing",
+    pathName: "file-income-tax-return-itr-2-online",
+    label: "ITR-2 Return Filing",
   },
-
   {
-    id: "12",
-    title: "GST Registration",
+    pathName: "income-tax-return-itr-1-filing-online",
+    label: "ITR-1 Filing",
   },
-
   {
-    id: "13",
-    title: "Sole Proprietorship",
+    pathName: "file-tds-return-online",
+    label: "TDS Return Filing",
   },
 ];
-
 const Page = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -151,7 +147,8 @@ const Page = () => {
   return (
     <main className="overflow-hidden">
       <div className="py-2 pb-10 bg-gradient-to-b from-[#212121] to-[#070707] min-h-screen bg-cover bg-center text-white">
-        <div className="w-full md:w-[90vw] mx-auto">
+        
+        <div className="w-full md:w-[90vw] mx-auto relative z-50">
           <Header />
         </div>
 
@@ -167,7 +164,7 @@ const Page = () => {
         <div className="relative flex flex-col md:flex-row pb-10 justify-center mt-10 md:mt-16 gap-10 md:gap-20 items-start general-sans font-medium text-xl md:text-4xl overflow-hidden">
           {/* Services List */}
           <div className="flex flex-col w-full text-center">
-            {services.map((service, index) => (
+            {dropdownData.map((service, index,array) => (
               <div
                 key={index}
                 className="pt-10 md:pt-14"
@@ -177,17 +174,14 @@ const Page = () => {
                 onTouchEnd={() => setHovered(null)}
               >
                 <Link
-                  href={`/services/${service.title
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")
-                    .replace(/[()]/g, "")}`}
+                  href={`/services/${service.pathName}`}
                 >
                   <p className="text-gray-100 md:text-[#575757] md:text-3xl lg:text-4xl font-medium hover:text-white hover:scale-105 md:hover:scale-110 transition-all duration-500">
-                    {service.id}. {service.title}
+                   {index <9 ? '0' :''}{index+1}. {service.label}
                   </p>
                 </Link>
 
-                {index !== services.length - 1 && (
+                {index !== array.length - 1 && (
                   <hr className="border border-[#464646] w-full md:w-2/3 mx-auto mt-8 md:mt-14" />
                 )}
               </div>

@@ -671,11 +671,13 @@ const AboutSecondSection = () => {
           </p>
 
           <p className="font-normal text-sm leading-6">
-            Whether you&apos;re in a metro or a growing city, our nationwide
+            {/* Whether you&apos;re in a metro or a growing city, our nationwide
             footprint ensures your business is supported with speed, precision,
             and consistency. With deep local insights and seamless coordination
             across regions, we deliver reliable, fast, and region-specific
-            services tailored to your business needs.
+            services tailored to your business needs. */}
+
+At YesToBoss, our core mission is to empower Indians—both individuals and businesses—to master their finances and simplify money management through smart, tailored solutions. Our dedicated team of experienced consultants streamlines essential operations, delivering reliable, seamless, end-to-end assistance. Whether you&apos;re a startup, entrepreneur, or established business in metro or emerging cities, our nationwide presence ensures fast, precise, and region-specific service that adapts to local needs. With a commitment to trust, accuracy, and round-the-clock expert support, we&apos;re proud to serve across more than 30 major cities and 5 regional zones, consistently earning high satisfaction and a strong 4.8-star rating. From meticulous document collection and eligibility verification to accurate filing, regulatory liaison, and real-time application tracking, our systematic approach ensures your financial and regulatory processes are smooth, compliant, and stress-free—empowering your growth with clarity and confidence.
           </p>
 
           <div className="grid grid-cols-2 gap-6 md:gap-10 w-full sm:w-fit">

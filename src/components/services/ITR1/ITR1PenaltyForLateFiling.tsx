@@ -26,12 +26,13 @@ const ITR1PenaltyForLateFiling = () => {
           </thead>
       </table>
 
-      <p className="mt-5 font-medium text-xl">Additionally, 1% monthly interest is charged on unpaid taxes. You may also:</p>
+      <p className="mt-5 text-lg sm:text-xl md:text-2xl font-medium
+">Additionally, 1% monthly interest is charged on unpaid taxes. You may also:</p>
 
-      <ol className="list-disc list-inside text-lg">
-          <li>Lose the right to carry forward losses</li>
-          <li>Face scrutiny or prosecution in case of repeated non-filing</li>
-          <li>Lose eligibility for refunds</li>
+      <ol className="list-disc list-inside text-lg mt-2">
+          <li className="text-base sm:text-lg md:text-xl mb-3">Lose the right to carry forward losses</li>
+          <li className="text-base sm:text-lg md:text-xl mb-3">Face scrutiny or prosecution in case of repeated non-filing</li>
+          <li className="text-base sm:text-lg md:text-xl">Lose eligibility for refunds</li>
       </ol>
     </section>
   );

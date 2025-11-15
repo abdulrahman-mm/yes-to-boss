@@ -37,5 +37,11 @@ export const itr1WhyFileData: serviceWhyTypes = {
       detailsDescription:
         "Filing ITR allows you to report and carry forward certain losses for set-off in future years",
     },
+    {
+      image: "/icons/why-file-gst-returns-icon.svg",
+      detailsHeading: "Build Financial Credibility",
+      detailsDescription:
+        "Regular ITR filing creates verified income proof, boosting credibility for loans, credit cards, and tenders.",
+    },
   ],
 };

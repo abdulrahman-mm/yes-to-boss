@@ -7,7 +7,7 @@ const ITRResidentIndividualsAged60_80Years = () => {
       <p className="text-2xl sm:text-3xl font-Bricolage_Grotesque md:text-4xl lg:text-5xl font-semibold">
         Resident Individuals Aged 60-80 Years
       </p>
-      <p className="text-lg mt-2">
+      <p className="text-lg font-medium mt-2">
         Taxpayers above 60 years of age and below 80 years enjoy a basic
         exemption limit of Rs.3 lakhs, making income up to Rs.3 lakh exempt from
         tax.
@@ -31,7 +31,10 @@ const ITRResidentIndividualsAged60_80Years = () => {
               <tr>
                 {incomeResidentIndividualsAged60_80Years.tableHeadData.map(
                   (heading, i) => (
-                    <th key={i} className="border border-black p-4 px-6 md:px-8">
+                    <th
+                      key={i}
+                      className="border border-black p-4 px-6 md:px-8"
+                    >
                       {heading}
                     </th>
                   )

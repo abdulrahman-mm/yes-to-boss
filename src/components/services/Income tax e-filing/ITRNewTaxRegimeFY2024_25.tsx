@@ -6,13 +6,13 @@ const ITRNewTaxRegimeFY2024_25 = () => {
       <p className="text-2xl sm:text-3xl font-Bricolage_Grotesque md:text-4xl lg:text-5xl font-semibold">
         New Tax Regime – FY 2024–25
       </p>
-      <p className="text-lg mt-2">
+      <p className="text-lg font-medium mt-2">
         Exemption Limit for All Individuals (irrespective of age): ₹3,00,000
       </p>
-      <p className="text-lg">Slab Rates (FY 2024–25):</p>
-      <p className="text-lg">Income Tax Slab for New Regime - FY 2024-25</p>
+      <p className="text-lg font-medium">Slab Rates (FY 2024–25):</p>
+      <p className="text-lg font-medium">Income Tax Slab for New Regime - FY 2024-25</p>
 
-      <p className="text-lg mt-3">
+      <p className="text-base sm:text-lg md:text-xl mt-3">
         If you&apos;re filing your income tax return for FY 2024-25, these are the
         tax slabs that apply to the income earned between 1st April 2024 and
         31st March 2025.The Duw date for filing your return is 15th September
@@ -66,7 +66,7 @@ const ITRNewTaxRegimeFY2024_25 = () => {
         </div>
       </section>
 
-      <p className="text-lg mt-5">
+      <p className="text-base sm:text-lg md:text-xl mt-5">
         Section 87A provides a rebate for individual taxpayers whose income is
         below a specified threshold. Under the new tax regime, the limit is Rs.
         7 lakh
